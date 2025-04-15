@@ -9,14 +9,23 @@ public:
 		int newDefense = 0, int* newStatusEffects = {0});
 	~Character();
 
-	void setAttack(int newAttack) const;
-	void setMaxHealth(int newMaxHealth) const;
-	void setCurrentHealth(int newCurHealth) const;
-	void setAgility(int newAgility) const;
-	void setAccuracy(int newAccuracy) const;
-	void setDefense(int newDefense) const;
-	void setStatusEffects(int& newStatusEffect) const;
-	void setMoveSet(Moves& newMoveSet) const;
+	void setAttack(const int newAttack);
+	void setMaxHealth(const int newMaxHealth);
+	void setCurrentHealth(const int newCurHealth);
+	void setAgility(const int newAgility);
+	void setAccuracy(const int newAccuracy);
+	void setDefense(const int newDefense);
+	void setStatusEffects(const int& newStatusEffect);
+	void setMoveSet(const Moves& newMoveSet);
+
+	int getAttack(void) const;
+	int getMaxHealth(void) const;
+	int getCurrentHealth(void) const;
+	int getAgility(void) const;
+	int	getAccuracy(void) const;
+	int getDefense(void) const;
+	int& getStatusEffect(void);
+	Moves& getMoveSet(void);
 
 
 private:
