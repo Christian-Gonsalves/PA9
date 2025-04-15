@@ -9,6 +9,15 @@ public:
 		int newDefense = 0, int* newStatusEffects = {0});
 	~Character();
 
+	void setAttack(int newAttack) const;
+	void setMaxHealth(int newMaxHealth) const;
+	void setCurrentHealth(int newCurHealth) const;
+	void setAgility(int newAgility) const;
+	void setAccuracy(int newAccuracy) const;
+	void setDefense(int newDefense) const;
+	void setStatusEffects(int& newStatusEffect) const;
+	void setMoveSet(Moves& newMoveSet) const;
+
 
 private:
 	int attack;	//base attack of character attack
