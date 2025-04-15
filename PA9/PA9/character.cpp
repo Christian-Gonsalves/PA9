@@ -8,7 +8,7 @@ Character::Character(int newAttack, int newMaxHealth, int newCurrentHealth, int 
 	agility = newAgility;
 	accuracy = newAccuracy;
 	defense = newDefense;
-	statusEffects = newStatusEffects;
+	*statusEffects = *newStatusEffects;
 }
 
 Character::~Character()

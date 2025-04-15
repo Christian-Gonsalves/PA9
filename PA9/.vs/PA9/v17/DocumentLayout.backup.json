@@ -42,8 +42,7 @@
               "RelativeToolTip": "PA9\\enemyCharacter.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T00:39:30.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T00:39:30.665Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "PA9\\character.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T00:39:00.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T00:39:00.398Z"
             },
             {
               "$type": "Document",
@@ -66,7 +64,7 @@
               "RelativeDocumentMoniker": "PA9\\character.hpp",
               "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.hpp",
               "RelativeToolTip": "PA9\\character.hpp",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAuwA8AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-15T00:36:56.517Z",
               "EditorCaption": ""
@@ -81,8 +79,7 @@
               "RelativeToolTip": "PA9\\move.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-12T05:25:54.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T05:25:54.086Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "PA9\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-12T05:24:47.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T05:24:47.846Z"
             }
           ]
         }
