@@ -5,10 +5,11 @@
 
 class Character {
 public:
-	Character(int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0, 
+	Character(string newName  = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,
 		int newDefense = 0, int* newStatusEffects = {0});
 	~Character();
 
+	void setName(const string newName);
 	void setAttack(const int newAttack);
 	void setMaxHealth(const int newMaxHealth);
 	void setCurrentHealth(const int newCurHealth);
@@ -18,6 +19,7 @@ public:
 	void setStatusEffects(const int& newStatusEffect);
 	void setMoveSet(const Moves& newMoveSet);
 
+	string getName(void) const;
 	int getAttack(void) const;
 	int getMaxHealth(void) const;
 	int getCurrentHealth(void) const;
@@ -27,8 +29,8 @@ public:
 	int& getStatusEffect(void);
 	Moves& getMoveSet(void);
 
-
 private:
+	string name;
 	int attack;	//base attack of character attack
 	int maxHealth;	//stores max health of character
 	int currentHealth;	//holds current health of character
@@ -41,3 +43,4 @@ private:
 	// the chracter model
 
 };
+

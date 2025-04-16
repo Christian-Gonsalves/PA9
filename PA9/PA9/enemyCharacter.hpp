@@ -7,6 +7,7 @@ public:
 
 	string getCatchPhrase(void) const;
 
+	void readFromFile(EnemyCharacter& n, ifstream& instream);
 
 private:
 	string catchPhrase;
