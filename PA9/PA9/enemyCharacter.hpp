@@ -5,6 +5,6 @@ public:
 
 
 private:
-
+	string catchPhrase;
 
 };
