@@ -1,7 +1,8 @@
 #include "character.hpp"
 
-Character::Character(int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
+Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
 {
+	name = newName;
 	attack = newAttack;
 	maxHealth = newMaxHealth;
 	currentHealth = newCurrentHealth;
@@ -14,6 +15,11 @@ Character::Character(int newAttack, int newMaxHealth, int newCurrentHealth, int 
 Character::~Character()
 {
 
+}
+
+void Character::setName(const string newName)
+{
+	name = newName;
 }
 
 void Character::setAttack(const int newAttack)
@@ -54,6 +60,11 @@ void Character::setStatusEffects(const int& newStatusEffect)
 void Character::setMoveSet(const Moves& newMoveSet)
 {
 	*MoveSet = newMoveSet;
+}
+
+string Character::getName(void) const
+{
+	return name;
 }
 
 int Character::getAttack(void) const
