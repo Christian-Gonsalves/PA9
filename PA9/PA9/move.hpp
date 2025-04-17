@@ -4,10 +4,14 @@
 
 class Moves {
 public:
+    
 
+
+
+    void setMoveName(const string newName);
 
 private:
-    std::string moveName;
+    string moveName;
     double power,	 // Multiplier
            speed,
            accuracy;

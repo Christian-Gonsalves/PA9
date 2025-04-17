@@ -11,9 +11,11 @@ string EnemyCharacter::getCatchPhrase(void) const
 }
 
 void EnemyCharacter::readFromFile(EnemyCharacter& n, ifstream& instream)
-{
+{	
 	string tempName = "", tempAtt = "", tempMxHp = "", tempCurrHp = "", tempAgil = "", tempAcc = "", tempDef = "",
-		tempPharse = "", tempMove = "";
+		tempPharse = "", tempMoveName = "";
+	Moves tempMove[6];
+	
 
 	getline(instream, tempName, ',');
 	getline(instream, tempAtt, ',');
@@ -33,6 +35,13 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, ifstream& instream)
 	n.setDefense(stoi(tempDef));
 	n.setCatchPhrase(tempPharse);
 
-
+	for (int i = 0; i < 4; i++) {
+		getline(instream, tempMoveName, ',');
+		tempMove[i].setMoveName(tempMoveName);
+		//get move data from database
+	}
+	getline(instream, tempMoveName, ',');
+	tempMove[5].setMoveName(tempMoveName);
+	//get move data from database
 
 }
