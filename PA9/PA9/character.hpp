@@ -37,9 +37,10 @@ private:
 	int agility;	//base agility stat
 	int accuracy;	//base accuracy stat
 	int defense;	//base defense stat
-	int statusEffects [6];	//an array for checking which status effects character has
+	int statusEffects [10];	//an array for checking which status effects character has
+	//5 total status' so an array of size 10 
 	Moves MoveSet[6];	//an array of moves that the charcater has access to
-
+	
 	// the chracter model
 
 };

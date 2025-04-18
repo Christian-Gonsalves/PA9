@@ -35,13 +35,13 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, ifstream& instream)
 	n.setDefense(stoi(tempDef));
 	n.setCatchPhrase(tempPharse);
 
-	for (int i = 0; i < 4; i++) {
-		getline(instream, tempMoveName, ',');
-		tempMove[i].setMoveName(tempMoveName);
-		//get move data from database
-	}
-	getline(instream, tempMoveName, ',');
-	tempMove[5].setMoveName(tempMoveName);
+	//for (int i = 0; i < 4; i++) {
+	//	getline(instream, tempMoveName, ',');
+	//	tempMove[i].setMoveName(tempMoveName);
+	//	//get move data from database
+	//}
+	//getline(instream, tempMoveName, ',');
+	//tempMove[5].setMoveName(tempMoveName);
 	//get move data from database
 
 }

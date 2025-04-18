@@ -4,9 +4,6 @@
 
 class Moves {
 public:
-    
-
-
 
     void setMoveName(const string newName);
 
