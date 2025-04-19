@@ -139,12 +139,14 @@
     <ClCompile Include="enemyCharacter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
+    <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.hpp" />
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="move.hpp" />
+    <ClInclude Include="Screen.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EnemyCharList.csv" />
