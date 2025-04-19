@@ -6,7 +6,7 @@
 class Character {
 public:
 	Character(string newName  = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,
-		int newDefense = 0, int* newStatusEffects = {0});
+		int newDefense = 0, int* newStatusEffects = nullptr);
 	~Character();
 
 	void setName(const string newName);

@@ -9,7 +9,10 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	agility = newAgility;
 	accuracy = newAccuracy;
 	defense = newDefense;
-	*statusEffects = *newStatusEffects;
+	for (int i = 0; i < 10; ++i) {
+		statusEffects[i] = newStatusEffects[i];
+	}
+
 }
 
 Character::~Character()

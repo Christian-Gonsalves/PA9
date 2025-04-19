@@ -1,5 +1,15 @@
 #include "enemyCharacter.hpp"
 
+EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
+{
+	Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newStatusEffects);
+	catchPhrase = newPhrase;
+}
+
+EnemyCharacter::~EnemyCharacter()
+{
+}
+
 void EnemyCharacter::setCatchPhrase(const string newPhrase)
 {
 	catchPhrase = newPhrase;
@@ -47,20 +57,21 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, string fileName)
 		getline(instream, tempType, ',');
 		getline(instream, tempInd, ',');
 		getline(instream, tempDur, ',');
-		getline(instream, tempStr, ',');
+		getline(instream, tempStr, '\n');
 
-		tempMove[i].setMoveName(tempName);
-		tempMove[i].setMovePhrase(tempPhrase);
-		tempMove[i].setPower(stof(tempPow));
-		tempMove[i].setSpeed(stof(tempSpd));
-		tempMove[i].setAccuracy(stof(tempAcc));
-		tempMove[i].setMoveCount(stoi(tempCnt));
-		tempMove[i].setMoveType(tempType[0]);
-		tempMove[i].setEffectArray(stoi(tempInd), stoi(tempDur), stoi(tempStr));
-
+		if (stoi(tempStr) != 0) {	//if the line is not empty
+			tempMove[i].setMoveName(tempName);
+			tempMove[i].setMovePhrase(tempPhrase);
+			tempMove[i].setPower(stof(tempPow));
+			tempMove[i].setSpeed(stof(tempSpd));
+			tempMove[i].setAccuracy(stof(tempAcc));
+			tempMove[i].setMoveCount(stoi(tempCnt));
+			tempMove[i].setMoveType(tempType[0]);
+			tempMove[i].setEffectArray(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+		}
 	}
 
-
+	n.setMoveSet(*tempMove);
 
 	instream.close();
 }
