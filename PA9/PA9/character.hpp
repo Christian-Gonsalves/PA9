@@ -16,8 +16,10 @@ public:
 	void setAgility(const int newAgility);
 	void setAccuracy(const int newAccuracy);
 	void setDefense(const int newDefense);
-	void setStatusEffects(const int& newStatusEffect);
-	void setMoveSet(const Moves& newMoveSet);
+	void setStatusEffect(const int index, const int turns, const int strength);
+	//index is where the turns will be held, index+1 is strength, [0] is attack turns, [1] is attack modifier
+	// ex index = 0, strength = .25, turns = 1, ==> [0] = 1. [1] = .25
+	void setMoveSet(const Move& newMoveSet);
 
 	string getName(void) const;
 	int getAttack(void) const;
@@ -26,8 +28,10 @@ public:
 	int getAgility(void) const;
 	int	getAccuracy(void) const;
 	int getDefense(void) const;
-	int& getStatusEffect(void);
-	Moves& getMoveSet(void);
+	int getStatusEffectTurns(int index);
+	int getStatursEffectStrength(int index);
+	Move& getMoveSet(void);
+
 
 private:
 	string name;
@@ -39,7 +43,7 @@ private:
 	int defense;	//base defense stat
 	int statusEffects [10];	//an array for checking which status effects character has
 	//5 total status' so an array of size 10 
-	Moves MoveSet[6];	//an array of moves that the charcater has access to
+	Move MoveSet[6];	//an array of moves that the charcater has access to
 	
 	// the chracter model
 
