@@ -54,8 +54,7 @@ void Character::setDefense(const int newDefense)
 
 void Character::setStatusEffects(const int& newStatusEffect)
 {
-	this->statusEffects[index] = turns; 
-	this->statusEffects[index + 1] = strength; 
+	*statusEffects = newStatusEffect;
 }
 
 void Character::setMoveSet(const Moves& newMoveSet)
@@ -98,14 +97,9 @@ int Character::getDefense(void) const
 	return defense;
 }
 
-int Character::getStatusEffectTurns(int index)	//put in the index for the start of attribute
-{
-	return this->statusEffects[index];
-}
-
 int& Character::getStatusEffect(void)
 {
-	return this->statusEffects;
+	return *this->statusEffects;
 }
 
 Moves& Character::getMoveSet(void)

@@ -1,79 +1,64 @@
 ﻿  character.cpp
   enemyCharacter.cpp
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(22,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(22,28): error C2143: syntax error: missing ',' before '&'
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(33,6): error C2143: syntax error: missing ';' before '&'
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(33,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(33,24): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(46,7): error C3646: 'MoveSet': unknown override specifier
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(46,14): error C2143: syntax error: missing ',' before '['
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(46,17): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'character.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(55,17): error C2039: 'setStatusEffects': is not a member of 'Character'
-      C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(6,7):
-      see declaration of 'Character'
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(57,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(57,22): error C2065: 'index': undeclared identifier
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(57,31): error C2065: 'turns': undeclared identifier
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(58,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(58,22): error C2065: 'index': undeclared identifier
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(58,31): error C7732: expected an expression before ']'
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(58,35): error C2065: 'strength': undeclared identifier
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(61,17): error C2511: 'void Character::setMoveSet(const Moves &)': overloaded member function not found in 'Character'
-      C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(6,7):
-      see declaration of 'Character'
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(63,3): error C2065: 'MoveSet': undeclared identifier
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(106,17): error C2039: 'getStatusEffect': is not a member of 'Character'
-      C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(6,7):
-      see declaration of 'Character'
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(108,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(111,19): error C2039: 'getMoveSet': is not a member of 'Character'
-      C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(6,7):
-      see declaration of 'Character'
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.cpp(113,10): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(22,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(22,28): error C2143: syntax error: missing ',' before '&'
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(33,6): error C2143: syntax error: missing ';' before '&'
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(33,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(33,24): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(46,7): error C3646: 'MoveSet': unknown override specifier
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(46,14): error C2143: syntax error: missing ',' before '['
-  (compiling source file 'enemyCharacter.cpp')
-  
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\character.hpp(46,17): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'enemyCharacter.cpp')
-  
   main.cpp
-C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\PA9\main.cpp(2,10): error C1083: Cannot open include file: 'Screen.hpp': No such file or directory
   Generating Code...
+sfml-graphics-s-d.lib(RenderTarget.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderTarget.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(RenderWindow.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderWindow.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(GLExtensions.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(GLExtensions.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(GLCheck.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(GLCheck.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(BlendMode.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(BlendMode.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(StencilMode.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(StencilMode.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(View.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(View.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(Shader.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Shader.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(Texture.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Texture.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(VertexBuffer.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(VertexBuffer.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(Image.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Image.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(RenderTextureImplFBO.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderTextureImplFBO.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(Glsl.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Glsl.obj)' or at ''; linking object as if no debug info
+sfml-graphics-s-d.lib(TextureSaver.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(TextureSaver.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(VideoMode.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(VideoMode.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(WindowBase.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WindowBase.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(Keyboard.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Keyboard.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(Window.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Window.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(Context.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Context.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(GlResource.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(GlResource.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(VideoModeImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(VideoModeImpl.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(Cursor.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Cursor.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(WindowImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WindowImpl.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(InputImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(InputImpl.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(GlContext.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(GlContext.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(CursorImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(CursorImpl.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(JoystickManager.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(JoystickManager.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(SensorManager.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(SensorManager.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(WindowImplWin32.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WindowImplWin32.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(VulkanImplWin32.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(VulkanImplWin32.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(WglContext.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WglContext.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(JoystickImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(JoystickImpl.obj)' or at ''; linking object as if no debug info
+sfml-window-s-d.lib(SensorImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(SensorImpl.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(String.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(String.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(Err.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(Err.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(Utils.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(Utils.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(Clock.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(Clock.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(Sleep.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(Sleep.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(SleepImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(SleepImpl.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundStream.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundStream.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(Music.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(Music.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(Miniaudio.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(Miniaudio.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(AudioResource.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(AudioResource.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundSource.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundSource.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(MiniaudioUtils.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(MiniaudioUtils.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(InputSoundFile.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(InputSoundFile.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(AudioDevice.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(AudioDevice.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileFactory.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileFactory.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(PlaybackDevice.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(PlaybackDevice.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileReaderFlac.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileReaderFlac.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileReaderMp3.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileReaderMp3.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileReaderOgg.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileReaderOgg.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileReaderWav.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileReaderWav.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileWriterFlac.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileWriterFlac.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileWriterOgg.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileWriterOgg.obj)' or at ''; linking object as if no debug info
+sfml-audio-s-d.lib(SoundFileWriterWav.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileWriterWav.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(FileInputStream.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(FileInputStream.obj)' or at ''; linking object as if no debug info
+sfml-system-s-d.lib(MemoryInputStream.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(MemoryInputStream.obj)' or at ''; linking object as if no debug info
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  PA9.vcxproj -> C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\x64\Debug\PA9.exe
