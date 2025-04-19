@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\Screen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\move.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\Screen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\Screen.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,30 +54,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Screen.cpp",
               "DocumentMoniker": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.cpp",
               "RelativeDocumentMoniker": "PA9\\Screen.cpp",
               "ToolTip": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.cpp",
               "RelativeToolTip": "PA9\\Screen.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-19T10:53:38.642Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Screen.hpp",
               "DocumentMoniker": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.hpp",
               "RelativeDocumentMoniker": "PA9\\Screen.hpp",
               "ToolTip": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\Screen.hpp",
               "RelativeToolTip": "PA9\\Screen.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-19T10:52:29.153Z",
               "EditorCaption": ""
@@ -96,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "enemyCharacter.cpp",
               "DocumentMoniker": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.cpp",
               "ToolTip": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeToolTip": "PA9\\enemyCharacter.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-16T23:42:46.39Z",
               "EditorCaption": ""
@@ -157,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "move.cpp",
               "DocumentMoniker": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.cpp",
               "RelativeDocumentMoniker": "PA9\\move.cpp",
@@ -170,20 +170,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "character.cpp",
               "DocumentMoniker": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp",
               "RelativeDocumentMoniker": "PA9\\character.cpp",
               "ToolTip": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp",
               "RelativeToolTip": "PA9\\character.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-15T00:39:00.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\lopez\\OneDrive\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp",
               "RelativeDocumentMoniker": "PA9\\main.cpp",

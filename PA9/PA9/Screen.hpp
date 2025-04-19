@@ -14,4 +14,7 @@ public:
 private:
     sf::Texture bg1Texture;
     sf::Sprite bg1Sprite;
+    sf::CircleShape player;
+    std::vector<sf::Vector2f> pos;
+    int curIndex = 0;
 };
