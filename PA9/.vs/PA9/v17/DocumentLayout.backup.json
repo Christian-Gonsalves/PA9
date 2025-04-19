@@ -1,34 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\",
+  "WorkspaceRootPath": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,15 +38,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "enemyCharacter.cpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.cpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeToolTip": "PA9\\enemyCharacter.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -55,11 +55,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "include.hpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\include.hpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\include.hpp",
               "RelativeDocumentMoniker": "PA9\\include.hpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\include.hpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\include.hpp",
               "RelativeToolTip": "PA9\\include.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -68,11 +68,24 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
+              "RelativeDocumentMoniker": "PA9\\main.cpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
+              "RelativeToolTip": "PA9\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-12T05:24:47.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "enemyCharacter.hpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.hpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp",
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.hpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.hpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp",
               "RelativeToolTip": "PA9\\enemyCharacter.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -81,54 +94,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "character.cpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
               "RelativeDocumentMoniker": "PA9\\character.cpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
               "RelativeToolTip": "PA9\\character.cpp",
-              "ViewState": "AgIAAAsAAAAAAAAAAAASwEIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-15T00:39:00.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "character.hpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.hpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp",
               "RelativeDocumentMoniker": "PA9\\character.hpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.hpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp",
               "RelativeToolTip": "PA9\\character.hpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-15T00:36:56.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "move.hpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.hpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.hpp",
               "RelativeDocumentMoniker": "PA9\\move.hpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.hpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.hpp",
               "RelativeToolTip": "PA9\\move.hpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-12T05:25:54.086Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp",
-              "RelativeDocumentMoniker": "PA9\\main.cpp",
-              "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp",
-              "RelativeToolTip": "PA9\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-12T05:24:47.846Z"
             }
           ]
         }
