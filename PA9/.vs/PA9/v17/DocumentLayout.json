@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -29,6 +17,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\include.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "enemyCharacter.hpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp",
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.hpp",
@@ -55,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "character.cpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
               "RelativeDocumentMoniker": "PA9\\character.cpp",
@@ -68,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "include.hpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\include.hpp",
               "RelativeDocumentMoniker": "PA9\\include.hpp",
@@ -81,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "enemyCharacter.cpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.cpp",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
               "RelativeDocumentMoniker": "PA9\\main.cpp",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Move.hpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\Move.hpp",
               "RelativeDocumentMoniker": "PA9\\Move.hpp",
@@ -120,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "character.hpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp",
               "RelativeDocumentMoniker": "PA9\\character.hpp",
