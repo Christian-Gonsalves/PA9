@@ -2,7 +2,7 @@
 
 #include "include.hpp"
 
-class Moves {
+class Move {
 public:
 
 
