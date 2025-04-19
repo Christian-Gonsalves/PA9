@@ -140,16 +140,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.hpp" />
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="move.hpp" />
-    <ClInclude Include="Screen.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="EnemyCharList.csv" />
+    <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
