@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -54,8 +54,7 @@
               "RelativeToolTip": "PA9\\character.hpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAmwBUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-19T21:33:00.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T21:33:00.143Z"
             },
             {
               "$type": "Document",
@@ -67,12 +66,11 @@
               "RelativeToolTip": "PA9\\Enemy_1.csv",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-04-19T21:17:45.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T21:17:45.326Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "move.cpp",
               "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.cpp",
               "RelativeDocumentMoniker": "PA9\\move.cpp",
@@ -80,12 +78,11 @@
               "RelativeToolTip": "PA9\\move.cpp",
               "ViewState": "AgIAACoAAAAAAAAAAAAmwDYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-19T21:12:37.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T21:12:37.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "move.hpp",
               "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\move.hpp",
               "RelativeDocumentMoniker": "PA9\\move.hpp",
@@ -98,13 +95,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp",
               "RelativeDocumentMoniker": "PA9\\main.cpp",
               "ToolTip": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\main.cpp",
               "RelativeToolTip": "PA9\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-19T21:09:26.224Z",
               "EditorCaption": ""
@@ -119,12 +116,11 @@
               "RelativeToolTip": "PA9\\enemyCharacter.cpp",
               "ViewState": "AgIAAEAAAAAAAAAAAAAewE4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-19T21:09:16.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T21:09:16.268Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "character.cpp",
               "DocumentMoniker": "C:\\Users\\mypeo\\Documents\\GitHub\\PA9\\PA9\\PA9\\character.cpp",
               "RelativeDocumentMoniker": "PA9\\character.cpp",
@@ -132,8 +128,7 @@
               "RelativeToolTip": "PA9\\character.cpp",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAEYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-19T21:08:32.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T21:08:32.618Z"
             },
             {
               "$type": "Document",
@@ -145,8 +140,7 @@
               "RelativeToolTip": "PA9\\enemyCharacter.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-19T21:11:18.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T21:11:18.574Z"
             }
           ]
         }
