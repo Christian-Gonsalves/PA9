@@ -6,7 +6,7 @@
 class Character {
 public:
 	Character(string newName  = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,
-		int newDefense = 0, int* newStatusEffects = {0});
+		int newDefense = 0, int* newStatusEffects = nullptr);
 	~Character();
 
 	void setName(const string newName);
@@ -19,7 +19,7 @@ public:
 	void setStatusEffect(const int index, const int turns, const int strength);
 	//index is where the turns will be held, index+1 is strength, [0] is attack turns, [1] is attack modifier
 	// ex index = 0, strength = .25, turns = 1, ==> [0] = 1. [1] = .25
-	void setMoveSet(const Move& newMoveSet);
+	void setMoveSet(const Move* newMoveSet);
 
 	string getName(void) const;
 	int getAttack(void) const;
@@ -43,7 +43,7 @@ private:
 	int defense;	//base defense stat
 	int statusEffects [10];	//an array for checking which status effects character has
 	//5 total status' so an array of size 10 
-	Move MoveSet[6];	//an array of moves that the charcater has access to
+	Move moveSet[12];	//an array of moves that the charcater has access to
 	
 	// the chracter model
 

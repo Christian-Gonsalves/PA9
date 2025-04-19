@@ -1,6 +1,6 @@
 #include "move.hpp"
 
-Move::Move(string newName, string newPhrase, double newPower, double newSpeed, double newAccuracy, int newMoveCnt, char newType, int newIndex, int newDur, int newStrength)
+Move::Move(string newName, string newPhrase, double newPower, double newSpeed, double newAccuracy, int newMoveCnt, char newType, int* newStatus)
 {
 	moveName = newName;
 	movePhrase = newPhrase;
@@ -9,9 +9,14 @@ Move::Move(string newName, string newPhrase, double newPower, double newSpeed, d
 	accuracy = newAccuracy;
 	moveCount = newMoveCnt;
 	moveType = newType;
-	effectIndex = newIndex;
-	effectDuration = newDur;
-	effectStrength = newStrength;
+	if (newStatus == nullptr) {
+	}
+	else {
+		for (int i = 0; i < 10; ++i) {
+			statusEffect[i] = newStatus[i];
+		}
+	}
+
 }
 
 Move::~Move()
@@ -47,16 +52,17 @@ void Move::setMoveType(char newType) {
 	moveType = newType;
 }
 
-void Move::setEffectIndex(int newIndex) {
-	effectIndex = newIndex;
+void Move::setEffectArray(const int *newArray)
+{
+	for (int i = 0; i < 10; i++) {
+		statusEffect[i] = newArray[i];
+	}
 }
 
-void Move::setEffectDuration(int newDuration) {
-	effectDuration = newDuration;
-}
-
-void Move::setEffectStrength(int newStrength) {
-	effectStrength = newStrength;
+void Move::setEffectAttribute(int index, int turns, int strength)
+{
+	statusEffect[index] = turns;
+	statusEffect[index + 1] = strength;
 }
 
 string Move::getMoveName() const {
@@ -87,14 +93,32 @@ char Move::getMoveType() const {
 	return moveType;
 }
 
-int Move::getEffectIndex() const {
-	return effectIndex;
+const int* Move::getEffectArray(void) const
+{
+	return statusEffect;
 }
 
-int Move::getEffectDuration() const {
-	return effectDuration;
+int Move::getEffectTurns(int index)
+{
+	return this->statusEffect[index];
 }
 
-int Move::getEffectStrength() const {
-	return effectStrength;
+int Move::getEffectStrength(int index)
+{
+	return this->statusEffect[index+1];
+}
+
+Move& Move::operator=(const Move& rhs)
+{
+
+	this->setMoveName(rhs.getMoveName());
+	this->setMovePhrase(rhs.getMovePhrase());
+	this->setPower(rhs.getPower());
+	this->setSpeed(rhs.getSpeed());
+	this->setAccuracy(rhs.getAccuracy());
+	this->setMoveCount(rhs.getMoveCount());
+	this->setMoveType(rhs.getMoveType());
+	this->setEffectArray(rhs.getEffectArray());
+
+	return *this;
 }

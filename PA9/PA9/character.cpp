@@ -1,4 +1,5 @@
 #include "character.hpp"
+#include "move.hpp"
 
 Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
 {
@@ -9,7 +10,15 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	agility = newAgility;
 	accuracy = newAccuracy;
 	defense = newDefense;
-	*statusEffects = *newStatusEffects;
+	if (newStatusEffects == nullptr) {
+	}
+	else {
+		for (int i = 0; i < 10; ++i) {
+			statusEffects[i] = newStatusEffects[i];
+		}
+	}
+
+
 }
 
 Character::~Character()
@@ -58,9 +67,11 @@ void Character::setStatusEffect(const int index, const int turns, const int stre
 	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(const Moves& newMoveSet)
+void Character::setMoveSet(const Move* newMoveSet)
 {
-	*MoveSet = newMoveSet;
+	for (int i = 0; i < 12; i++) {
+		moveSet[i] = newMoveSet[i];
+	}
 }
 
 string Character::getName(void) const
@@ -110,7 +121,7 @@ int Character::getStatursEffectStrength(int index)	//put in the index for the st
 }
 
 
-Moves& Character::getMoveSet(void)
+Move& Character::getMoveSet(void)
 {
-	return *this->MoveSet;
+	return *this->moveSet;
 }

@@ -147,7 +147,10 @@
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="move.hpp" />
-    <ClInclude Include="turnWrapper.hpp" />
+    <ClInclude Include="Screen.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Enemy_1.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
