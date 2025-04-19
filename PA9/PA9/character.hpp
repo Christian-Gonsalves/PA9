@@ -43,7 +43,7 @@ private:
 	int defense;	//base defense stat
 	int statusEffects [10];	//an array for checking which status effects character has
 	//5 total status' so an array of size 10 
-	Move MoveSet[6];	//an array of moves that the charcater has access to
+	Move MoveSet[12];	//an array of moves that the charcater has access to
 	
 	// the chracter model
 
