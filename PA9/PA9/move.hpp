@@ -11,7 +11,8 @@ private:
     double power,	 // Multiplier
            speed,
            accuracy;
-    int moveCount; // Max # of times a move can be used
+    int maxMoveCount, // # of times a move can be used
+        currentMoveCount;
     char moveType; 
 
     // some sort of status eefect moodifier

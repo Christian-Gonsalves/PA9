@@ -137,12 +137,14 @@
   <ItemGroup>
     <ClCompile Include="character.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.hpp" />
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="move.hpp" />
+    <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

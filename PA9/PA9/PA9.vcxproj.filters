@@ -21,6 +21,9 @@
     <ClCompile Include="character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="turnWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.hpp">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="turnWrapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
