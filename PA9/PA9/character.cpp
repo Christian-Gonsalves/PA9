@@ -58,7 +58,7 @@ void Character::setStatusEffect(const int index, const int turns, const int stre
 	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(const Moves& newMoveSet)
+void Character::setMoveSet(const Move& newMoveSet)
 {
 	*MoveSet = newMoveSet;
 }
@@ -110,7 +110,7 @@ int Character::getStatursEffectStrength(int index)	//put in the index for the st
 }
 
 
-Moves& Character::getMoveSet(void)
+Move& Character::getMoveSet(void)
 {
 	return *this->MoveSet;
 }

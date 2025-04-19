@@ -5,7 +5,7 @@
 class Move {
 public:
     Move(string newName = "", string newPhrase = "", double newPower = 0, double newSpeed = 0, double newAccuracy = 0,
-        int newMoveCnt = 0, char newType = '\n', int newIndex = 0, int newDur = 0, int newStrength = 0);
+        int newMoveCnt = 0, char newType = '\n', int* newStatus = { 0 });
 
     ~Move();
 
@@ -16,20 +16,17 @@ public:
     void setAccuracy(double newAccuracy);
     void setMoveCount(int newCount);
     void setMoveType(char newType);
-    void setEffectIndex(int newIndex);
-    void setEffectDuration(int newDuration);
-    void setEffectStrength(int newStrength);
+    void setEffectArray(int index, int turns, int strength);
 
-    string getMoveName() const;
-    string getMovePhrase() const;
-    double getPower() const;
-    double getSpeed() const;
-    double getAccuracy() const;
-    int getMoveCount() const;
-    char getMoveType() const;
-    int getEffectIndex() const;
-    int getEffectDuration() const;
-    int getEffectStrength() const;
+    string getMoveName(void) const;
+    string getMovePhrase(void) const;
+    double getPower(void) const;
+    double getSpeed(void) const;
+    double getAccuracy(void) const;
+    int getMoveCount(void) const;
+    char getMoveType(void) const;
+    int getEffectTurns(int index);
+    int getEffectStrength(int index);
 
 private:
     string moveName;
@@ -39,10 +36,8 @@ private:
            accuracy;
     int moveCount; // Max # of times a move can be used 
     char moveType; 
-    int effectIndex;
-    int effectDuration;
-    int effectStrength;
-
+    int statusEffect[10];
+    
     // some sort of status eefect moodifier
     // an array to hold status effect things;
 };
