@@ -6,11 +6,11 @@
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode({ 1200, 1200 }),"TA BASH"); 
-	//sf::Music music;
-	//if (!music.openFromFile("../Audio/sound1.wav"))
-		//return -1; // error
+	sf::Music music;
+	if (!music.openFromFile("../Audio/sound1.wav"))
+		return -1; // error
 
-	//music.play();
+	music.play();
 
 
 	while (window.isOpen())
