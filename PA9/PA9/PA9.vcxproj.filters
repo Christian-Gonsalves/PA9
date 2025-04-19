@@ -49,7 +49,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="EnemyCharList.csv">
+    <None Include="Enemy_1.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
