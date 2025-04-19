@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\move.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -27,12 +11,24 @@
       "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\EnemyCharList.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PA9\\EnemyCharList.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PA9\\move.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\enemyCharacter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7721C22D-A0BB-4E4D-AB24-A8981BB86BEC}|PA9\\PA9.vcxproj|solutionrelative:PA9\\character.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,29 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EnemyCharList.csv",
-              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\EnemyCharList.csv",
-              "RelativeDocumentMoniker": "PA9\\EnemyCharList.csv",
-              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\EnemyCharList.csv",
-              "RelativeToolTip": "PA9\\EnemyCharList.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-04-17T18:11:46.198Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "enemyCharacter.cpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.cpp",
               "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.cpp",
               "RelativeToolTip": "PA9\\enemyCharacter.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-16T23:42:46.39Z"
             },
@@ -76,25 +60,63 @@
               "RelativeDocumentMoniker": "PA9\\enemyCharacter.hpp",
               "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\enemyCharacter.hpp",
               "RelativeToolTip": "PA9\\enemyCharacter.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T00:39:30.665Z"
+              "WhenOpened": "2025-04-15T00:39:30.665Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
+              "RelativeDocumentMoniker": "PA9\\main.cpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
+              "RelativeToolTip": "PA9\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-12T05:24:47.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "move.cpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.cpp",
+              "RelativeDocumentMoniker": "PA9\\move.cpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.cpp",
+              "RelativeToolTip": "PA9\\move.cpp",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-17T19:13:42.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "character.hpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp",
               "RelativeDocumentMoniker": "PA9\\character.hpp",
               "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.hpp",
               "RelativeToolTip": "PA9\\character.hpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-15T00:36:56.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "character.cpp",
+              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
+              "RelativeDocumentMoniker": "PA9\\character.cpp",
+              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
+              "RelativeToolTip": "PA9\\character.cpp",
+              "ViewState": "AgIAAEcAAAAAAAAAAAApwHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T00:39:00.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "move.hpp",
               "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.hpp",
               "RelativeDocumentMoniker": "PA9\\move.hpp",
@@ -102,43 +124,7 @@
               "RelativeToolTip": "PA9\\move.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-12T05:25:54.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "move.cpp",
-              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.cpp",
-              "RelativeDocumentMoniker": "PA9\\move.cpp",
-              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\move.cpp",
-              "RelativeToolTip": "PA9\\move.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-17T19:13:42.167Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "character.cpp",
-              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
-              "RelativeDocumentMoniker": "PA9\\character.cpp",
-              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\character.cpp",
-              "RelativeToolTip": "PA9\\character.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAmwGQAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T00:39:00.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
-              "RelativeDocumentMoniker": "PA9\\main.cpp",
-              "ToolTip": "C:\\Users\\drevc\\Desktop\\School\\Cpts 122\\PA9\\PA9\\PA9\\main.cpp",
-              "RelativeToolTip": "PA9\\main.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-12T05:24:47.846Z",
+              "WhenOpened": "2025-04-12T05:25:54.086Z",
               "EditorCaption": ""
             }
           ]
