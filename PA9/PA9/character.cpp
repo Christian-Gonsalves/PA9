@@ -1,6 +1,7 @@
-#include "character.hpp"
+##include "character.hpp"
+#include "move.hpp"
 
-Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
+Character::Character(string newName, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
 {
 	name = newName;
 	attack = newAttack;
@@ -9,7 +10,15 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	agility = newAgility;
 	accuracy = newAccuracy;
 	defense = newDefense;
-	*statusEffects = *newStatusEffects;
+	if (newStatusEffects == nullptr) {
+	}
+	else {
+		for (int i = 0; i < 10; ++i) {
+			statusEffects[i] = newStatusEffects[i];
+		}
+	}
+
+
 }
 
 Character::~Character()
@@ -52,14 +61,17 @@ void Character::setDefense(const int newDefense)
 	defense = newDefense;
 }
 
-void Character::setStatusEffects(const int& newStatusEffect)
+void Character::setStatusEffect(const int index, const int turns, const int strength)
 {
-	*statusEffects = newStatusEffect;
+	this->statusEffects[index] = turns;
+	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(const Moves& newMoveSet)
+void Character::setMoveSet(const Move* newMoveSet)
 {
-	*MoveSet = newMoveSet;
+	for (int i = 0; i < 12; i++) {
+		moveSet[i] = newMoveSet[i];
+	}
 }
 
 string Character::getName(void) const
@@ -97,12 +109,19 @@ int Character::getDefense(void) const
 	return defense;
 }
 
-int& Character::getStatusEffect(void)
+int Character::getStatusEffectTurns(int index)	//put in the index for the start of attribute
 {
-	return *this->statusEffects;
+	return this->statusEffects[index];
 }
 
-Moves& Character::getMoveSet(void)
+int Character::getStatursEffectStrength(int index)	//put in the index for the start of attribute
 {
-	return *this->MoveSet;
+	return this->statusEffects[index + 1];
+
+}
+
+
+Move& Character::getMoveSet(void)
+{
+	return *this->moveSet;
 }

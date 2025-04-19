@@ -138,12 +138,24 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="move.cpp" />
+    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.hpp" />
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="include.hpp" />
-    <ClInclude Include="Move.hpp" />
+    <ClInclude Include="move.hpp" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="turnWrapper.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PA9.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Enemy_1.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
