@@ -138,6 +138,8 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="move.cpp" />
+    <ClCompile Include="Screen.cpp" />
     <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
