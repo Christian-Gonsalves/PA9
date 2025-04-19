@@ -2,7 +2,6 @@
   enemyCharacter.cpp
   main.cpp
   move.cpp
-  Screen.cpp
   Generating Code...
 sfml-graphics-s-d.lib(Texture.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Texture.obj)' or at ''; linking object as if no debug info
 sfml-graphics-s-d.lib(RenderWindow.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderWindow.obj)' or at ''; linking object as if no debug info

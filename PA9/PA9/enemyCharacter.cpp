@@ -20,7 +20,7 @@ string EnemyCharacter::getCatchPhrase(void) const
 	return catchPhrase;
 }
 
-void EnemyCharacter::readFromFile(EnemyCharacter& n, string fileName)
+void EnemyCharacter::readFromFile(string fileName)
 {	
 	ifstream instream(fileName);
 	string tempName = "", tempAtt = "", tempMxHp = "", tempCurrHp = "", tempAgil = "", tempAcc = "", tempDef = "",
@@ -38,16 +38,16 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, string fileName)
 	getline(instream, tempDef, ',');
 	getline(instream, tempPhrase, '\n');
 
-	n.setName(tempName);
-	n.setAttack(stoi(tempAtt));
-	n.setMaxHealth(stoi(tempMxHp));
-	n.setCurrentHealth(stoi(tempCurrHp));
-	n.setAgility(stoi(tempAgil));
-	n.setAccuracy(stoi(tempAcc));
-	n.setDefense(stoi(tempDef));
-	n.setCatchPhrase(tempPhrase);
+	this->setName(tempName);
+	this->setAttack(stoi(tempAtt));
+	this->setMaxHealth(stoi(tempMxHp));
+	this->setCurrentHealth(stoi(tempCurrHp));
+	this->setAgility(stoi(tempAgil));
+	this->setAccuracy(stoi(tempAcc));
+	this->setDefense(stoi(tempDef));
+	this->setCatchPhrase(tempPhrase);
 
-	for (int i = 0; i < 11; i++) {
+	for (int i = 0; i < 12; i++) {
 		getline(instream, tempName, ',');
 		getline(instream, tempPhrase, ',');
 		getline(instream, tempPow, ',');
@@ -59,7 +59,7 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, string fileName)
 		getline(instream, tempDur, ',');
 		getline(instream, tempStr, '\n');
 
-		if (stoi(tempStr) != 0) {	//if the line is not empty
+		if (i == 0 || tempName != tempMove[i-1].getMoveName()) {	//if the line is not empty
 			tempMove[i].setMoveName(tempName);
 			tempMove[i].setMovePhrase(tempPhrase);
 			tempMove[i].setPower(stof(tempPow));
@@ -67,11 +67,14 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, string fileName)
 			tempMove[i].setAccuracy(stof(tempAcc));
 			tempMove[i].setMoveCount(stoi(tempCnt));
 			tempMove[i].setMoveType(tempType[0]);
-			tempMove[i].setEffectArray(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+			tempMove[i].setEffectAttribute(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+		}
+		else {
+			break;
 		}
 	}
 
-	n.setMoveSet(*tempMove);
+	this->setMoveSet(tempMove);
 
 	instream.close();
 }

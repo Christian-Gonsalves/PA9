@@ -11,7 +11,7 @@ public:
 
 	string getCatchPhrase(void) const;
 
-	void readFromFile(EnemyCharacter& n, string fileName);
+	void readFromFile(string fileName);
 
 private:
 	string catchPhrase;

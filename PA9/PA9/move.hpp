@@ -5,7 +5,7 @@
 class Move {
 public:
     Move(string newName = "", string newPhrase = "", double newPower = 0, double newSpeed = 0, double newAccuracy = 0,
-        int newMoveCnt = 0, char newType = '\n', int* newStatus = { 0 });
+        int newMoveCnt = 0, char newType = '\n', int* newStatus = nullptr);
 
     ~Move();
 
@@ -16,7 +16,8 @@ public:
     void setAccuracy(double newAccuracy);
     void setMoveCount(int newCount);
     void setMoveType(char newType);
-    void setEffectArray(int index, int turns, int strength);
+    void setEffectArray(const int* newArray);
+    void setEffectAttribute(int index, int turns, int strength);
 
     string getMoveName(void) const;
     string getMovePhrase(void) const;
@@ -25,8 +26,11 @@ public:
     double getAccuracy(void) const;
     int getMoveCount(void) const;
     char getMoveType(void) const;
+    const int* getEffectArray(void) const;
     int getEffectTurns(int index);
     int getEffectStrength(int index);
+
+    Move& operator= (const Move& rhs);
 
 private:
     string moveName;
@@ -41,3 +45,4 @@ private:
     // some sort of status eefect moodifier
     // an array to hold status effect things;
 };
+
