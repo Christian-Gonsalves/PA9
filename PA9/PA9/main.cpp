@@ -5,17 +5,12 @@
 
 int main() {
 
-	sf::RenderWindow window(sf::VideoMode({ 1280, 720 }),"TA BASH"); 
-	window.setFramerateLimit(60); 
-	sf::SoundBuffer buffer("../Audio/sound3.wav");
-	sf::Sound sound(buffer);
-	sf::CircleShape circle; 
-	sf::Vector2f circlePosition(640, 360); 
-	circle.setPosition(circlePosition); 
-	circle.setRadius(100); 
-	circle.setFillColor(sf::Color::Yellow); 
+	sf::RenderWindow window(sf::VideoMode({ 1200, 1200 }),"TA BASH"); 
+	//sf::Music music;
+	//if (!music.openFromFile("../Audio/sound1.wav"))
+		//return -1; // error
 
-
+	//music.play();
 
 
 	while (window.isOpen())
@@ -32,30 +27,25 @@ int main() {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
 			{
 
-				sound.play(); 
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 			{
-		
-				
+
 			}
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))\
 			{
-			
 
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
 			{
-			
-			
+
 
 			}
 
 			window.clear(); 
-			window.draw(circle); 
 			window.display(); 
 		}
 	}
