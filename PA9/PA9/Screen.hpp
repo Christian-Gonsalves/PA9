@@ -1,6 +1,4 @@
 #pragma once
-
-#pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
 
@@ -14,7 +12,8 @@ public:
 private:
     sf::Texture bg1Texture;
     sf::Sprite bg1Sprite;
-    sf::CircleShape player;
+    sf::Texture playerTexture;
+    sf::Sprite player;
     std::vector<sf::Vector2f> pos;
     int curIndex = 0;
 };
