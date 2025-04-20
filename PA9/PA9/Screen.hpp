@@ -16,4 +16,8 @@ private:
     sf::Sprite player;
     std::vector<sf::Vector2f> pos;
     int curIndex = 0;
+    sf::Texture battleBgTexture;
+    sf::Sprite battleBgSprite;
+
+    bool inBattle = false;
 };
