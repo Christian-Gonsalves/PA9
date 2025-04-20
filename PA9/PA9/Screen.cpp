@@ -1,29 +1,26 @@
 #include "Screen.hpp"
 #include <SFML/Window/Event.hpp>
 
-Screen::Screen()
-    : bg1Texture("assets/lvlSelectBackgroundPxl.png"),
-    bg1Sprite(bg1Texture)
+Screen::Screen(): curIndex(0), bg1Texture("assets/lvlSelectBackgroundPxl.png"), bg1Sprite(bg1Texture),
+playerTexture("assets/playerPxl.png"), player(playerTexture)
 {
-    player.setRadius(30);
-    player.setFillColor(sf::Color::Magenta);
-
-    
+    player.setScale(sf::Vector2f(0.8f, 0.8f));
     pos = {
-        {210.f, 193.f},
-        {372.f, 478.f},
-        {782.f, 750.f},
-        {1405.f, 675.f},
-        {1650.f, 120.f}
+        {205.f, 140.f},
+        {370.f, 430.f},
+        {780.f, 710.f},
+        {1405.f, 630.f},
+        {1650.f, 80.f}
     };
     player.setPosition(pos[curIndex]);
 }
 
 bool Screen::loadAssets()
 {
-    bg1Texture = sf::Texture("assets/lvlSelectBackgroundPxl.png");
+    if (!bg1Texture.loadFromFile("assets/lvlSelectBackgroundPxl.png"))
+        return false;
 
-    bg1Sprite = sf::Sprite(bg1Texture);
+    bg1Sprite.setTexture(bg1Texture);
     return true;
 }
 
