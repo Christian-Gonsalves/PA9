@@ -2,7 +2,8 @@
 #include <SFML/Window/Event.hpp>
 
 Screen::Screen(): curIndex(0), bg1Texture("assets/lvlSelectBackgroundPxl.png"), bg1Sprite(bg1Texture),
-playerTexture("assets/playerPxl.png"), player(playerTexture)
+playerTexture("assets/playerPxl.png"), player(playerTexture), battleBgTexture("assets/inBattleBG.png"),
+battleBgSprite(battleBgTexture)
 {
     player.setScale(sf::Vector2f(0.8f, 0.8f));
     pos = {
@@ -35,28 +36,54 @@ void Screen::run(sf::RenderWindow& window)
                 window.close();
         }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+        if (!inBattle)
         {
-            if (curIndex < static_cast<int>(pos.size()) - 1)
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
             {
-                curIndex++;
-                player.setPosition(pos[curIndex]);
-                sf::sleep(sf::milliseconds(150));
+                if (curIndex < static_cast<int>(pos.size()) - 1)
+                {
+                    curIndex++;
+                    player.setPosition(pos[curIndex]);
+                    sf::sleep(sf::milliseconds(200));
+                }
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+            {
+                if (curIndex > 0)
+                {
+                    curIndex--;
+                    player.setPosition(pos[curIndex]);
+                    sf::sleep(sf::milliseconds(200));
+                }
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
+            {
+                // Enter battle
+                inBattle = true;
+                sf::sleep(sf::milliseconds(200));
             }
         }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+        else
         {
-            if (curIndex > 0)
-            {
-                curIndex--;
-                player.setPosition(pos[curIndex]);
-                sf::sleep(sf::milliseconds(150));
+            // Battle input
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
+                // Return to map
+                inBattle = false;
+                sf::sleep(sf::milliseconds(200));
             }
         }
-
         window.clear();
-        window.draw(bg1Sprite);
-        window.draw(player);
+
+        if (!inBattle)
+        {
+            window.draw(bg1Sprite);
+            window.draw(player);
+        }
+        else
+        {
+            window.draw(battleBgSprite);
+            
+        }
         window.display();
     }
 }
