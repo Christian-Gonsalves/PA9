@@ -5,7 +5,7 @@
 class TurnWrapper {
 public:
 
-	TurnWrapper(Character* newEnemy, Character* newPlayer) : enemy(newEnemy), player(newPlayer) {};
+	TurnWrapper(Character newEnemy, Character newPlayer) : enemy(newEnemy), player(newPlayer) {};
 
 	~TurnWrapper() {};
 
@@ -17,17 +17,31 @@ public:
 private:
 	int mDifficulty; // Scales stats based on player overall progress
 
-	Character *enemy,
-			  *player;
-
-	/*Determines turn order based on agility stat. 
-		@returns true if player is first, false otherwise*/
-	bool determineTurnOrder();
+	// Not pointers because we will make changes that we don't want to save throughout multiple battles
+	Character enemy,
+			  player;
 
 	/*Chooses which move an enemey makes
 		@returns reference to move*/ 
-	Move& chooseEnemyMove();
+	Move *chooseEnemyMove();
 
-	/*@returns true if battle is over; false otherwise*/
-	bool isBattleOver();
+	/*Chooses which move an enemey makes
+	@returns reference to move*/
+	Move* choosePlayerMove();
+
+	/*Executes all the code associated for currentCharacter's playedMove against a recipient character:
+	1. Whether atk hits
+	2. Damage done
+	3. Whether Status effect hits*/
+	void playMove(Character& currentCharacter, Move* playedMove, Character &recipient);
+
+	/*Updates the duration and, if necessary, the strength of a status effect after a turn passes*/
+	void updateStatusEffects(Character& currentCharacter);
+
+	/*Gets a random integer along the bounds min & max using std::rand()*/
+	int getRandomInt(int min, int max);
+
+	/*Calculates multiplier based on status effect strength*/
+	double calculateMultiplier(int strength);
+
 };
