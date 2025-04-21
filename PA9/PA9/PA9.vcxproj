@@ -135,17 +135,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="battleScreen.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
+    <ClCompile Include="gameMange.cpp" />
+    <ClCompile Include="levelSelectScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="battleScreen.hpp" />
     <ClInclude Include="character.hpp" />
     <ClInclude Include="enemyCharacter.hpp" />
+    <ClInclude Include="gameManage.hpp" />
+    <ClInclude Include="GameScreen.hpp" />
     <ClInclude Include="include.hpp" />
+    <ClInclude Include="levelSelectScreen.hpp" />
     <ClInclude Include="move.hpp" />
+    <ClInclude Include="Player.hpp" />
     <ClInclude Include="Screen.hpp" />
   </ItemGroup>
   <ItemGroup>

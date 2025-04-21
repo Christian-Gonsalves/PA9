@@ -1,11 +1,9 @@
 #include <iostream>
-#include "Screen.hpp"
+#include "GameManage.hpp"
 
-
-int main() {
-	sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "SFML window");
-	Screen s;
-
-	s.run(window);
-	return 0;
+int main(int argc, const char* argv[])
+{
+    GameManage game;
+    game.run();
+    return 0;
 }

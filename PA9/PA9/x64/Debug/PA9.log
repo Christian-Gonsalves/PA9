@@ -1,2 +1,5 @@
-﻿  Screen.cpp
-  PA9.vcxproj -> C:\Users\lopez\OneDrive\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
+﻿  gameMange.cpp
+C:\Users\Alejandro\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(6,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Alejandro\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(7,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Alejandro\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(8,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  PA9.vcxproj -> C:\Users\Alejandro\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
