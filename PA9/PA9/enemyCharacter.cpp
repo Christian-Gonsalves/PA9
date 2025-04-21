@@ -36,5 +36,4 @@ void EnemyCharacter::readFromFile(EnemyCharacter& n, ifstream& instream)
 	n.setCatchPhrase(tempPharse);
 
 
-
 }
