@@ -16,5 +16,8 @@ private:
     sf::Sprite bg;
     sf::Texture& bgTex;
     Player player;
-    bool startBattle = false;
+    bool startBattle;
+    bool isFlashing;
+    int flashCount;
+    sf::Clock flashTimer;
 };

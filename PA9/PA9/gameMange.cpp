@@ -1,13 +1,13 @@
 #include "GameManage.hpp"
-#include "iostream"
 GameManage::GameManage()
     : window(sf::VideoMode({ 1920, 1080 }), "SFML window")
 {
     lvlBgTex.loadFromFile("assets/lvlSelectBackgroundPxl.png");
     playerTex.loadFromFile("assets/playerPxl.png");
     battleBgTex.loadFromFile("assets/inBattleBG.png");
+    andyTex.loadFromFile("assets/andySprite.png");
     levelScreen = std::make_unique<LevelSelectScreen>(playerTex, lvlBgTex);
-    battleScreen = std::make_unique<BattleScreen>(battleBgTex);
+    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex);
 
     curScreen = levelScreen.get();
 }
