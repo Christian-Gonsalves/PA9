@@ -11,7 +11,7 @@ bool TurnWrapper::runBattle() {
 		enemyMove = chooseEnemyMove();
 
 		// Turn Order
-		if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(4)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(4)) * enemyMove->getSpeed()) { // Player is first 
+		if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
 			playMove(player, playerMove, enemy);
 			playMove(enemy, enemyMove, player);
 		}
@@ -35,7 +35,7 @@ bool TurnWrapper::runBattle() {
 }
 
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
-	if (currentCharacter.getStatusEffectTurns(8) >= 0) { // Stunned
+	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) >= 0) { // Stunned
 		return; 
 	}
 
@@ -47,12 +47,12 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 	
 	// Does player hit attack?
 	double totalMoveAccuracy = currentCharacter.getAccuracy() * playedMove->getAccuracy();
-	double totalRecipientEvasion = recipient.getAgility() * calculateMultiplier(recipient.getStatusEffectStrength(4)) * calculateMultiplier(recipient.getStatusEffectStrength(6));
+	double totalRecipientEvasion = recipient.getAgility() * calculateMultiplier(recipient.getStatusEffectStrength(SPD_EFFECT_INDEX)) * calculateMultiplier(recipient.getStatusEffectStrength(EVA_EFFECT_INDEX));
 
 	if (getRandomInt(1, 10000) >= 10000 - ((int) 10000 * totalMoveAccuracy / totalRecipientEvasion)) { // Essentially a random number with (accuracy / evasion)% chance of occuring accurate to 3 decimal points 
 		// Damage Calculations
-		int totalDamage = currentCharacter.getAttack() * calculateMultiplier(currentCharacter.getStatusEffectStrength(0)) * playedMove->getPower();
-		totalDamage -= recipient.getDefense() * calculateMultiplier(recipient.getStatusEffectStrength(2));
+		int totalDamage = currentCharacter.getAttack() * calculateMultiplier(currentCharacter.getStatusEffectStrength(STR_EFFECT_INDEX)) * playedMove->getPower();
+		totalDamage -= recipient.getDefense() * calculateMultiplier(recipient.getStatusEffectStrength(DEF_EFFECT_INDEX));
 		recipient.setCurrentHealth(recipient.getCurrentHealth() - totalDamage);
 		std::cout << recipient.getName() << " took " << totalDamage << " damage!";
 

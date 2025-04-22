@@ -1,7 +1,7 @@
 #include "character.hpp"
 #include "move.hpp"
 
-Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int newMoveCnt, int* newStatusEffects)
+Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int newMoveCnt, int* newStatusEffects, char newLastTypeUsed)
 {
 	name = newName;
 	attack = newAttack;
@@ -11,6 +11,7 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	accuracy = newAccuracy;
 	defense = newDefense;
 	moveCount = newMoveCnt;
+	lastTypeUsed = newLastTypeUsed;
 	if (newStatusEffects == nullptr) {
 		for (int i = 0; i < 10; ++i) {
 			statusEffects[i] = 0;
