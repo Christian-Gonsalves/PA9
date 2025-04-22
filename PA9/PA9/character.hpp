@@ -29,7 +29,7 @@ public:
 	int	getAccuracy(void) const;
 	int getDefense(void) const;
 	int getStatusEffectTurns(int index);
-	int getStatursEffectStrength(int index);
+	int getStatusEffectStrength(int index);
 	Move& getMoveSet(void);
 
 
@@ -41,11 +41,8 @@ private:
 	int agility;	//base agility stat
 	int accuracy;	//base accuracy stat
 	int defense;	//base defense stat
-	int statusEffects [10];	//an array for checking which status effects character has
-	//5 total status' so an array of size 10 
+    int statusEffects [10];	//an array for checking which status effects character has. Each status effect has 2 elements. First if for turn duration, second is intensity. 0: str; 2: def; 4: spd; 6: eva; 8: stun; 
 	Move moveSet[12];	//an array of moves that the charcater has access to
-	
 	// the chracter model
-
 };
 

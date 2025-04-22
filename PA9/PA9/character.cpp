@@ -11,6 +11,9 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	accuracy = newAccuracy;
 	defense = newDefense;
 	if (newStatusEffects == nullptr) {
+		for (int i = 0; i < 10; ++i) {
+			statusEffects[i] = 0;
+		}
 	}
 	else {
 		for (int i = 0; i < 10; ++i) {
@@ -114,7 +117,7 @@ int Character::getStatusEffectTurns(int index)	//put in the index for the start 
 	return this->statusEffects[index];
 }
 
-int Character::getStatursEffectStrength(int index)	//put in the index for the start of attribute
+int Character::getStatusEffectStrength(int index)	//put in the index for the start of attribute
 {
 	return this->statusEffects[index +1];
 

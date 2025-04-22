@@ -1,9 +1,9 @@
 #include "enemyCharacter.hpp"
 
 EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
+	: Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newStatusEffects),
+		catchPhrase(newPhrase)
 {
-	Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newStatusEffects);
-	catchPhrase = newPhrase;
 }
 
 EnemyCharacter::~EnemyCharacter()
