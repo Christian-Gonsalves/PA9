@@ -1,15 +1,19 @@
 #include "move.hpp"
 
-Move::Move(string newName, string newPhrase, double newPower, double newSpeed, double newAccuracy, int newMoveCnt, char newType, int* newStatus)
+Move::Move(string newName, string newPhrase, double newPower, double newSpeed, double newAccuracy, int newMaxMoveCnt, int newCurMoveCnt, char newType, int* newStatus)
 {
 	moveName = newName;
 	movePhrase = newPhrase;
 	power = newPower;
 	speed = newSpeed;
 	accuracy = newAccuracy;
-	moveCount = newMoveCnt;
+	maxMoveCount = newMaxMoveCnt;
+	currentMoveCount = newCurMoveCnt;
 	moveType = newType;
 	if (newStatus == nullptr) {
+		for (int i = 0; i < 10; ++i) {
+			statusEffect[i] = 0;
+		}
 	}
 	else {
 		for (int i = 0; i < 10; ++i) {
@@ -44,8 +48,13 @@ void Move::setAccuracy(double newAccuracy) {
 	accuracy = newAccuracy;
 }
 
-void Move::setMoveCount(int newCount) {
-	moveCount = newCount;
+void Move::setMaxMoveCount(int newMaxCount) {
+	maxMoveCount = newMaxCount;
+}
+
+void Move::setCurMoveCount(int newCurCount)
+{
+	currentMoveCount = newCurCount;
 }
 
 void Move::setMoveType(char newType) {
@@ -85,8 +94,13 @@ double Move::getAccuracy() const {
 	return accuracy;
 }
 
-int Move::getMoveCount() const {
-	return moveCount;
+int Move::getMaxMoveCount() const {
+	return maxMoveCount;
+}
+
+int Move::getCurMoveCount(void) const
+{
+	return currentMoveCount;
 }
 
 char Move::getMoveType() const {
@@ -116,7 +130,7 @@ Move& Move::operator=(const Move& rhs)
 	this->setPower(rhs.getPower());
 	this->setSpeed(rhs.getSpeed());
 	this->setAccuracy(rhs.getAccuracy());
-	this->setMoveCount(rhs.getMoveCount());
+	this->setMaxMoveCount(rhs.getMaxMoveCount());
 	this->setMoveType(rhs.getMoveType());
 	this->setEffectArray(rhs.getEffectArray());
 

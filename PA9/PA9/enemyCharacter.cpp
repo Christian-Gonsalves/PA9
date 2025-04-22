@@ -1,7 +1,7 @@
 #include "enemyCharacter.hpp"
 
-EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
-	: Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newStatusEffects),
+EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int newMoveCnt, int* newStatusEffects)
+	: Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newMoveCnt, newStatusEffects),
 		catchPhrase(newPhrase)
 {
 }
@@ -65,11 +65,13 @@ void EnemyCharacter::readFromFile(string fileName)
 			tempMove[i].setPower(stof(tempPow));
 			tempMove[i].setSpeed(stof(tempSpd));
 			tempMove[i].setAccuracy(stof(tempAcc));
-			tempMove[i].setMoveCount(stoi(tempCnt));
+			tempMove[i].setMaxMoveCount(stoi(tempCnt));
+			tempMove[i].setCurMoveCount(stoi(tempCnt));
 			tempMove[i].setMoveType(tempType[0]);
 			tempMove[i].setEffectAttribute(stoi(tempInd), stoi(tempDur), stoi(tempStr));
 		}
 		else {
+			this->setMoveCount(i);
 			break;
 		}
 	}
