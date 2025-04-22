@@ -31,8 +31,9 @@ public:
     const int* getEffectArray(void) const;
     int getEffectTurns(int index);
     int getEffectStrength(int index);
-
+    
     Move& operator= (const Move& rhs);
+
 
 private:
     string moveName;

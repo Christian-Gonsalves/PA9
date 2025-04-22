@@ -1,3 +1,4 @@
+#pragma once
 #include "character.hpp"
 
 class EnemyCharacter : public Character {
@@ -6,7 +7,7 @@ public:
 		int newDefense = 0, int newMoveCnt = 0, int* newStatusEffects = nullptr);
 
 	~EnemyCharacter();
-
+		
 	void setCatchPhrase(const string newPhrase);
 
 	string getCatchPhrase(void) const;
