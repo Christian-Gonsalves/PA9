@@ -1,6 +1,6 @@
 #include "move.hpp"
 
-Move::Move(string newName, string newPhrase, double newPower, double newSpeed, double newAccuracy, int newMaxMoveCnt, int newCurMoveCnt, char newType, int* newStatus)
+Move::Move(string newName, string newPhrase, double newPower, double newSpeed, double newAccuracy, int newMaxMoveCnt, char newType, int* newStatus)
 {
 	moveName = newName;
 	movePhrase = newPhrase;
@@ -8,7 +8,7 @@ Move::Move(string newName, string newPhrase, double newPower, double newSpeed, d
 	speed = newSpeed;
 	accuracy = newAccuracy;
 	maxMoveCount = newMaxMoveCnt;
-	currentMoveCount = newCurMoveCnt;
+	currentMoveCount = newMaxMoveCnt;
 	moveType = newType;
 	if (newStatus == nullptr) {
 		for (int i = 0; i < 10; ++i) {
@@ -131,6 +131,7 @@ Move& Move::operator=(const Move& rhs)
 	this->setSpeed(rhs.getSpeed());
 	this->setAccuracy(rhs.getAccuracy());
 	this->setMaxMoveCount(rhs.getMaxMoveCount());
+	this->setCurMoveCount(rhs.getCurMoveCount());
 	this->setMoveType(rhs.getMoveType());
 	this->setEffectArray(rhs.getEffectArray());
 

@@ -5,7 +5,7 @@
 class Move {
 public:
     Move(string newName = "", string newPhrase = "", double newPower = 0, double newSpeed = 0, double newAccuracy = 0,
-        int newMaxMoveCnt = 0, int newCurMoveCnt = 0, char newType = '\n', int* newStatus = nullptr);
+        int newMaxMoveCnt = 0, char newType = '\n', int* newStatus = nullptr);
 
     ~Move();
 

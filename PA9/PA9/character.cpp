@@ -23,7 +23,6 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 		}
 	}
 
-
 }
 
 Character::~Character()
@@ -77,10 +76,11 @@ void Character::setStatusEffect(const int index, const int turns, const int stre
 	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(const Move* newMoveSet)
+void Character::setMoveSet(Move* newMoveSet)
 {
 	for (int i = 0; i < 12; i++) {
 		moveSet[i] = newMoveSet[i];
+	//	cout << moveSet[i].getMoveName() << endl;
 	}
 }
 

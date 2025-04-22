@@ -1,35 +1,39 @@
 #pragma once
 
-#include "character.hpp"
+#include "enemyCharacter.hpp"
 #include "battleScreen.hpp"
 
 class TurnWrapper {
 public:
 
-	TurnWrapper(Character newEnemy, Character newPlayer) : enemy(newEnemy), player(newPlayer) {};
+	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer) : enemy(newEnemy), player(newPlayer) {};
 
 	~TurnWrapper() {};
 
 	/*Runs Battle
 		@returns true if player won;
 				 false otherwise.*/
-	bool runBattle();
+	//bool runBattle();
+
+	Move* chooseEnemyMove(void);
+
+
 
 private:
 	int mDifficulty; // Scales stats based on player overall progress
 
 	// Not pointers because we will make changes that we don't want to save throughout multiple battles
 
-	Character enemy,
-		player;
+	Character player;
+	EnemyCharacter enemy;
 
 	/*Chooses which move an enemey makes
 		@returns reference to move*/
-	Move* chooseEnemyMove();
+	Move* chooseEnemyMove(EnemyCharacter& enemy);
 
 	/*Chooses which move an enemey makes
 	@returns reference to move*/
-	Move* choosePlayerMove();
+	//Move* choosePlayerMove();
 
 	/*Executes all the code associated for currentCharacter's playedMove against a recipient character:
 	1. Whether atk hits

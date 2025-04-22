@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Andy.cpp" />
     <ClCompile Include="battleScreen.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Andy.hpp" />
     <ClInclude Include="battleScreen.hpp" />
     <ClInclude Include="character.hpp" />
     <ClInclude Include="enemyCharacter.hpp" />

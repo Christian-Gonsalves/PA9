@@ -59,21 +59,27 @@ void EnemyCharacter::readFromFile(string fileName)
 		getline(instream, tempDur, ',');
 		getline(instream, tempStr, '\n');
 
-		if (i == 0 || tempName != tempMove[i-1].getMoveName()) {	//if the line is not empty
-			tempMove[i].setMoveName(tempName);
-			tempMove[i].setMovePhrase(tempPhrase);
-			tempMove[i].setPower(stof(tempPow));
-			tempMove[i].setSpeed(stof(tempSpd));
-			tempMove[i].setAccuracy(stof(tempAcc));
-			tempMove[i].setMaxMoveCount(stoi(tempCnt));
-			tempMove[i].setCurMoveCount(stoi(tempCnt));
-			tempMove[i].setMoveType(tempType[0]);
-			tempMove[i].setEffectAttribute(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+		if (tempName != this->getName()) {
+			if (i == 0 || tempName != tempMove[i - 1].getMoveName()) {
+				tempMove[i].setMoveName(tempName);
+				tempMove[i].setMovePhrase(tempPhrase);
+				tempMove[i].setPower(stof(tempPow));
+				tempMove[i].setSpeed(stof(tempSpd));
+				tempMove[i].setAccuracy(stof(tempAcc));
+				tempMove[i].setMaxMoveCount(stoi(tempCnt));
+				tempMove[i].setCurMoveCount(stoi(tempCnt));
+				tempMove[i].setMoveType(tempType[0]);
+				tempMove[i].setEffectAttribute(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+			}
+			else {
+				this->setMoveCount(i);
+				break;
+			}
 		}
 		else {
-			this->setMoveCount(i);
 			break;
 		}
+		
 	}
 
 	this->setMoveSet(tempMove);

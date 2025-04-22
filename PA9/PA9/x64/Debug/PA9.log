@@ -1,6 +1,4 @@
-﻿  character.cpp
-  turnWrapper.cpp
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(54,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(55,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(107,1): error C4716: 'TurnWrapper::choosePlayerMove': must return a value
+﻿  turnWrapper.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(59,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  PA9.vcxproj -> C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe

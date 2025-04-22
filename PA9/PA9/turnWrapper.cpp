@@ -2,37 +2,42 @@
 
 #include "turnWrapper.hpp"
 
-bool TurnWrapper::runBattle() {
-	Move *playerMove,
-		*enemyMove;
+//bool TurnWrapper::runBattle() {
+//	Move *playerMove,
+//		*enemyMove;
+//
+//	while (1) { // while loop ends with last conditionals
+//		playerMove = choosePlayerMove();
+//		enemyMove = chooseEnemyMove();
+//
+//		// Turn Order
+//		if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
+//			playMove(player, playerMove, enemy);
+//			playMove(enemy, enemyMove, player);
+//		}
+//		else { // Player is second
+//			playMove(enemy, enemyMove, player);
+//			playMove(player, playerMove, enemy);
+//		}
+//
+//		// Update Status Effects
+//		updateStatusEffects(player);
+//		updateStatusEffects(enemy);
+//
+//		// Battle End Condition
+//		if (player.getCurrentHealth() <= 0) {
+//			return false;
+//		}
+//		if (enemy.getCurrentHealth() <= 0) {
+//			return true;
+//		}
+//	}
+//}
 
-	while (1) { // while loop ends with last conditionals
-		playerMove = choosePlayerMove();
-		enemyMove = chooseEnemyMove();
-
-		// Turn Order
-		if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
-			playMove(player, playerMove, enemy);
-			playMove(enemy, enemyMove, player);
-		}
-		else { // Player is second
-			playMove(enemy, enemyMove, player);
-			playMove(player, playerMove, enemy);
-		}
-
-		// Update Status Effects
-		updateStatusEffects(player);
-		updateStatusEffects(enemy);
-
-		// Battle End Condition
-		if (player.getCurrentHealth() <= 0) {
-			return false;
-		}
-		if (enemy.getCurrentHealth() <= 0) {
-			return true;
-		}
-	}
+Move* TurnWrapper::chooseEnemyMove(void) {
+	return chooseEnemyMove(enemy);
 }
+
 
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
 	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) >= 0) { // Stunned
@@ -82,33 +87,44 @@ void TurnWrapper::updateStatusEffects(Character &currentCharacter) {
 	}
 }
 
-Move* TurnWrapper::chooseEnemyMove() {
-	int totalMoves = enemy.getMoveCount();
+Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
+	int totalMoves = enemyIn.getMoveCount();
 	Move* localArray[12];     
 	Move* enemyMove;
+	Move defaultMove ( "Struggle", "Yam struggling", 0, 0, 0, 10, 'd' );
 	int j = 0;
 
 	for (int i = 0; i < totalMoves && j < 12; ++i) {
-		Move& m = enemy.getMoveSet()[i];
-		if (m.getCurMoveCount() != 0){
-			if (m.getMoveType() != enemy.getLastTypeUsed()) {
-				localArray[j++] = &m;
+		Move& m = enemyIn.getMoveSet()[i];
+		if (m.getCurMoveCount() != 0){	//checks if the move in the array has moves left to be used
+			if (m.getMoveType() != enemyIn.getLastTypeUsed()) {	//if it does checks to see if it 
+																//is the same as last used move
+				localArray[j++] = &m;	//adds the move to the local array
 			}
 		}
 	}
+	if(localArray[0] == nullptr){
+		cout << "something" << endl;
+		enemyMove = &defaultMove;
+	}
+	else {
+		enemyMove = localArray[getRandomInt(0, j - 1)];	//selects which move the enemy will use
+		enemyIn.setLastTypeUsed(enemyMove->getMoveType());	//sets the enemys last used move type
+		for (int i = 0; i < j+1; ++i) {
+			if (enemyIn.getMoveSet()[i].getMoveName() == enemyMove->getMoveName()) {
+				enemyIn.getMoveSet()[i].setCurMoveCount(enemyMove->getCurMoveCount() - 1);
+			}
+		}
 
-	enemyMove = localArray[getRandomInt(0, j - 1)];	//selects which move the enemy will use
-	enemy.setLastTypeUsed(enemyMove->getMoveType());	//sets the enemys last used move type
+	}
 
 	return enemyMove;
-
-
 }
 
-Move* TurnWrapper::choosePlayerMove() {
-
-
-}
+//Move* TurnWrapper::choosePlayerMove() {
+//
+//
+//}
 
 int TurnWrapper::getRandomInt(int min, int max) {
 	return std::rand() % (max - min + 1) + min;
@@ -117,4 +133,3 @@ int TurnWrapper::getRandomInt(int min, int max) {
 double TurnWrapper::calculateMultiplier(int strength) {
 	return 1 + 0.25 * strength;
 }
-
