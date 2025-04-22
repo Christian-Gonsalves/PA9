@@ -1,6 +1,7 @@
 #pragma once
 
 #include "character.hpp"
+#include "battleScreen.hpp"
 
 class TurnWrapper {
 public:
@@ -18,6 +19,7 @@ private:
 	int mDifficulty; // Scales stats based on player overall progress
 
 	// Not pointers because we will make changes that we don't want to save throughout multiple battles
+
 	Character enemy,
 			  player;
 

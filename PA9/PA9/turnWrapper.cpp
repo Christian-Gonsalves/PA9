@@ -57,7 +57,11 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		std::cout << recipient.getName() << " took " << totalDamage << " damage!";
 
 		// Status Effect (Currently completely overwrites a given status effect type with the new strenth and duration. This means if it was previously a strength of -2 and then a strength of 1 was applied, the final status effect would be 1)
-		recipient.setStatusEffect(playedMove->getEffectIndex(), playedMove->getEffectDuration(), playedMove->getEffectStrength());
+		for (int i = 0; i < 10;  i += 2) {
+			if (playedMove->getEffectTurns(i) != 0) {
+				recipient.setStatusEffect(i, playedMove->getEffectTurns(i), playedMove->getEffectStrength(i));
+			}
+		}
 	}
 	else {
 		std::cout << currentCharacter.getName() << " missed!" << std::endl;
@@ -80,7 +84,6 @@ void TurnWrapper::updateStatusEffects(Character &currentCharacter) {
 
 Move* TurnWrapper::chooseEnemyMove() {
 	
-
 }
 
 Move* TurnWrapper::choosePlayerMove() {
