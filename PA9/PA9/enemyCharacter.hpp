@@ -4,7 +4,7 @@
 class EnemyCharacter : public Character {
 public:
 	EnemyCharacter(string newName = "", string newPhrase = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,
-		int newDefense = 0, int newMoveCnt = 0, int* newStatusEffects = nullptr);
+		int newDefense = 0, int newMoveCnt = 0, int* newStatusEffects = nullptr, char newLastTypeUsed='\0');
 
 	~EnemyCharacter();
 		

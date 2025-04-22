@@ -1,12 +1,17 @@
 #pragma once
+
+#define STR_EFFECT_INDEX 0 
+#define DEF_EFFECT_INDEX 2
+#define SPD_EFFECT_INDEX 4
+#define EVA_EFFECT_INDEX 6
+#define STN_EFFECT_INDEX 8
+
 #include "move.hpp"
-
-
 
 class Character {
 public:
 	Character(string newName  = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,
-		int newDefense = 0, int* newStatusEffects = nullptr, char newLastTypeUsed);
+		int newDefense = 0, int* newStatusEffects = nullptr, char newLastTypeUsed='\0');
 	~Character();
 
 	void setName(const string newName);

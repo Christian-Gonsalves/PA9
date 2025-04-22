@@ -21,11 +21,11 @@ private:
 	// Not pointers because we will make changes that we don't want to save throughout multiple battles
 
 	Character enemy,
-			  player;
+		player;
 
 	/*Chooses which move an enemey makes
-		@returns reference to move*/ 
-	Move *chooseEnemyMove();
+		@returns reference to move*/
+	Move* chooseEnemyMove();
 
 	/*Chooses which move an enemey makes
 	@returns reference to move*/
@@ -35,7 +35,7 @@ private:
 	1. Whether atk hits
 	2. Damage done
 	3. Whether Status effect hits*/
-	void playMove(Character& currentCharacter, Move* playedMove, Character &recipient);
+	void playMove(Character& currentCharacter, Move* playedMove, Character& recipient);
 
 	/*Updates the duration and, if necessary, the strength of a status effect after a turn passes*/
 	void updateStatusEffects(Character& currentCharacter);
