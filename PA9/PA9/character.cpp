@@ -85,11 +85,11 @@ void Character::setMoveSet(const Move* newMoveSet)
 }
 
 void Character::setLastTypeUsed(char newLastTypeUsed) {
-
+	lastTypeUsed = newLastTypeUsed;
 }
 
 char Character::getLastTypeUsed(void) const {
-	
+	return lastTypeUsed;
 }
 
 string Character::getName(void) const

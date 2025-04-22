@@ -1,42 +1,6 @@
-﻿  battleScreen.cpp
-  enemyCharacter.cpp
-  gameMange.cpp
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(5,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(6,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(7,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(8,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
-  main.cpp
-  move.cpp
-  test.cpp
+﻿  character.cpp
   turnWrapper.cpp
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(54,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(55,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,41): error C2039: 'getEffectIndex': is not a member of 'Move'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\move.hpp(5,7):
-      see declaration of 'Move'
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,71): error C2039: 'getEffectDuration': is not a member of 'Move'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\move.hpp(5,7):
-      see declaration of 'Move'
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,104): error C2660: 'Move::getEffectStrength': function does not take 0 arguments
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\move.hpp(33,9):
-      see declaration of 'Move::getEffectStrength'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,104):
-      while trying to match the argument list '()'
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,13): error C2660: 'Character::setStatusEffect': function does not take 2 arguments
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\character.hpp(20,7):
-      see declaration of 'Character::setStatusEffect'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,13):
-      while trying to match the argument list '()'
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(66,14): error C2039: 'setMoveCount': is not a member of 'Move'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\move.hpp(5,7):
-      see declaration of 'Move'
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(66,39): error C2039: 'getMoveCount': is not a member of 'Move'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\move.hpp(5,7):
-      see declaration of 'Move'
-  
   Generating Code...
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(107,1): error C4716: 'TurnWrapper::choosePlayerMove': must return a value

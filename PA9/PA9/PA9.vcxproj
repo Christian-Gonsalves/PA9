@@ -162,7 +162,7 @@
     <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Enemy_1.csv" />
+    <None Include="Andy_Character.csv" />
     <None Include="Test_Enemy_1.csv" />
     <None Include="Test_Enemy_2.csv" />
   </ItemGroup>
