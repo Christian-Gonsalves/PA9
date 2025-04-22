@@ -83,6 +83,14 @@ void Character::setMoveSet(const Move* newMoveSet)
 	}
 }
 
+void Character::setLastTypeUsed(char newLastTypeUsed) {
+
+}
+
+char Character::getLastTypeUsed(void) const {
+	
+}
+
 string Character::getName(void) const
 {
 	return name;
