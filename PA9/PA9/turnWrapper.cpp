@@ -63,7 +63,7 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		std::cout << currentCharacter.getName() << " missed!" << std::endl;
 	}
 
-	playedMove->setMoveCount(playedMove->getMoveCount() - 1);
+	playedMove->setCurMoveCount(playedMove->getCurMoveCount() - 1);
 }
 
 void TurnWrapper::updateStatusEffects(Character &currentCharacter) {
