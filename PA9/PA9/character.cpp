@@ -114,7 +114,7 @@ int Character::getStatusEffectTurns(int index)	//put in the index for the start 
 	return this->statusEffects[index];
 }
 
-int Character::getStatursEffectStrength(int index)	//put in the index for the start of attribute
+int Character::getStatusEffectStrength(int index)	//put in the index for the start of attribute
 {
 	return this->statusEffects[index +1];
 

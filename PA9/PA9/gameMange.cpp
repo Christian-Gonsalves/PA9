@@ -1,0 +1,44 @@
+#include "GameManage.hpp"
+GameManage::GameManage()
+    : window(sf::VideoMode({ 1920, 1080 }), "SFML window")
+{
+    lvlBgTex.loadFromFile("assets/lvlSelectBackgroundPxl.png");
+    playerTex.loadFromFile("assets/playerPxl.png");
+    battleBgTex.loadFromFile("assets/inBattleBG.png");
+    andyTex.loadFromFile("assets/andySprite.png");
+    levelScreen = std::make_unique<LevelSelectScreen>(playerTex, lvlBgTex);
+    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex);
+
+    curScreen = levelScreen.get();
+}
+
+void GameManage::run()
+{
+    while (window.isOpen())
+    {
+        window.clear();
+
+        while (const std::optional event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+                window.close();
+        }
+
+
+        // input, update, draw current screen
+        curScreen->handleInput(window);
+        curScreen->update();
+        curScreen->draw(window);
+        window.display();
+
+        // check screen transitions
+        if (curScreen == levelScreen.get() && levelScreen->shouldStartBattle())
+        {
+            curScreen = battleScreen.get();
+        }
+        else if (curScreen == battleScreen.get() && battleScreen->shouldExitBattle())
+        {
+            curScreen = levelScreen.get();
+        }
+    }
+}
