@@ -157,6 +157,7 @@
     <ClInclude Include="move.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Enemy_1.csv" />
