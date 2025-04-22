@@ -11,6 +11,9 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	accuracy = newAccuracy;
 	defense = newDefense;
 	if (newStatusEffects == nullptr) {
+		for (int i = 0; i < 10; ++i) {
+			statusEffects[i] = 0;
+		}
 	}
 	else {
 		for (int i = 0; i < 10; ++i) {
