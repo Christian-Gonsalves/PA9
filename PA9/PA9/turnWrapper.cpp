@@ -83,7 +83,22 @@ void TurnWrapper::updateStatusEffects(Character &currentCharacter) {
 }
 
 Move* TurnWrapper::chooseEnemyMove() {
-	
+	int totalMoves = enemy.getMoveCount();
+	Move* localArray[12];     
+	int j = 0;
+
+	for (int i = 0; i < totalMoves && j < 12; ++i) {
+		Move& m = enemy.getMoveSet()[i];
+		if (m.getCurMoveCount() != 0){
+			if (m.getMoveType() != 0 /*last move type*/) {
+				localArray[j++] = &m;
+			}
+		}
+	}
+
+	return localArray[getRandomInt(0, j - 1)];
+
+
 }
 
 Move* TurnWrapper::choosePlayerMove() {
