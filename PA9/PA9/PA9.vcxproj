@@ -144,6 +144,7 @@
     <ClCompile Include="move.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Enemy_1.csv" />
+    <None Include="Test_Enemy_1.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

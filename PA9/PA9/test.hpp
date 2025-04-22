@@ -4,6 +4,10 @@
 #include "GameManage.hpp"
 
 class Test {
+public:
+
+	void testReadEnemyCharacterFromFile(void);
+	void testReadEnemyCharWithMoves(void);
 
 
 
