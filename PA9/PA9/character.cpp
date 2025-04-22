@@ -1,7 +1,7 @@
 #include "character.hpp"
 #include "move.hpp"
 
-Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
+Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int newMoveCnt, int* newStatusEffects)
 {
 	name = newName;
 	attack = newAttack;
@@ -10,6 +10,7 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	agility = newAgility;
 	accuracy = newAccuracy;
 	defense = newDefense;
+	moveCount = newMoveCnt;
 	if (newStatusEffects == nullptr) {
 		for (int i = 0; i < 10; ++i) {
 			statusEffects[i] = 0;
@@ -64,6 +65,11 @@ void Character::setDefense(const int newDefense)
 	defense = newDefense;
 }
 
+void Character::setMoveCount(const int newCount)
+{
+	moveCount = newCount;
+}
+
 void Character::setStatusEffect(const int index, const int turns, const int strength)
 {
 	this->statusEffects[index] = turns;
@@ -112,6 +118,11 @@ int Character::getDefense(void) const
 	return defense;
 }
 
+int Character::getMoveCount(void) const
+{
+	return moveCount;
+}
+
 int Character::getStatusEffectTurns(int index)	//put in the index for the start of attribute
 {
 	return this->statusEffects[index];
@@ -124,7 +135,7 @@ int Character::getStatusEffectStrength(int index)	//put in the index for the sta
 }
 
 
-Move& Character::getMoveSet(void)
+Move* Character::getMoveSet(void)
 {
-	return *this->moveSet;
+	return this->moveSet;
 }
