@@ -6,8 +6,9 @@ GameManage::GameManage()
     playerTex.loadFromFile("assets/playerPxl.png");
     battleBgTex.loadFromFile("assets/inBattleBG.png");
     andyTex.loadFromFile("assets/andySprite.png");
+    font = sf::Font("assets/dogicabold.ttf");
     levelScreen = std::make_unique<LevelSelectScreen>(playerTex, lvlBgTex);
-    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex);
+    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex, font);
 
     curScreen = levelScreen.get();
 }

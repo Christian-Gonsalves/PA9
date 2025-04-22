@@ -13,4 +13,5 @@ private:
 	float targetX;
 	float speed;
 	bool enteredBattle;
+
 };

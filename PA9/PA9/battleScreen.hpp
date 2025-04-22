@@ -5,7 +5,7 @@
 class BattleScreen : public GameScreen
 {
 public:
-    BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex);
+    BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Font& font);
     void handleInput(sf::RenderWindow& window) override;
     void update() override;
     void draw(sf::RenderWindow& window) override;
@@ -15,7 +15,11 @@ public:
 private:
     sf::Texture& bgTex;
     sf::Sprite bg;
-    bool exitBattle;
+    bool exitBattle, showDialog;
     sf::Texture andyTexture;
     Andy andy;
+    sf::Font font;
+    sf::Text dialog;
+    sf::RectangleShape dialogBox;
+
 };

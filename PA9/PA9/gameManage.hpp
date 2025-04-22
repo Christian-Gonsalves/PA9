@@ -12,6 +12,7 @@ public:
 private:
     sf::RenderWindow window;
     sf::Texture playerTex, battleBgTex, lvlBgTex, andyTex;
+    sf::Font font;
     std::unique_ptr<LevelSelectScreen> levelScreen;
     std::unique_ptr<BattleScreen> battleScreen;
 
