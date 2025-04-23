@@ -1,4 +1,6 @@
+#pragma once
 #include "test.hpp"
+
 
 void Test::testReadEnemyCharacterFromFile(void)
 {

@@ -8,6 +8,8 @@
 
 #include "move.hpp"
 
+
+
 class Character {
 public:
 	Character(string newName  = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,

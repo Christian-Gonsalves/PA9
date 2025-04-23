@@ -1,4 +1,21 @@
-﻿  turnWrapper.cpp
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(59,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-  PA9.vcxproj -> C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
+﻿  Andy.cpp
+  battleScreen.cpp
+  character.cpp
+  enemyCharacter.cpp
+  gameMange.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(5,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(6,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(7,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(8,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  main.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\main.cpp(16,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  move.cpp
+  test.cpp
+  turnWrapper.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(60,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(61,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(109,15): error C2440: '=': cannot convert from 'const Move *' to 'Move *'
+      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(109,15):
+      Conversion loses qualifiers
+  
+  Generating Code...
