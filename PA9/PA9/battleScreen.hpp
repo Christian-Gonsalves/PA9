@@ -2,6 +2,7 @@
 #include "GameScreen.hpp"
 #include "Andy.hpp"
 #include "Player.hpp"
+#include "hpBar.hpp"
 
 class BattleScreen : public GameScreen
 {
@@ -20,4 +21,6 @@ private:
     Player player;
     sf::Text dialog;
     sf::RectangleShape dialogBox;
+    hpBar pHealthBar, eHealthBar;
+
 };

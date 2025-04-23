@@ -1,7 +1,7 @@
 #pragma once
 #include "enemyCharacter.hpp"
 #include <SFML/Graphics.hpp>
-class Andy/*: public EnemyCharacter*/
+class Andy: public EnemyCharacter
 {
 public:
 	Andy(const sf::Texture& texture);

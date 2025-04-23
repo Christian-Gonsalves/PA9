@@ -1,8 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "character.hpp"
 
-class Player
+class Player : public Character
 {
 public:
     // Overworld (level select) constructor
