@@ -8,12 +8,12 @@ GameManage::GameManage()
     inBattlePlayerTex.loadFromFile("assets/playerInBattle.png");
     andyTex.loadFromFile("assets/andySprite.png");
     font = sf::Font("assets/dogicabold.ttf");
-    std::vector<sf::Vector2f> pos = { sf::Vector2f(200.f, 600.f) };
     levelScreen = std::make_unique<LevelSelectScreen>(playerTex, lvlBgTex);
-    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex, inBattlePlayerTex, font, pos);
+    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex, inBattlePlayerTex, font);
 
     curScreen = levelScreen.get();
 }
+
 
 void GameManage::run()
 {

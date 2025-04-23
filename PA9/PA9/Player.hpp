@@ -5,7 +5,11 @@
 class Player
 {
 public:
-    Player(const sf::Texture& texture, const std::vector<sf::Vector2f>& pos);
+    // Overworld (level select) constructor
+    Player(const sf::Texture& overworldTex, const std::vector<sf::Vector2f>& pos);
+
+    // Battle constructor
+    Player(const sf::Texture& battleTex);
 
     void moveLeft();
     void moveRight();
@@ -13,9 +17,11 @@ public:
     void draw(sf::RenderWindow& window);
     void drawInBattle(sf::RenderWindow& window);
     int getCurrentIndex() const;
+
 private:
-    sf::Sprite sprite;
-    sf::Sprite inBattleSprite;
+    sf::Sprite overworldSprite;
+    sf::Sprite battleSprite;
     std::vector<sf::Vector2f> positions;
     int curIndex;
+    bool inLevelSelect;
 };

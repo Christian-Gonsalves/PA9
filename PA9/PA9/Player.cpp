@@ -1,47 +1,43 @@
 #include "Player.hpp"
 
-Player::Player(const sf::Texture& texture, const std::vector<sf::Vector2f>& pos)
-    : positions(pos), curIndex(0), sprite(texture), inBattleSprite(texture)
+// Overworld constructor
+Player::Player(const sf::Texture& overworldTex, const std::vector<sf::Vector2f>& pos)
+	: positions(pos), curIndex(0), inLevelSelect(true), overworldSprite(overworldTex), battleSprite(overworldTex)
 {
-    sprite.setTexture(texture);
-    sprite.setScale(sf::Vector2f(0.8f, 0.8f));
-    sprite.setPosition(pos[curIndex]);
+    overworldSprite.setTexture(overworldTex);
+    overworldSprite.setScale(sf::Vector2f(0.8f, 0.8f));
+    overworldSprite.setPosition(positions[curIndex]);
 
-    inBattleSprite.setPosition(pos[0]);
 }
 
-void Player::moveRight()
+// Battle-only constructor
+Player::Player(const sf::Texture& battleTex)
+	: curIndex(0), inLevelSelect(false), battleSprite(battleTex), overworldSprite(battleTex)
 {
-    if (curIndex < positions.size() - 1)
-    {
-        curIndex++;
-        sprite.setPosition(positions[curIndex]);
-    }
+    battleSprite.setTexture(battleTex);
+    battleSprite.setScale(sf::Vector2f(1.f, 1.f));
+    battleSprite.setPosition(sf::Vector2f(1300.f, 600.f));
 }
 
-void Player::moveLeft()
-{
-    if (curIndex > 0)
-    {
-        curIndex--;
-        sprite.setPosition(positions[curIndex]);
-    }
+void Player::moveRight() {
+    if (inLevelSelect && curIndex < positions.size() - 1)
+        overworldSprite.setPosition(positions[++curIndex]);
 }
 
-void Player::draw(sf::RenderWindow& window)
-{
-    window.draw(sprite);
+void Player::moveLeft() {
+    if (inLevelSelect && curIndex > 0)
+        overworldSprite.setPosition(positions[--curIndex]);
 }
 
-void Player::drawInBattle(sf::RenderWindow& window)
-{
-    inBattleSprite.setScale(sf::Vector2f(1.f, 1.f));
-    inBattleSprite.setPosition(sf::Vector2f(1300.f, 600.f));
-    window.draw(inBattleSprite);
+void Player::draw(sf::RenderWindow& window) {
+    if (inLevelSelect)
+        window.draw(overworldSprite);
 }
 
-int Player::getCurrentIndex() const
-{
+void Player::drawInBattle(sf::RenderWindow& window) {
+    window.draw(battleSprite);
+}
+
+int Player::getCurrentIndex() const {
     return curIndex;
 }
-
