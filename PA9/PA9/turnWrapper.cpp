@@ -2,6 +2,7 @@
 
 #include "turnWrapper.hpp"
 
+
 //bool TurnWrapper::runBattle() {
 //	Move *playerMove,
 //		*enemyMove;
@@ -89,9 +90,9 @@ void TurnWrapper::updateStatusEffects(Character &currentCharacter) {
 
 Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 	int totalMoves = enemyIn.getMoveCount();
-	Move* localArray[12];     
+	Move* localArray[12] = {};
 	Move* enemyMove;
-	Move defaultMove ( "Struggle", "Yam struggling", 0, 0, 0, 10, 'd' );
+	//Move defaultMove ( "Struggle", "Yam struggling", 0, 0, 0, 10, 'd' );
 	int j = 0;
 
 	for (int i = 0; i < totalMoves && j < 12; ++i) {
@@ -103,9 +104,9 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 			}
 		}
 	}
-	if(localArray[0] == nullptr){
+	if(localArray[0] == nullptr) {
 		cout << "something" << endl;
-		enemyMove = &defaultMove;
+		enemyMove = &DEFAULT_MOVE;
 	}
 	else {
 		enemyMove = localArray[getRandomInt(0, j - 1)];	//selects which move the enemy will use

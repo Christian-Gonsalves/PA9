@@ -3,9 +3,13 @@
 #include "enemyCharacter.hpp"
 #include "battleScreen.hpp"
 
+const Move DEFAULT_MOVE("Struggle", "Yam struggling", 0, 0, 0, 10, 'd');
+
+
+
 class TurnWrapper {
 public:
-
+		
 	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer) : enemy(newEnemy), player(newPlayer) {};
 
 	~TurnWrapper() {};
