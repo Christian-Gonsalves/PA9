@@ -92,6 +92,7 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 	int totalMoves = enemyIn.getMoveCount();
 	Move* localArray[12] = {};
 	Move* enemyMove;
+	defaultMoveSetup();
 	//Move defaultMove ( "Struggle", "Yam struggling", 0, 0, 0, 10, 'd' );
 	int j = 0;
 
@@ -106,7 +107,7 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 	}
 	if(localArray[0] == nullptr) {
 		cout << "something" << endl;
-		enemyMove = &DEFAULT_MOVE;
+		enemyMove = &struggle;
 	}
 	else {
 		enemyMove = localArray[getRandomInt(0, j - 1)];	//selects which move the enemy will use
@@ -120,6 +121,15 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 	}
 
 	return enemyMove;
+}
+
+void TurnWrapper::defaultMoveSetup(void)
+{
+	string name = "struggle", phrase = "yam struggling";
+
+	Move tempMove(name, phrase, 0, 0, 0, 10, 'd');
+	this->struggle = tempMove;
+
 }
 
 //Move* TurnWrapper::choosePlayerMove() {

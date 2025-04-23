@@ -48,7 +48,7 @@ void Test::testChooseEnemyMove(void)
 		chosenMove = turn.chooseEnemyMove();
 		cout << "The chosen move was: " << chosenMove->getMoveName() << " with type: ";
 		cout << chosenMove->getMoveType() << " and with " << chosenMove->getCurMoveCount() << " moves left" << endl;
-	} while (chosenMove != nullptr);
+	} while (chosenMove->getMoveName()!= "struggle");
 
 
 

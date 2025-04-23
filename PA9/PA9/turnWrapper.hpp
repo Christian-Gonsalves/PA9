@@ -3,7 +3,6 @@
 #include "enemyCharacter.hpp"
 #include "battleScreen.hpp"
 
-const Move DEFAULT_MOVE("Struggle", "Yam struggling", 0, 0, 0, 10, 'd');
 
 
 
@@ -20,6 +19,8 @@ public:
 	//bool runBattle();
 
 	Move* chooseEnemyMove(void);
+	void defaultMoveSetup(void);
+
 
 
 
@@ -30,10 +31,12 @@ private:
 
 	Character player;
 	EnemyCharacter enemy;
+	Move struggle;
 
 	/*Chooses which move an enemey makes
 		@returns reference to move*/
 	Move* chooseEnemyMove(EnemyCharacter& enemy);
+
 
 	/*Chooses which move an enemey makes
 	@returns reference to move*/
