@@ -5,10 +5,12 @@ GameManage::GameManage()
     lvlBgTex.loadFromFile("assets/lvlSelectBackgroundPxl.png");
     playerTex.loadFromFile("assets/playerPxl.png");
     battleBgTex.loadFromFile("assets/inBattleBG.png");
+    inBattlePlayerTex.loadFromFile("assets/playerInBattle.png");
     andyTex.loadFromFile("assets/andySprite.png");
     font = sf::Font("assets/dogicabold.ttf");
+    std::vector<sf::Vector2f> pos = { sf::Vector2f(200.f, 600.f) };
     levelScreen = std::make_unique<LevelSelectScreen>(playerTex, lvlBgTex);
-    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex, font);
+    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex, inBattlePlayerTex, font, pos);
 
     curScreen = levelScreen.get();
 }
