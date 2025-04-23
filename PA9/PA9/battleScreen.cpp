@@ -1,6 +1,6 @@
 #include "BattleScreen.hpp"
 
-BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Font& font) : exitBattle(false), showDialog(true), bgTex(bgTex), bg(bgTex), andy(andyTex), andyTexture(andyTex), dialog(font)
+BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture& playerTex, sf::Font& font, const std::vector<sf::Vector2f>& pos) : exitBattle(false), showDialog(true), bgTex(bgTex), bg(bgTex), andy(andyTex), andyTexture(andyTex), dialog(font), player(playerTex, pos)
 {
     dialogBox.setSize(sf::Vector2f(350.f, 200.f));
     dialogBox.setFillColor(sf::Color::White);
@@ -36,6 +36,9 @@ void BattleScreen::draw(sf::RenderWindow& window)
 {
     window.draw(bg);
 	andy.draw(window);
+
+
+    player.drawInBattle(window);
     if (andy.hasEnteredBattle())
     {
         if (showDialog)
