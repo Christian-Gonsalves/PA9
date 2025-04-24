@@ -3,35 +3,49 @@
 #include "turnWrapper.hpp"
 
 
-bool TurnWrapper::runBattle() {
+void TurnWrapper::runBattle() {
 	Move *playerMove,
 		*enemyMove;
 
-	playerMove = choosePlayerMove();
-	enemyMove = chooseEnemyMove();
+	defaultMoveSetup();
 
-	// Turn Order
-	if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
-		playMove(player, playerMove, enemy);
-		playMove(enemy, enemyMove, player);
-	}
-	else { // Player is second
-		playMove(enemy, enemyMove, player);
-		playMove(player, playerMove, enemy);
-	}
+	screen->getDialogueBox()->setText(enemy.getName() + ": " + enemy.getCatchPhrase());
+	display();
+	promptDialogueBoxInput();
 
-	// Update Status Effects
-	updateStatusEffects(player);
-	updateStatusEffects(enemy);
+	while (1) {
+		if(player.getStatusEffectStrength(STN_EFFECT_INDEX) < 1) {
+			playerMove = choosePlayerMove();
+		}
+		
+		if (enemy.getStatusEffectStrength(STN_EFFECT_INDEX) < 1) {
+			enemyMove = chooseEnemyMove();
+		}
+		
 
-	// Battle End Condition
-	if (player.getCurrentHealth() <= 0) {
-		victoryState = 1;
-		return false;
-	}
-	if (enemy.getCurrentHealth() <= 0) {
-		victoryState = 2;
-		return true;
+		// Turn Order
+		if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
+			playMove(player, playerMove, enemy);
+			playMove(enemy, enemyMove, player);
+		}
+		else { // Player is second
+			playMove(enemy, enemyMove, player);
+			playMove(player, playerMove, enemy);
+		}
+
+		// Update Status Effects
+		updateStatusEffects(player);
+		updateStatusEffects(enemy);
+
+		// Battle End Condition
+		if (player.getCurrentHealth() <= 0) {
+			endBattle(false);
+			return;
+		}
+		if (enemy.getCurrentHealth() <= 0) {
+			endBattle(true);
+			return;
+		}
 	}
 }
 
@@ -43,6 +57,11 @@ Move* TurnWrapper::chooseEnemyMove(void) {
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
 	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) > 0) { // Stunned
 		return; 
+	}
+
+	if (playedMove->getMoveName() == "struggle") {
+		std::cout << currentCharacter.getName() << " struggled!" << std::endl;
+		return;
 	}
 
 	// Move Dialogue
@@ -131,8 +150,91 @@ void TurnWrapper::defaultMoveSetup(void)
 }
 
 Move* TurnWrapper::choosePlayerMove() {
+	Move* selectedMove = nullptr;
+	Move* sortedArray[12] = {nullptr};
+	bool validMove = false, hasAvailableMove = false;
+	int numAtkMoves = 0, numDefMoves = 0, numAgiMoves = 0,
+		selectedTypeIndex = 0;
+	char tempMoveType = '\0';
 
+	// Any available moves?
+	for (int i = 0; i < player.getMoveCount(); i++) {
+		if (player.getMoveSet()[i].getCurMoveCount() > 0) {
+			hasAvailableMove = true;
+		}
+	}
+	if (!hasAvailableMove) {
+		return &struggle;
+	}
 
+	// Sorting
+	for (int i = 0; i < 12; i++) {
+		tempMoveType = player.getMoveSet()[i].getMoveType();
+		switch (tempMoveType) {
+			case 's':
+				sortedArray[numAtkMoves] = &(player.getMoveSet()[i]);
+				numAtkMoves++;
+				break;
+			case 'd':
+				sortedArray[numDefMoves + 4] = &(player.getMoveSet()[i]);
+				numDefMoves++;
+				break;
+			case 'a':
+				sortedArray[numAgiMoves + 4] = &(player.getMoveSet()[i]);
+				numAgiMoves++;
+				break;
+			default:
+				std::cout << "Error in TurnWrapper::choosePlayerMove(): player has move of invalid type." << std::endl;
+				break;
+		}
+	}
+
+	while (!validMove) {
+		selectedTypeIndex = screen->getSelectedTypeIndex();
+
+		if (sortedArray[selectedTypeIndex] == nullptr) {
+			screen->getMove1Box()->setText("");
+		}
+		else {
+			screen->getMove1Box()->setText("Z.\n" + sortedArray[selectedTypeIndex]->getMoveName());
+		}
+
+		if (sortedArray[selectedTypeIndex + 1] == nullptr) {
+			screen->getMove2Box()->setText("");
+		}
+		else {
+			screen->getMove2Box()->setText("X.\n" + sortedArray[selectedTypeIndex + 1]->getMoveName());
+		}
+
+		if (sortedArray[selectedTypeIndex + 2] == nullptr) {
+			screen->getMove3Box()->setText("");
+		}
+		else {
+			screen->getMove3Box()->setText("C.\n" + sortedArray[selectedTypeIndex + 2]->getMoveName());
+		}
+
+		if (sortedArray[selectedTypeIndex + 3] == nullptr) {
+			screen->getMove4Box()->setText("");
+		}
+		else {
+			screen->getMove4Box()->setText("V.\n" + sortedArray[selectedTypeIndex + 3]->getMoveName());
+		}
+		
+
+		display();
+		screen->handleInput(*window);
+		selectedMove = sortedArray[screen->getSelectedMoveIndex() + 4 * selectedTypeIndex];
+
+		if (selectedMove != nullptr) {
+			if (selectedMove->getMoveType() != player.getLastTypeUsed() && selectedMove->getCurMoveCount() > 0) {
+				validMove = true;
+			}
+		}
+	}
+
+	screen->setShowingMainDialogueBox(true);
+
+	return selectedMove;
 }
 
 void TurnWrapper::playMove(Character& recipiant, Character& attacker)
@@ -146,4 +248,16 @@ int TurnWrapper::getRandomInt(int min, int max) {
 
 double TurnWrapper::calculateMultiplier(int strength) {
 	return 1 + 0.25 * strength;
+}
+
+void TurnWrapper::display() {
+	screen->update();
+	screen->draw(*window);
+	window->display();
+}
+
+void TurnWrapper::promptDialogueBoxInput() {
+	while (screen->isShowingMainDialogBox()) {
+		screen->handleInput(*window);
+	}
 }

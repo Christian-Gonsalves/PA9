@@ -9,20 +9,16 @@
 class TurnWrapper {
 public:
 		
-	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer, bool newVictoryState=false, int newDifficulty=0) : enemy(newEnemy), player(newPlayer), victoryState(newVictoryState), mDifficulty(newDifficulty) {};
+	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer, BattleScreen *newScreen=nullptr, sf::RenderWindow *newWindow=nullptr, bool newVictoryState=false, int newDifficulty=0) : enemy(newEnemy), player(newPlayer), screen(newScreen), window(newWindow), victoryState(newVictoryState), mDifficulty(newDifficulty) {};
 
 	~TurnWrapper() {};
 
-	/*Runs Battle
-		@returns true if battle is over;
-				 false otherwise*/
-	bool runBattle();
+	void runBattle();
 
 	Move* chooseEnemyMove(void);
 	void defaultMoveSetup(void);
 
 	void playMove(Character& recipiant, Character& attacker);
-
 
 private:
 	int mDifficulty; // Scales stats based on player overall progress
@@ -32,6 +28,9 @@ private:
 	Character player;
 	EnemyCharacter enemy;
 	Move struggle; // Default move used if no other move is available
+
+	BattleScreen *screen;
+	sf::RenderWindow *window;
 
 	/*Chooses which move an enemey makes
 		@returns reference to move*/
@@ -57,4 +56,12 @@ private:
 	/*Calculates multiplier based on status effect strength*/
 	double calculateMultiplier(int strength);
 
+	/*Function ends battle gracefully*/
+	void endBattle(bool playerVictory);
+
+	/*Updates, draws, and displays screen*/
+	void display();
+
+	/*Pauses until user presses enter on dialogue box to continue game*/
+	void promptDialogueBoxInput();
 };

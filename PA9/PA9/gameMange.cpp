@@ -23,7 +23,7 @@ void GameManage::run()
 {
     Character player;
     EnemyCharacter enemy;
-    TurnWrapper mainBattle(enemy, player);
+    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
 
     int playerMoveNum = -1, playerMoveTypeNum = -1; // Variables responsible for representing user input in move selection
 
@@ -35,35 +35,6 @@ void GameManage::run()
         {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
-            }
-            else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) // Conditional taken from SFML website's event tutorial page
-            {
-                if (!battleScreen->isShowingMainDialogBox()) {
-                    switch (keyPressed->scancode) {
-                        case sf::Keyboard::Scancode::Z:
-                            playerMoveNum = 0;
-                            break;
-                        case sf::Keyboard::Scancode::X:
-                            playerMoveNum = 1;
-                            break;
-                        case sf::Keyboard::Scancode::C:
-                            playerMoveNum = 2;
-                            break;
-                        case sf::Keyboard::Scancode::V:
-                            playerMoveNum = 3;
-                            break;
-                        case sf::Keyboard::Scancode::Numpad1: case sf::Keyboard::Scancode::Num1:
-                            playerMoveTypeNum = 0;
-                            break;
-                        case sf::Keyboard::Scancode::Numpad2: case sf::Keyboard::Scancode::Num2:
-                            playerMoveTypeNum = 1;
-                            break;
-                        case sf::Keyboard::Scancode::Numpad3: case sf::Keyboard::Scancode::Num3:
-                            playerMoveTypeNum = 2;
-                            break;
-                    }
-                }
-                    
             }
         }
 
@@ -78,6 +49,8 @@ void GameManage::run()
         if (curScreen == levelScreen.get() && levelScreen->shouldStartBattle())
         {
             curScreen = battleScreen.get();
+            mainBattle.runBattle();
+
         }
         else if (curScreen == battleScreen.get() && battleScreen->shouldExitBattle())
         {

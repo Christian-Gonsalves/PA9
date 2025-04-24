@@ -16,6 +16,17 @@ public:
 
     bool shouldExitBattle();
     bool isShowingMainDialogBox() const { return showDialog; } // if it isn't, it's player choice time
+    void setShowingMainDialogueBox(bool newState) { showDialog = newState; }
+
+    textBox* getDialogueBox() { return &dialogBox; }
+    textBox* getMove1Box() { return &move1; }
+    textBox* getMove2Box() { return &move2; }
+    textBox* getMove3Box() { return &move3; }
+    textBox* getMove4Box() { return &move4; }
+
+    int getSelectedTypeIndex() const { return selectedTypeIndex; }
+    int getSelectedMoveIndex() const { return selectedMoveIndex; }
+
 
 private:
     sf::Sprite bg;

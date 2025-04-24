@@ -53,53 +53,28 @@ void BattleScreen::handleInput(sf::RenderWindow& window)
 
             else if (!showDialog)
             {
-                if (menuState == MenuState::SelectingType)
-                {
-                    if (keyEvent->code == sf::Keyboard::Key::Num1)
-                    {
-                        selectedTypeIndex = 0;
-                        menuState = MenuState::SelectingMove;
-                        selectedMoveIndex = 0;
-                    }
-                    else if (keyEvent->code == sf::Keyboard::Key::Num2)
-                    {
-                        selectedTypeIndex = 1;
-                        menuState = MenuState::SelectingMove;
-                        selectedMoveIndex = 0;
-                    }
-                    else if (keyEvent->code == sf::Keyboard::Key::Num3)
-                    {
-                        selectedTypeIndex = 2;
-                        menuState = MenuState::SelectingMove;
-                        selectedMoveIndex = 0;
-                    }
-                }
-                else if (menuState == MenuState::SelectingMove)
-                {
-                    if (keyEvent->code == sf::Keyboard::Key::Z)
-                    {
-                        selectedMoveIndex = 0;
-                        //move1 logic here
-                        menuState = MenuState::SelectingType;
-                    }
-                    else if (keyEvent->code == sf::Keyboard::Key::X)
-                    {
-                        selectedMoveIndex = 1;
-                        //move2 logic here
-                        menuState = MenuState::SelectingType;
-                    }
-                    else if (keyEvent->code == sf::Keyboard::Key::C)
-                    {
-                        selectedMoveIndex = 2;
-                        //move3 logic here
-                        menuState = MenuState::SelectingType;
-                    }
-                    else if (keyEvent->code == sf::Keyboard::Key::V)
-                    {
-                        selectedMoveIndex = 3;
-                        //move4 logic here
-                        menuState = MenuState::SelectingType;
-                    }
+                switch (keyEvent->scancode) {
+                case sf::Keyboard::Scancode::Z:
+                    selectedMoveIndex = 0;
+                    break;
+                case sf::Keyboard::Scancode::X:
+                    selectedMoveIndex = 1;
+                    break;
+                case sf::Keyboard::Scancode::C:
+                    selectedMoveIndex = 2;
+                    break;
+                case sf::Keyboard::Scancode::V:
+                    selectedMoveIndex = 3;
+                    break;
+                case sf::Keyboard::Scancode::Numpad1: case sf::Keyboard::Scancode::Num1:
+                    selectedTypeIndex = 0;
+                    break;
+                case sf::Keyboard::Scancode::Numpad2: case sf::Keyboard::Scancode::Num2:
+                    selectedTypeIndex = 1;
+                    break;
+                case sf::Keyboard::Scancode::Numpad3: case sf::Keyboard::Scancode::Num3:
+                    selectedTypeIndex = 2;
+                    break;
                 }
             }
         }

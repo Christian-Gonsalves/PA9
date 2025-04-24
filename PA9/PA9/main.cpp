@@ -6,13 +6,16 @@
 int main(int argc, const char* argv[])
 {
     std::srand(std::time(NULL));
+    bool testing = false;
 
-    Test t;
-    t.testReadEnemyCharacterFromFile();
-    t.testReadEnemyCharWithMoves();
-    t.testChooseEnemyMove();
-    t.testPlayMove();
-    t.testHitEvasionLogic();
+    if (testing) {
+        Test t;
+        t.testReadEnemyCharacterFromFile();
+        t.testReadEnemyCharWithMoves();
+        t.testChooseEnemyMove();
+        t.testPlayMove();
+        t.testHitEvasionLogic();
+    }
 
     GameManage game;
     game.run();
