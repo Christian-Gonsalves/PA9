@@ -41,7 +41,7 @@ Move* TurnWrapper::chooseEnemyMove(void) {
 
 
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
-	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) >= 0) { // Stunned
+	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) > 0) { // Stunned
 		return; 
 	}
 
@@ -93,7 +93,6 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 	Move* localArray[12] = {};
 	Move* enemyMove;
 	defaultMoveSetup();
-	//Move defaultMove ( "Struggle", "Yam struggling", 0, 0, 0, 10, 'd' );
 	int j = 0;
 
 	for (int i = 0; i < totalMoves && j < 12; ++i) {
@@ -106,16 +105,15 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 		}
 	}
 	if(localArray[0] == nullptr) {
-		cout << "something" << endl;
 		enemyMove = &struggle;
 	}
 	else {
 		enemyMove = localArray[getRandomInt(0, j - 1)];	//selects which move the enemy will use
 		enemyIn.setLastTypeUsed(enemyMove->getMoveType());	//sets the enemys last used move type
 		for (int i = 0; i < j+1; ++i) {
-			if (enemyIn.getMoveSet()[i].getMoveName() == enemyMove->getMoveName()) {
-				enemyIn.getMoveSet()[i].setCurMoveCount(enemyMove->getCurMoveCount() - 1);
-			}
+			//if (enemyIn.getMoveSet()[i].getMoveName() == enemyMove->getMoveName()) {
+			//	enemyIn.getMoveSet()[i].setCurMoveCount(enemyMove->getCurMoveCount() - 1);
+			//}
 		}
 
 	}
@@ -135,6 +133,11 @@ void TurnWrapper::defaultMoveSetup(void)
 Move* TurnWrapper::choosePlayerMove() {
 
 
+}
+
+void TurnWrapper::playMove(Character& recipiant, Character& attacker)
+{
+	this->playMove(attacker, this->chooseEnemyMove(), recipiant);
 }
 
 int TurnWrapper::getRandomInt(int min, int max) {
