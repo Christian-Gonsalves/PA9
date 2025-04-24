@@ -14,6 +14,8 @@ public:
 
 	void readFromFile(string fileName);
 
+	EnemyCharacter& operator=(const EnemyCharacter& rhs);
+
 private:
 	string catchPhrase;
 
