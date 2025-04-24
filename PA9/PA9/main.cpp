@@ -12,6 +12,7 @@ int main(int argc, const char* argv[])
     t.testReadEnemyCharWithMoves();
     t.testChooseEnemyMove();
     t.testPlayMove();
+    t.testHitEvasionLogic();
 
     GameManage game;
     game.run();

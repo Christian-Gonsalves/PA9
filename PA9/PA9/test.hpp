@@ -13,6 +13,7 @@ public:
 	void testReadEnemyCharWithMoves(void);
 	void testChooseEnemyMove(void);
 	void testPlayMove(void);
+	void testHitEvasionLogic(void);
 
 
 };

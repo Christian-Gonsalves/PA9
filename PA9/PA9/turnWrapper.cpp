@@ -111,9 +111,9 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 		enemyMove = localArray[getRandomInt(0, j - 1)];	//selects which move the enemy will use
 		enemyIn.setLastTypeUsed(enemyMove->getMoveType());	//sets the enemys last used move type
 		for (int i = 0; i < j+1; ++i) {
-			if (enemyIn.getMoveSet()[i].getMoveName() == enemyMove->getMoveName()) {
-				enemyIn.getMoveSet()[i].setCurMoveCount(enemyMove->getCurMoveCount() - 1);
-			}
+			//if (enemyIn.getMoveSet()[i].getMoveName() == enemyMove->getMoveName()) {
+			//	enemyIn.getMoveSet()[i].setCurMoveCount(enemyMove->getCurMoveCount() - 1);
+			//}
 		}
 
 	}

@@ -1,2 +1,4 @@
 ﻿  test.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\test.cpp(108,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\test.cpp(109,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
   PA9.vcxproj -> C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
