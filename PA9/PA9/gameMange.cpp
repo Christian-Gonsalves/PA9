@@ -17,7 +17,7 @@ GameManage::GameManage()
 
     curScreen = levelScreen.get();
 }
-
+    
 
 void GameManage::run()
 {

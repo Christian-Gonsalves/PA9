@@ -4,8 +4,8 @@
 
 
 void TurnWrapper::runBattle() {
-	Move *playerMove,
-		*enemyMove;
+	Move *playerMove = nullptr,
+		*enemyMove = nullptr;
 
 	defaultMoveSetup();
 
