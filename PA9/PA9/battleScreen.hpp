@@ -3,6 +3,8 @@
 #include "Andy.hpp"
 #include "Player.hpp"
 #include "hpBar.hpp"
+#include "textBox.hpp"
+#include <iostream>
 
 class BattleScreen : public GameScreen
 {
@@ -20,8 +22,16 @@ private:
     bool exitBattle, showDialog;
     Andy andy;
     Player player;
-    sf::Text dialog;
-    sf::RectangleShape dialogBox;
     hpBar pHealthBar, eHealthBar;
+
+    textBox defBox, strBox, agilBox;
+    textBox move1, move2, move3, move4;
+    textBox dialogBox;
+
+    int selectedTypeIndex;
+    int selectedMoveIndex;
+    enum class MenuState { SelectingType, SelectingMove };
+    MenuState menuState;
+    bool dialogInit;
 
 };
