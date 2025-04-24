@@ -25,8 +25,8 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
     dialogBox.setText(std::string("Andy:\n\nHello, world!"));
 
 	// set up health bars
-    pHealthBar.setPosition({ 50.f, 50.f });
-    eHealthBar.setPosition({ 50.f, 100.f });
+    pHealthBar.setPosition({ 100.f, 50.f });
+    eHealthBar.setPosition({ 500.f, 100.f });
 }
 
 void BattleScreen::handleInput(sf::RenderWindow& window)

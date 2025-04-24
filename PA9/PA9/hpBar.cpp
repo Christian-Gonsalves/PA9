@@ -27,6 +27,7 @@ void hpBar::update(float curHP, float maxHP)
     sf::Vector2f size = bgBar.getSize();
     healthBar.setSize(sf::Vector2f(size.x * healthPercent, size.y));
 
+
     if (healthPercent > 0.5f)
     {
         healthBar.setFillColor(sf::Color::Green);
