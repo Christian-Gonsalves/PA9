@@ -28,7 +28,7 @@ public:
 	void setStatusEffect(const int index, const int turns, const int strength);
 	//index is where the turns will be held, index+1 is strength, [0] is attack turns, [1] is attack modifier
 	// ex index = 0, strength = .25, turns = 1, ==> [0] = 1. [1] = .25
-	void setMoveSet(const Move* newMoveSet);
+	void setMoveSet(Move* newMoveSet);
 	void setLastTypeUsed(char newLastTypeUsed);
 
 	string getName(void) const;
@@ -42,11 +42,11 @@ public:
 	const int* getStatusEffectArray(void) const;
 	int getStatusEffectTurns(int index);
 	int getStatusEffectStrength(int index);
-	const Move* getMoveSet(void) const;
+	Move* getMoveSet(void);
 	char getLastTypeUsed(void) const;
 
 	void readFromFile(string fileName);
-	Character& operator= (const Character& rhs);
+	Character& operator= (Character& rhs);
 
 
 private:

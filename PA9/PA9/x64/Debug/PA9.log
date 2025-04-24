@@ -12,44 +12,36 @@ C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(10,27): warning C4834:
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(11,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(12,35): warning C4834: discarding return value of function with [[nodiscard]] attribute
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(13,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
-  hpBar.cpp
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:         with
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:         [
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:             T=float
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:         ]
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:         with
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:         [
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:             T=float
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:         ]
   levelSelectScreen.cpp
   main.cpp
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\main.cpp(8,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  move.cpp
   Player.cpp
-  Screen.cpp
   test.cpp
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\test.cpp(122,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\test.cpp(123,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-  textBox.cpp
   turnWrapper.cpp
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(93,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(94,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(136,11): error C2440: 'initializing': cannot convert from 'const Move' to 'Move &'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(136,11):
-      Conversion loses qualifiers
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(193,32): error C2440: '=': cannot convert from 'const Move *' to 'Move *'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(193,32):
-      Conversion loses qualifiers
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(197,36): error C2440: '=': cannot convert from 'const Move *' to 'Move *'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(197,36):
-      Conversion loses qualifiers
-  
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(201,36): error C2440: '=': cannot convert from 'const Move *' to 'Move *'
-      C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(201,36):
-      Conversion loses qualifiers
-  
   Generating Code...
+  character.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+character.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in Andy.obj
+character.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in Andy.obj
+character.obj : error LNK2005: "public: int __cdecl Character::getDefense(void)const " (?getDefense@Character@@QEBAHXZ) already defined in character.obj
+character.obj : error LNK2005: "public: int __cdecl Character::getAccuracy(void)const " (?getAccuracy@Character@@QEBAHXZ) already defined in character.obj
+character.obj : error LNK2005: "public: int __cdecl Character::getAgility(void)const " (?getAgility@Character@@QEBAHXZ) already defined in character.obj
+character.obj : error LNK2005: "public: int __cdecl Character::getCurrentHealth(void)const " (?getCurrentHealth@Character@@QEBAHXZ) already defined in character.obj
+character.obj : error LNK2005: "public: int __cdecl Character::getMaxHealth(void)const " (?getMaxHealth@Character@@QEBAHXZ) already defined in character.obj
+character.obj : error LNK2005: "public: int __cdecl Character::getAttack(void)const " (?getAttack@Character@@QEBAHXZ) already defined in character.obj
+character.obj : error LNK2005: "public: void __cdecl Character::setDefense(int)" (?setDefense@Character@@QEAAXH@Z) already defined in character.obj
+character.obj : error LNK2005: "public: void __cdecl Character::setAccuracy(int)" (?setAccuracy@Character@@QEAAXH@Z) already defined in character.obj
+character.obj : error LNK2005: "public: void __cdecl Character::setAgility(int)" (?setAgility@Character@@QEAAXH@Z) already defined in character.obj
+character.obj : error LNK2005: "public: void __cdecl Character::setCurrentHealth(int)" (?setCurrentHealth@Character@@QEAAXH@Z) already defined in character.obj
+character.obj : error LNK2005: "public: void __cdecl Character::setMaxHealth(int)" (?setMaxHealth@Character@@QEAAXH@Z) already defined in character.obj
+character.obj : error LNK2005: "public: void __cdecl Character::setAttack(int)" (?setAttack@Character@@QEAAXH@Z) already defined in character.obj
+character.obj : error LNK2005: "public: __cdecl Character::~Character(void)" (??1Character@@QEAA@XZ) already defined in character.obj
+main.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in Andy.obj
+main.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in Andy.obj
+main.obj : error LNK2005: main already defined in main.obj
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe : fatal error LNK1169: one or more multiply defined symbols found

@@ -32,7 +32,7 @@ public:
     int getEffectTurns(int index);
     int getEffectStrength(int index);
     
-    Move& operator= (const Move& rhs);
+    Move& operator= (Move& rhs);
 
 
 private:

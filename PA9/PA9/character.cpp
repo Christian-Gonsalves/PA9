@@ -83,7 +83,7 @@ void Character::setStatusEffect(const int index, const int turns, const int stre
 	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(const Move* newMoveSet)
+void Character::setMoveSet(Move* newMoveSet)
 {
 	for (int i = 0; i < 12; i++) {
 		moveSet[i] = newMoveSet[i];
@@ -163,7 +163,7 @@ void Character::readFromFile(string fileName)
 	instream.close();
 }
 
-Character& Character::operator=(const Character& rhs)
+Character& Character::operator=(Character& rhs)
 {
 	this->setName(rhs.getName());
 	this->setAttack(rhs.getAttack());
@@ -238,7 +238,7 @@ int Character::getStatusEffectStrength(int index)	//put in the index for the sta
 }
 
 
-const Move* Character::getMoveSet(void) const
+Move* Character::getMoveSet(void)
 {
 	return this->moveSet;
 }
