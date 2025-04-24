@@ -93,7 +93,6 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 	Move* localArray[12] = {};
 	Move* enemyMove;
 	defaultMoveSetup();
-	//Move defaultMove ( "Struggle", "Yam struggling", 0, 0, 0, 10, 'd' );
 	int j = 0;
 
 	for (int i = 0; i < totalMoves && j < 12; ++i) {
@@ -106,7 +105,6 @@ Move* TurnWrapper::chooseEnemyMove(EnemyCharacter& enemyIn) {
 		}
 	}
 	if(localArray[0] == nullptr) {
-		cout << "something" << endl;
 		enemyMove = &struggle;
 	}
 	else {

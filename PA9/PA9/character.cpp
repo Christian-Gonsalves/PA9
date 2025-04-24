@@ -80,7 +80,6 @@ void Character::setMoveSet(Move* newMoveSet)
 {
 	for (int i = 0; i < 12; i++) {
 		moveSet[i] = newMoveSet[i];
-	//	cout << moveSet[i].getMoveName() << endl;
 	}
 }
 
