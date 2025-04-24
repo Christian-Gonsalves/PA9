@@ -4,11 +4,13 @@
 
 void Test::testReadEnemyCharacterFromFile(void)
 {
+	cout << "Begin Test 1" << endl << endl;
+
 	EnemyCharacter test;
 	string fileName = "Test_Enemy_1.csv";
 
 	test.readFromFile(fileName);
-
+	cout << "This test will read in an enemy character from a file with no moves" << endl << endl;
 	cout << "If the next line says \"This is my test catch phrase\" then the test worked: " << endl;
 	cout << test.getCatchPhrase() << endl;
 	cout << endl << "End of Test 1" << endl << endl;
@@ -17,11 +19,16 @@ void Test::testReadEnemyCharacterFromFile(void)
 
 void Test::testReadEnemyCharWithMoves(void)
 {
+	cout << "Begin Test 2" << endl << endl;
+
 	EnemyCharacter test;
 	string fileName = "Test_Enemy_2.csv";
 
 	test.readFromFile(fileName);
 
+	
+
+	cout << "This test will read in an enemy character from a file with 3 moves" << endl << endl;
 	cout << "If the next line says \"This was a Test!\" then the test has worked: " << endl;
 	cout << test.getMoveSet()[0].getMovePhrase() << endl;
 	cout << endl << "End of Test 2" << endl << endl;
@@ -30,6 +37,9 @@ void Test::testReadEnemyCharWithMoves(void)
 
 void Test::testChooseEnemyMove(void)
 {
+
+	cout << "Begin Test 3" << endl << endl;
+
 	EnemyCharacter test1;
 	Character test2;
 	string fileName = "Test_Enemy_2.csv";
@@ -42,12 +52,11 @@ void Test::testChooseEnemyMove(void)
 	TurnWrapper turn(test1, test2);
 
 	cout << "This test will loop through an enemy with three moves, two of the moves have the same type" << endl;
-	cout << "and they should not repeat" << endl;
+	cout << "and they should not repeat" << endl << endl;
 
 	for (int i = 0; i < 20; i ++){
 		chosenMove = turn.chooseEnemyMove();
-		cout << "The chosen move was: " << chosenMove->getMoveName() << " with type: ";
-		//cout << chosenMove->getMoveType() << " and with " << chosenMove->getCurMoveCount() << " moves left" << endl;
+		cout << "The chosen move was: " << chosenMove->getMoveName() << " with type: " << chosenMove->getMoveType() << endl;
 	} 
 
 	cout << endl << "End of Test 3" << endl << endl;
@@ -55,6 +64,8 @@ void Test::testChooseEnemyMove(void)
 
 void Test::testPlayMove(void)
 {
+	cout << "Begin Test 4" << endl << endl;
+
 	EnemyCharacter attacker, defender;
 	string attackerFile = "Test_Enemy_2.csv", defenderFile = "Test_Enemy_1.csv";
 
@@ -77,6 +88,9 @@ void Test::testPlayMove(void)
 
 void Test::testHitEvasionLogic(void)
 {
+	cout << "Begin Test 5" << endl << endl;
+
+
 	EnemyCharacter attacker, defender;
 	string attackerFile = "Test_Enemy_2.csv", defenderFile = "Test_Enemy_1.csv";
 
@@ -122,6 +136,8 @@ void Test::testHitEvasionLogic(void)
 		}
 
 	}
-	cout << "Total hits: " << hits << " Total misses: " << misses << endl;
+	cout << endl << "Total hits: " << hits << " Total misses: " << misses << endl;
+
+	cout << endl << "End of Test 5" << endl << endl;
 
 }
