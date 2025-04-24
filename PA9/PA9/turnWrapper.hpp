@@ -9,29 +9,28 @@
 class TurnWrapper {
 public:
 		
-	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer) : enemy(newEnemy), player(newPlayer) {};
+	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer, BattleScreen *newScreen=nullptr, sf::RenderWindow *newWindow=nullptr, bool newVictoryState=false, int newDifficulty=0) : enemy(newEnemy), player(newPlayer), screen(newScreen), window(newWindow), victoryState(newVictoryState), mDifficulty(newDifficulty) {};
 
 	~TurnWrapper() {};
 
-	/*Runs Battle
-		@returns true if player won;
-				 false otherwise.*/
-	//bool runBattle();
+	void runBattle();
 
 	Move* chooseEnemyMove(void);
 	void defaultMoveSetup(void);
 
-
-
+	void playMove(Character& recipiant, Character& attacker);
 
 private:
 	int mDifficulty; // Scales stats based on player overall progress
-
+	int victoryState; // 0 default; 1 if enemy won, 2 if player won
 	// Not pointers because we will make changes that we don't want to save throughout multiple battles
 
 	Character player;
 	EnemyCharacter enemy;
-	Move struggle;
+	Move struggle; // Default move used if no other move is available
+
+	BattleScreen *screen;
+	sf::RenderWindow *window;
 
 	/*Chooses which move an enemey makes
 		@returns reference to move*/
@@ -40,7 +39,7 @@ private:
 
 	/*Chooses which move an enemey makes
 	@returns reference to move*/
-	//Move* choosePlayerMove();
+	Move* choosePlayerMove();
 
 	/*Executes all the code associated for currentCharacter's playedMove against a recipient character:
 	1. Whether atk hits
@@ -57,4 +56,12 @@ private:
 	/*Calculates multiplier based on status effect strength*/
 	double calculateMultiplier(int strength);
 
+	/*Function ends battle gracefully*/
+	void endBattle(bool playerVictory);
+
+	/*Updates, draws, and displays screen*/
+	void display();
+
+	/*Pauses until user presses enter on dialogue box to continue game*/
+	void promptDialogueBoxInput();
 };

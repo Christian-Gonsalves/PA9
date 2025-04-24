@@ -140,12 +140,14 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
     <ClCompile Include="gameMange.cpp" />
+    <ClCompile Include="hpBar.cpp" />
     <ClCompile Include="levelSelectScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="textBox.cpp" />
     <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,18 +157,42 @@
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="gameManage.hpp" />
     <ClInclude Include="GameScreen.hpp" />
+    <ClInclude Include="hpBar.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="levelSelectScreen.hpp" />
     <ClInclude Include="move.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Screen.hpp" />
     <ClInclude Include="test.hpp" />
+    <ClInclude Include="textBox.hpp" />
     <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Andy_Character.csv" />
     <None Include="Test_Enemy_1.csv" />
     <None Include="Test_Enemy_2.csv" />
+    <None Include="x64\Release\PA9.exe.recipe" />
+    <None Include="x64\Release\PA9.iobj" />
+    <None Include="x64\Release\PA9.ipdb" />
+    <None Include="x64\Release\vc143.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\andyAttackSprite.png" />
+    <Image Include="assets\andySprite.png" />
+    <Image Include="assets\inBattleBG.png" />
+    <Image Include="assets\lvlSelectBackgroundPxl.png" />
+    <Image Include="assets\playerInBattle.png" />
+    <Image Include="assets\playerPxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\dogicabold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="x64\Release\character.obj" />
+    <Object Include="x64\Release\main.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Release\PA9.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

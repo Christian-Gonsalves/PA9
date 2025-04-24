@@ -64,7 +64,13 @@ void LevelSelectScreen::draw(sf::RenderWindow& window)
     }
 }
 
-bool LevelSelectScreen::shouldStartBattle() const
+bool LevelSelectScreen::shouldStartBattle() 
 {
-    return startBattle;
+    if (startBattle) {
+        startBattle = false;
+        return true;
+    }
+    else {
+        return false;
+    }
 }

@@ -43,6 +43,8 @@ public:
 	Move* getMoveSet(void);
 	char getLastTypeUsed(void) const;
 
+	void readFromFile(string fileName);
+
 private:
 	string name;
 	int attack;	//base attack of character attack

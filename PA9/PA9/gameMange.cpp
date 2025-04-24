@@ -1,4 +1,8 @@
+#pragma once
+
 #include "GameManage.hpp"
+#include "turnWrapper.hpp"
+
 GameManage::GameManage()
     : window(sf::VideoMode({ 1920, 1080 }), "SFML window")
 {
@@ -13,18 +17,25 @@ GameManage::GameManage()
 
     curScreen = levelScreen.get();
 }
-
+    
 
 void GameManage::run()
 {
+    Character player;
+    EnemyCharacter enemy;
+    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
+
+    int playerMoveNum = -1, playerMoveTypeNum = -1; // Variables responsible for representing user input in move selection
+
     while (window.isOpen())
     {
         window.clear();
 
         while (const std::optional event = window.pollEvent())
         {
-            if (event->is<sf::Event::Closed>())
+            if (event->is<sf::Event::Closed>()) {
                 window.close();
+            }
         }
 
 
@@ -38,6 +49,8 @@ void GameManage::run()
         if (curScreen == levelScreen.get() && levelScreen->shouldStartBattle())
         {
             curScreen = battleScreen.get();
+            mainBattle.runBattle();
+
         }
         else if (curScreen == battleScreen.get() && battleScreen->shouldExitBattle())
         {
