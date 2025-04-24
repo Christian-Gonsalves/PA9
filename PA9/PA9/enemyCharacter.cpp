@@ -87,7 +87,7 @@ void EnemyCharacter::readFromFile(string fileName)
 	instream.close();
 }
 
-EnemyCharacter& EnemyCharacter::operator=(const EnemyCharacter& rhs)
+EnemyCharacter& EnemyCharacter::operator=(EnemyCharacter& rhs)
 {
 	this->setName(rhs.getName());
 	this->setCatchPhrase(rhs.getCatchPhrase());

@@ -122,7 +122,7 @@ int Move::getEffectStrength(int index)
 	return this->statusEffect[index+1];
 }
 
-Move& Move::operator=(const Move& rhs)
+Move& Move::operator=(Move& rhs)
 {
 
 	this->setMoveName(rhs.getMoveName());
