@@ -25,7 +25,9 @@ void GameManage::run()
     EnemyCharacter enemy;
     TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
 
-    int playerMoveNum = -1, playerMoveTypeNum = -1; // Variables responsible for representing user input in move selection
+    // Temp measure
+    player.readFromFile("Player_Character.csv");
+    enemy.readFromFile("Andy_Character.csv");
 
     while (window.isOpen())
     {
@@ -46,15 +48,12 @@ void GameManage::run()
         window.display();
 
         // check screen transitions
-        if (curScreen == levelScreen.get() && levelScreen->shouldStartBattle())
-        {
-            curScreen = battleScreen.get();
+        if (levelScreen->shouldStartBattle()) {
             mainBattle.runBattle();
-
-        }
-        else if (curScreen == battleScreen.get() && battleScreen->shouldExitBattle())
-        {
-            curScreen = levelScreen.get();
+            
+            // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
+            mainBattle.setPlayer(player);
+            mainBattle.setEnemy(enemy);
         }
     }
 }
