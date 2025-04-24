@@ -140,6 +140,7 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
     <ClCompile Include="gameMange.cpp" />
+    <ClCompile Include="hpBar.cpp" />
     <ClCompile Include="levelSelectScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="gameManage.hpp" />
     <ClInclude Include="GameScreen.hpp" />
+    <ClInclude Include="hpBar.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="levelSelectScreen.hpp" />
     <ClInclude Include="move.hpp" />

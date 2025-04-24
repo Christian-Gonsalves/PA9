@@ -12,7 +12,8 @@ public:
     void update() override;
     void draw(sf::RenderWindow& window) override;
 
-    bool shouldExitBattle() const;
+    bool shouldExitBattle();
+    bool isShowingMainDialogBox() const { return showDialog; } // if it isn't, it's player choice time
 
 private:
     sf::Sprite bg;

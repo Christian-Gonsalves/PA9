@@ -9,14 +9,14 @@
 class TurnWrapper {
 public:
 		
-	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer) : enemy(newEnemy), player(newPlayer) {};
+	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer, bool newVictoryState=false, int newDifficulty=0) : enemy(newEnemy), player(newPlayer), victoryState(newVictoryState), mDifficulty(newDifficulty) {};
 
 	~TurnWrapper() {};
 
 	/*Runs Battle
-		@returns true if player won;
-				 false otherwise.*/
-	//bool runBattle();
+		@returns true if battle is over;
+				 false otherwise*/
+	bool runBattle();
 
 	Move* chooseEnemyMove(void);
 	void defaultMoveSetup(void);
@@ -26,12 +26,12 @@ public:
 
 private:
 	int mDifficulty; // Scales stats based on player overall progress
-
+	int victoryState; // 0 default; 1 if enemy won, 2 if player won
 	// Not pointers because we will make changes that we don't want to save throughout multiple battles
 
 	Character player;
 	EnemyCharacter enemy;
-	Move struggle;
+	Move struggle; // Default move used if no other move is available
 
 	/*Chooses which move an enemey makes
 		@returns reference to move*/
@@ -40,7 +40,7 @@ private:
 
 	/*Chooses which move an enemey makes
 	@returns reference to move*/
-	//Move* choosePlayerMove();
+	Move* choosePlayerMove();
 
 	/*Executes all the code associated for currentCharacter's playedMove against a recipient character:
 	1. Whether atk hits

@@ -54,7 +54,13 @@ void BattleScreen::draw(sf::RenderWindow& window)
     }
 }
 
-bool BattleScreen::shouldExitBattle() const
+bool BattleScreen::shouldExitBattle() 
 {
-    return exitBattle;
+    if (exitBattle) {
+        exitBattle = false;
+        return true;
+    }
+    else {
+        return false;
+    }
 }

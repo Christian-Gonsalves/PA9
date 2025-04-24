@@ -3,37 +3,37 @@
 #include "turnWrapper.hpp"
 
 
-//bool TurnWrapper::runBattle() {
-//	Move *playerMove,
-//		*enemyMove;
-//
-//	while (1) { // while loop ends with last conditionals
-//		playerMove = choosePlayerMove();
-//		enemyMove = chooseEnemyMove();
-//
-//		// Turn Order
-//		if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
-//			playMove(player, playerMove, enemy);
-//			playMove(enemy, enemyMove, player);
-//		}
-//		else { // Player is second
-//			playMove(enemy, enemyMove, player);
-//			playMove(player, playerMove, enemy);
-//		}
-//
-//		// Update Status Effects
-//		updateStatusEffects(player);
-//		updateStatusEffects(enemy);
-//
-//		// Battle End Condition
-//		if (player.getCurrentHealth() <= 0) {
-//			return false;
-//		}
-//		if (enemy.getCurrentHealth() <= 0) {
-//			return true;
-//		}
-//	}
-//}
+bool TurnWrapper::runBattle() {
+	Move *playerMove,
+		*enemyMove;
+
+	playerMove = choosePlayerMove();
+	enemyMove = chooseEnemyMove();
+
+	// Turn Order
+	if (player.getAgility() * calculateMultiplier(player.getStatusEffectStrength(SPD_EFFECT_INDEX)) * playerMove->getSpeed() >= enemy.getAgility() * calculateMultiplier(enemy.getStatusEffectStrength(SPD_EFFECT_INDEX)) * enemyMove->getSpeed()) { // Player is first 
+		playMove(player, playerMove, enemy);
+		playMove(enemy, enemyMove, player);
+	}
+	else { // Player is second
+		playMove(enemy, enemyMove, player);
+		playMove(player, playerMove, enemy);
+	}
+
+	// Update Status Effects
+	updateStatusEffects(player);
+	updateStatusEffects(enemy);
+
+	// Battle End Condition
+	if (player.getCurrentHealth() <= 0) {
+		victoryState = 1;
+		return false;
+	}
+	if (enemy.getCurrentHealth() <= 0) {
+		victoryState = 2;
+		return true;
+	}
+}
 
 Move* TurnWrapper::chooseEnemyMove(void) {
 	return chooseEnemyMove(enemy);
@@ -132,10 +132,10 @@ void TurnWrapper::defaultMoveSetup(void)
 
 }
 
-//Move* TurnWrapper::choosePlayerMove() {
-//
-//
-//}
+Move* TurnWrapper::choosePlayerMove() {
+
+
+}
 
 int TurnWrapper::getRandomInt(int min, int max) {
 	return std::rand() % (max - min + 1) + min;
