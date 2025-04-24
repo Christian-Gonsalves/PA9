@@ -48,7 +48,6 @@ void BattleScreen::handleInput(sf::RenderWindow& window)
             else if (showDialog && keyEvent->code == sf::Keyboard::Key::Enter)
             {
                 showDialog = false;
-                menuState = MenuState::SelectingType;
             }
 
             else if (!showDialog)

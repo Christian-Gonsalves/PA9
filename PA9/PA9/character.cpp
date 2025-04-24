@@ -70,13 +70,20 @@ void Character::setMoveCount(const int newCount)
 	moveCount = newCount;
 }
 
+void Character::setStatusEffectArray(const int* newArray)
+{
+	for (int i = 0; i < 10; i++) {
+		statusEffects[i] = newArray[i];
+	}
+}
+
 void Character::setStatusEffect(const int index, const int turns, const int strength)
 {
 	this->statusEffects[index] = turns;
 	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(Move* newMoveSet)
+void Character::setMoveSet(const Move* newMoveSet)
 {
 	for (int i = 0; i < 12; i++) {
 		moveSet[i] = newMoveSet[i];
@@ -156,6 +163,23 @@ void Character::readFromFile(string fileName)
 	instream.close();
 }
 
+Character& Character::operator=(const Character& rhs)
+{
+	this->setName(rhs.getName());
+	this->setAttack(rhs.getAttack());
+	this->setMaxHealth(rhs.getMaxHealth());
+	this->setCurrentHealth(rhs.getCurrentHealth());
+	this->setAgility(rhs.getAgility());
+	this->setAccuracy(rhs.getAccuracy());
+	this->setDefense(rhs.getDefense());
+	this->setMoveCount(rhs.getMoveCount());
+	this->setStatusEffectArray(rhs.getStatusEffectArray());
+	this->setMoveSet(rhs.getMoveSet());
+	this->setLastTypeUsed(rhs.getLastTypeUsed());
+
+	return *this;
+}
+
 
 string Character::getName(void) const
 {
@@ -197,6 +221,11 @@ int Character::getMoveCount(void) const
 	return moveCount;
 }
 
+const int* Character::getStatusEffectArray(void) const
+{
+	return statusEffects;
+}
+
 int Character::getStatusEffectTurns(int index)	//put in the index for the start of attribute
 {
 	return this->statusEffects[index];
@@ -209,7 +238,7 @@ int Character::getStatusEffectStrength(int index)	//put in the index for the sta
 }
 
 
-Move* Character::getMoveSet(void)
+const Move* Character::getMoveSet(void) const
 {
 	return this->moveSet;
 }

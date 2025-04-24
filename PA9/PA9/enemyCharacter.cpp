@@ -86,3 +86,21 @@ void EnemyCharacter::readFromFile(string fileName)
 
 	instream.close();
 }
+
+EnemyCharacter& EnemyCharacter::operator=(const EnemyCharacter& rhs)
+{
+	this->setName(rhs.getName());
+	this->setCatchPhrase(rhs.getCatchPhrase());
+	this->setAttack(rhs.getAttack());
+	this->setMaxHealth(rhs.getMaxHealth());
+	this->setCurrentHealth(rhs.getCurrentHealth());
+	this->setAgility(rhs.getAgility());
+	this->setAccuracy(rhs.getAccuracy());
+	this->setDefense(rhs.getDefense());
+	this->setMoveCount(rhs.getMoveCount());
+	this->setStatusEffectArray(rhs.getStatusEffectArray());
+	this->setMoveSet(rhs.getMoveSet());
+	this->setLastTypeUsed(rhs.getLastTypeUsed());
+
+	return *this;
+}
