@@ -21,7 +21,7 @@ public:
 	Move* chooseEnemyMove(void);
 	void defaultMoveSetup(void);
 
-
+	void playMove(Character& recipiant, Character& attacker);
 
 
 private:

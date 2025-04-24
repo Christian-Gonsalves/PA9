@@ -53,3 +53,22 @@ void Test::testChooseEnemyMove(void)
 
 	cout << endl << "End of Test 3" << endl << endl;
 }
+
+void Test::testPlayMove(void)
+{
+	EnemyCharacter attacker, defender;
+	string attackerFile = "Test_Enemy_2.csv", defenderFile = "Test_Enemy_1.csv";
+
+	attacker.readFromFile(attackerFile);
+	defender.readFromFile(defenderFile);
+
+	TurnWrapper turn(attacker, defender);
+
+
+	cout << defender.getName() << "'s initial health is: " << defender.getCurrentHealth() << endl;
+
+	turn.playMove(defender, attacker);
+
+	cout << defender.getName() << "'s new health is: " << defender.getCurrentHealth() << endl;
+
+}

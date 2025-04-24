@@ -12,7 +12,7 @@ public:
 	void testReadEnemyCharacterFromFile(void);
 	void testReadEnemyCharWithMoves(void);
 	void testChooseEnemyMove(void);
-
+	void testPlayMove(void);
 
 
 };

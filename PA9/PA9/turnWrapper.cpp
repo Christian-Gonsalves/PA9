@@ -41,7 +41,7 @@ Move* TurnWrapper::chooseEnemyMove(void) {
 
 
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
-	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) >= 0) { // Stunned
+	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) > 0) { // Stunned
 		return; 
 	}
 
@@ -128,6 +128,11 @@ void TurnWrapper::defaultMoveSetup(void)
 	Move tempMove(name, phrase, 0, 0, 0, 10, 'd');
 	this->struggle = tempMove;
 
+}
+
+void TurnWrapper::playMove(Character& recipiant, Character& attacker)
+{
+	this->playMove(attacker, this->chooseEnemyMove(), recipiant);
 }
 
 //Move* TurnWrapper::choosePlayerMove() {

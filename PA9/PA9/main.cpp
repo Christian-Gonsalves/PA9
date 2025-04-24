@@ -5,15 +5,14 @@
 
 int main(int argc, const char* argv[])
 {
+    std::srand(std::time(NULL));
+
     Test t;
     t.testReadEnemyCharacterFromFile();
     t.testReadEnemyCharWithMoves();
     t.testChooseEnemyMove();
+    t.testPlayMove();
 
-
-
-
-    std::srand(std::time(NULL));
     GameManage game;
     game.run();
     return 0;
