@@ -25,7 +25,7 @@ int main(int argc, const char* argv[])
     bool testing = false;
 
     if (testing) {
-        Test t;
+        Test t; 
         t.testReadEnemyCharacterFromFile();
         t.testReadEnemyCharWithMoves();
         t.testChooseEnemyMove();

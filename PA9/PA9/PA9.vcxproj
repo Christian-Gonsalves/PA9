@@ -171,6 +171,28 @@
     <None Include="Andy_Character.csv" />
     <None Include="Test_Enemy_1.csv" />
     <None Include="Test_Enemy_2.csv" />
+    <None Include="x64\Release\PA9.exe.recipe" />
+    <None Include="x64\Release\PA9.iobj" />
+    <None Include="x64\Release\PA9.ipdb" />
+    <None Include="x64\Release\vc143.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\andyAttackSprite.png" />
+    <Image Include="assets\andySprite.png" />
+    <Image Include="assets\inBattleBG.png" />
+    <Image Include="assets\lvlSelectBackgroundPxl.png" />
+    <Image Include="assets\playerInBattle.png" />
+    <Image Include="assets\playerPxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\dogicabold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="x64\Release\character.obj" />
+    <Object Include="x64\Release\main.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Release\PA9.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
