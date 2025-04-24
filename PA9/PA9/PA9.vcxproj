@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Andy_Character.csv" />
+    <None Include="Player_Character.csv" />
     <None Include="Test_Enemy_1.csv" />
     <None Include="Test_Enemy_2.csv" />
     <None Include="x64\Release\PA9.exe.recipe" />

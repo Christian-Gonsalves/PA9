@@ -1,4 +1,43 @@
-﻿sfml-graphics-s-d.lib(Transformable.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Transformable.obj)' or at ''; linking object as if no debug info
+﻿  Andy.cpp
+  battleScreen.cpp
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\battleScreen.cpp(97,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\battleScreen.cpp(97,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\battleScreen.cpp(98,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\battleScreen.cpp(98,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  character.cpp
+  enemyCharacter.cpp
+  gameMange.cpp
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\gameMange.cpp(9,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\gameMange.cpp(10,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\gameMange.cpp(11,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\gameMange.cpp(12,35): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\gameMange.cpp(13,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  hpBar.cpp
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:         with
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:         [
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:             T=float
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,43): warning C4244:         ]
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:         with
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:         [
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:             T=float
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\hpBar.cpp(5,34): warning C4244:         ]
+  levelSelectScreen.cpp
+  main.cpp
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\main.cpp(8,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  move.cpp
+  Player.cpp
+  Screen.cpp
+  test.cpp
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\test.cpp(122,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\test.cpp(123,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  textBox.cpp
+  turnWrapper.cpp
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\turnWrapper.cpp(93,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\PA9\turnWrapper.cpp(94,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+sfml-graphics-s-d.lib(Transformable.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Transformable.obj)' or at ''; linking object as if no debug info
 sfml-graphics-s-d.lib(RenderTarget.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderTarget.obj)' or at ''; linking object as if no debug info
 sfml-graphics-s-d.lib(Sprite.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Sprite.obj)' or at ''; linking object as if no debug info
 sfml-graphics-s-d.lib(RenderStates.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderStates.obj)' or at ''; linking object as if no debug info
@@ -47,5 +86,4 @@ sfml-system-s-d.lib(Utils.obj) : warning LNK4099: PDB '' was not found with 'sfm
 sfml-system-s-d.lib(Vector2.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(Vector2.obj)' or at ''; linking object as if no debug info
 sfml-system-s-d.lib(SleepImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(SleepImpl.obj)' or at ''; linking object as if no debug info
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-turnWrapper.obj : error LNK2019: unresolved external symbol "private: void __cdecl TurnWrapper::endBattle(bool)" (?endBattle@TurnWrapper@@AEAAX_N@Z) referenced in function "public: void __cdecl TurnWrapper::runBattle(void)" (?runBattle@TurnWrapper@@QEAAXXZ)
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe : fatal error LNK1120: 1 unresolved externals
+  PA9.vcxproj -> C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\x64\Debug\PA9.exe

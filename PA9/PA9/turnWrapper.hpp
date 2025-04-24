@@ -9,19 +9,26 @@
 class TurnWrapper {
 public:
 		
-	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer, BattleScreen *newScreen=nullptr, sf::RenderWindow *newWindow=nullptr, bool newVictoryState=false, int newDifficulty=0) : enemy(newEnemy), player(newPlayer), screen(newScreen), window(newWindow), victoryState(newVictoryState), mDifficulty(newDifficulty) {};
+	TurnWrapper(EnemyCharacter& newEnemy, Character &newPlayer, BattleScreen *newScreen=nullptr, sf::RenderWindow *newWindow=nullptr, bool newVictoryState=false, int newDifficulty=0) : enemy(newEnemy), player(newPlayer), screen(newScreen), window(newWindow), victoryState(newVictoryState), mDifficulty(newDifficulty) { defaultMoveSetup(); };
 
 	~TurnWrapper() {};
 
+	// Main loop of battle
 	void runBattle();
 
+	void setPlayer(Character& newPlayer) { player = newPlayer; }
+	void setEnemy(EnemyCharacter& newEnemy) { enemy = newEnemy; }
+
+	// Public interface for testing purposes
 	Move* chooseEnemyMove(void);
+
+	// Public interface for testing purposes
 	void defaultMoveSetup(void);
 
 	void playMove(Character& recipiant, Character& attacker);
 
 private:
-	int mDifficulty; // Scales stats based on player overall progress
+	int mDifficulty; // Scales stats based on player overall progress (not currently implemented)
 	int victoryState; // 0 default; 1 if enemy won, 2 if player won
 	// Not pointers because we will make changes that we don't want to save throughout multiple battles
 
