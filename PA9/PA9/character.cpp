@@ -113,7 +113,7 @@ void Character::readFromFile(string fileName)
 	getline(instream, tempCurrHp, ',');
 	getline(instream, tempAgil, ',');
 	getline(instream, tempAcc, ',');
-	getline(instream, tempDef, ',');
+	getline(instream, tempDef, '\n');
 
 	this->setName(tempName);
 	this->setAttack(stoi(tempAtt));
