@@ -4,16 +4,17 @@
 
 
 void TurnWrapper::runBattle() {
-	Move *playerMove,
-		*enemyMove;
+	Move *playerMove = nullptr,
+		*enemyMove = nullptr;
 
-	defaultMoveSetup();
+	bool isEndOfBattle = false;
+	int playerVictory = false;
 
 	screen->getDialogueBox()->setText(enemy.getName() + ": " + enemy.getCatchPhrase());
 	display();
 	promptDialogueBoxInput();
 
-	while (1) {
+	while (!isEndOfBattle) {
 		if(player.getStatusEffectStrength(STN_EFFECT_INDEX) < 1) {
 			playerMove = choosePlayerMove();
 		}
@@ -38,15 +39,16 @@ void TurnWrapper::runBattle() {
 		updateStatusEffects(enemy);
 
 		// Battle End Condition
-		if (player.getCurrentHealth() <= 0) {
-			endBattle(false);
-			return;
+		if (enemy.getCurrentHealth() <= 0) { // Player wins in situation where both hit zero hp on same turn
+			isEndOfBattle = true;
 		}
-		if (enemy.getCurrentHealth() <= 0) {
-			endBattle(true);
-			return;
+		else if (player.getCurrentHealth() <= 0) {
+			playerVictory = true;
+			isEndOfBattle = true;
 		}
 	}
+
+	endBattle(playerVictory);
 }
 
 Move* TurnWrapper::chooseEnemyMove(void) {
@@ -55,19 +57,31 @@ Move* TurnWrapper::chooseEnemyMove(void) {
 
 
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
+	screen->setShowingMainDialogueBox(true); // Continue to show 
+
 	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) > 0) { // Stunned
 		return; 
 	}
 
 	if (playedMove->getMoveName() == "struggle") {
-		std::cout << currentCharacter.getName() << " struggled!" << std::endl;
+		screen->getDialogueBox()->setText(currentCharacter.getName() + " struggled!\n");
+		display();
+		promptDialogueBoxInput();
+		
 		return;
 	}
+	screen->getDialogueBox()->setText(currentCharacter.getName() + " used " + playedMove->getMoveName() + "!\n");
+	display();
+	promptDialogueBoxInput();
+	screen->setShowingMainDialogueBox(true); // Continue to show 
 
 	// Move Dialogue
 	string playedMovePhrase = playedMove->getMovePhrase();
 	if (playedMovePhrase != "") {
-		std::cout << playedMovePhrase << std::endl;
+		screen->getDialogueBox()->setText(currentCharacter.getName() + ": " + playedMovePhrase + "\n");
+		display();
+		promptDialogueBoxInput();
+		screen->setShowingMainDialogueBox(true); // Continue to show 
 	}
 	
 	// Does player hit attack?
@@ -79,7 +93,8 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		int totalDamage = currentCharacter.getAttack() * calculateMultiplier(currentCharacter.getStatusEffectStrength(STR_EFFECT_INDEX)) * playedMove->getPower();
 		totalDamage -= recipient.getDefense() * calculateMultiplier(recipient.getStatusEffectStrength(DEF_EFFECT_INDEX));
 		recipient.setCurrentHealth(recipient.getCurrentHealth() - totalDamage);
-		std::cout << recipient.getName() << " took " << totalDamage << " damage!";
+
+		screen->getDialogueBox()->setText(recipient.getName() + " took " + std::to_string(totalDamage) + " damage!");
 
 		// Status Effect (Currently completely overwrites a given status effect type with the new strenth and duration. This means if it was previously a strength of -2 and then a strength of 1 was applied, the final status effect would be 1)
 		for (int i = 0; i < 10;  i += 2) {
@@ -89,8 +104,11 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		}
 	}
 	else {
-		std::cout << currentCharacter.getName() << " missed!" << std::endl;
+		screen->getDialogueBox()->setText(currentCharacter.getName() + " missed!\n");
 	}
+
+	display();
+	promptDialogueBoxInput();
 
 	playedMove->setCurMoveCount(playedMove->getCurMoveCount() - 1);
 }
@@ -250,7 +268,24 @@ double TurnWrapper::calculateMultiplier(int strength) {
 	return 1 + 0.25 * strength;
 }
 
+void TurnWrapper::endBattle(bool playerVictory) {
+	screen->setShowingMainDialogueBox(true);
+
+	if (playerVictory) {
+		screen->getDialogueBox()->setText("Player victory!!!");
+	}
+	else {
+		screen->getDialogueBox()->setText("Player defeated :(");
+	}
+
+	display();
+	promptDialogueBoxInput();
+
+
+}
+
 void TurnWrapper::display() {
+	window->clear();
 	screen->update();
 	screen->draw(*window);
 	window->display();
@@ -261,3 +296,4 @@ void TurnWrapper::promptDialogueBoxInput() {
 		screen->handleInput(*window);
 	}
 }
+
