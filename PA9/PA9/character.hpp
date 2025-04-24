@@ -62,6 +62,8 @@ public:
 	char getLastTypeUsed(void) const;
 >>>>>>> andres-2
 
+	void readFromFile(string fileName);
+
 private:
 	string name;
 	int attack;	//base attack of character attack

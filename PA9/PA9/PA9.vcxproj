@@ -140,16 +140,14 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="enemyCharacter.cpp" />
     <ClCompile Include="gameMange.cpp" />
+    <ClCompile Include="hpBar.cpp" />
     <ClCompile Include="levelSelectScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
-<<<<<<< HEAD
-    <ClCompile Include="Screen.cpp" />
-=======
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="test.cpp" />
->>>>>>> andres-2
+    <ClCompile Include="textBox.cpp" />
     <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,30 +157,20 @@
     <ClInclude Include="enemyCharacter.hpp" />
     <ClInclude Include="gameManage.hpp" />
     <ClInclude Include="GameScreen.hpp" />
+    <ClInclude Include="hpBar.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="levelSelectScreen.hpp" />
     <ClInclude Include="move.hpp" />
-<<<<<<< HEAD
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Screen.hpp" />
-    <ClInclude Include="turnWrapper.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="PA9.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Enemy_1.csv" />
-=======
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Screen.hpp" />
     <ClInclude Include="test.hpp" />
+    <ClInclude Include="textBox.hpp" />
     <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Andy_Character.csv" />
     <None Include="Test_Enemy_1.csv" />
     <None Include="Test_Enemy_2.csv" />
->>>>>>> andres-2
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

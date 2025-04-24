@@ -10,7 +10,7 @@ public:
     void update() override {}
     void draw(sf::RenderWindow& window) override;
 
-    bool shouldStartBattle() const;
+    bool shouldStartBattle();
 
 private:
     sf::Sprite bg;
