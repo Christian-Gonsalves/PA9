@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "enemyCharacter.hpp"
 
 EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
@@ -9,16 +10,33 @@ EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, 
 EnemyCharacter::~EnemyCharacter()
 {
 }
+=======
+#pragma once
+#include "character.hpp"
+
+class EnemyCharacter : public Character {
+public:
+	EnemyCharacter(string newName = "", string newPhrase = "", int newAttack = 0, int newMaxHealth = 0, int newCurrentHealth = 0, int newAgility = 0, int newAccuracy = 0,
+		int newDefense = 0, int newMoveCnt = 0, int* newStatusEffects = nullptr, char newLastTypeUsed='\0');
+
+	~EnemyCharacter();
+		
+	void setCatchPhrase(const string newPhrase);
+>>>>>>> andres-2
 
 void EnemyCharacter::setCatchPhrase(const string newPhrase)
 {
 	catchPhrase = newPhrase;
 }
 
+<<<<<<< HEAD
 string EnemyCharacter::getCatchPhrase(void) const
 {
 	return catchPhrase;
 }
+=======
+	void readFromFile(string fileName);
+>>>>>>> andres-2
 
 void EnemyCharacter::readFromFile(string fileName)
 {

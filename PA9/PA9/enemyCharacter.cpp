@@ -1,9 +1,16 @@
 #include "enemyCharacter.hpp"
 
+<<<<<<< HEAD
 EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
 {
 	Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newStatusEffects);
 	catchPhrase = newPhrase;
+=======
+EnemyCharacter::EnemyCharacter(string newName, string newPhrase, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int newMoveCnt, int* newStatusEffects, char newLastTypeUsed)
+	: Character(newName, newAttack, newMaxHealth, newCurrentHealth, newAgility, newAccuracy, newDefense, newMoveCnt, newStatusEffects, newLastTypeUsed),
+		catchPhrase(newPhrase)
+{
+>>>>>>> andres-2
 }
 
 EnemyCharacter::~EnemyCharacter()
@@ -21,6 +28,7 @@ string EnemyCharacter::getCatchPhrase(void) const
 }
 
 void EnemyCharacter::readFromFile(string fileName)
+<<<<<<< HEAD
 {
 	ifstream instream(fileName);
 	string tempName = "", tempAtt = "", tempMxHp = "", tempCurrHp = "", tempAgil = "", tempAcc = "", tempDef = "",
@@ -28,6 +36,15 @@ void EnemyCharacter::readFromFile(string fileName)
 		tempInd = "", tempDur = "", tempStr = "";
 	Move tempMove[12];
 
+=======
+{	
+	ifstream instream(fileName);
+	string tempName = "", tempAtt = "", tempMxHp = "", tempCurrHp = "", tempAgil = "", tempAcc = "", tempDef = "",
+		tempPhrase = "", tempMoveName = "", tempPow="", tempSpd="", tempCnt = "", tempType = "",
+		tempInd = "", tempDur = "", tempStr = "";
+	Move tempMove[12];
+	
+>>>>>>> andres-2
 
 	getline(instream, tempName, ',');
 	getline(instream, tempAtt, ',');
@@ -59,6 +76,7 @@ void EnemyCharacter::readFromFile(string fileName)
 		getline(instream, tempDur, ',');
 		getline(instream, tempStr, '\n');
 
+<<<<<<< HEAD
 		if (i == 0 || tempName != tempMove[i - 1].getMoveName()) {	//if the line is not empty
 			tempMove[i].setMoveName(tempName);
 			tempMove[i].setMovePhrase(tempPhrase);
@@ -68,10 +86,32 @@ void EnemyCharacter::readFromFile(string fileName)
 			tempMove[i].setMoveCount(stoi(tempCnt));
 			tempMove[i].setMoveType(tempType[0]);
 			tempMove[i].setEffectAttribute(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+=======
+		if (tempName != this->getName()) {
+			if (i == 0 || tempName != tempMove[i - 1].getMoveName()) {
+				tempMove[i].setMoveName(tempName);
+				tempMove[i].setMovePhrase(tempPhrase);
+				tempMove[i].setPower(stof(tempPow));
+				tempMove[i].setSpeed(stof(tempSpd));
+				tempMove[i].setAccuracy(stof(tempAcc));
+				tempMove[i].setMaxMoveCount(stoi(tempCnt));
+				tempMove[i].setCurMoveCount(stoi(tempCnt));
+				tempMove[i].setMoveType(tempType[0]);
+				tempMove[i].setEffectAttribute(stoi(tempInd), stoi(tempDur), stoi(tempStr));
+			}
+			else {
+				this->setMoveCount(i);
+				break;
+			}
+>>>>>>> andres-2
 		}
 		else {
 			break;
 		}
+<<<<<<< HEAD
+=======
+		
+>>>>>>> andres-2
 	}
 
 	this->setMoveSet(tempMove);

@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>C:\Users\drevc\Desktop\School\Cpts 122\PA9\PA9\x64\Debug\PA9.exe</FullPath>
+=======
+      <FullPath>C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe</FullPath>
+>>>>>>> andres-2
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
