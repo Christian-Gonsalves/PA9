@@ -1,7 +1,7 @@
 #include "BattleScreen.hpp"
 
 BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture& playerTex, sf::Font& font)
-    : bg(bgTex), exitBattle(false), showDialog(false), andy(andyTex), player(playerTex), pHealthBar(200.f, 20.f), eHealthBar(200.f, 20.f), dialogInit(false),
+    : bg(bgTex), exitBattle(false), showDialog(false), andy(andyTex), player(playerTex), pHealthBar(300.f, 20.f, 600.f, 40.f), eHealthBar(300.f, 20.f, 600.f, 40.f), dialogInit(false),
     /*          size      |     position    | font | charSize*/
     defBox({ 150.f, 50.f }, { 1160.f, 815.f }, font, 24),
     strBox({ 150.f, 50.f }, { 1160.f, 875.f }, font, 24),
@@ -24,11 +24,9 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
 
     dialogBox.setText(std::string("Andy:\n\nHello, world!"));
 
-    pHealthBar.setPosition(sf::Vector2f(50.f, 50.f));
-    eHealthBar.setPosition(sf::Vector2f(50.f, 100.f));
 	// set up health bars
-	pHealthBar.setPosition(sf::Vector2f(50.f, 50.f));
-	eHealthBar.setPosition(sf::Vector2f(50.f, 100.f));
+    pHealthBar.setPosition({ 50.f, 50.f });
+    eHealthBar.setPosition({ 50.f, 100.f });
 }
 
 void BattleScreen::handleInput(sf::RenderWindow& window)
@@ -108,8 +106,6 @@ void BattleScreen::handleInput(sf::RenderWindow& window)
 
 
 
-
-
 void BattleScreen::update()
 {
     andy.update();
@@ -131,11 +127,12 @@ void BattleScreen::draw(sf::RenderWindow& window)
     player.drawInBattle(window);
 	pHealthBar.draw(window);
 	eHealthBar.draw(window);
-  
+
     if (showDialog)
     {
         dialogBox.draw(window);
     }
+
     if (andy.hasEnteredBattle() && !showDialog)
     {
 

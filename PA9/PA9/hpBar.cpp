@@ -1,18 +1,24 @@
 #include "hpBar.hpp"
 
-hpBar::hpBar(float w, float h)
+hpBar::hpBar(float hw, float hh, float bw, float bh)
 {
-    bgBar.setSize(sf::Vector2f(w * 1.2, h * 1.2));
+    bgBar.setSize(sf::Vector2f(bw, bh));
     bgBar.setFillColor(sf::Color::White);
 
-    healthBar.setSize(sf::Vector2f(w, h));
+    healthBar.setSize(sf::Vector2f(hw, hh));
     healthBar.setFillColor(sf::Color::Green);
 }
 
 void hpBar::setPosition(const sf::Vector2f& position)
 {
     bgBar.setPosition(position);
-    healthBar.setPosition(position);
+
+    sf::Vector2f bgSize = bgBar.getSize();
+    sf::Vector2f offset(
+        (bgSize.x - healthBarMaxWidth) / 2.f,
+        (bgSize.y - healthBarHeight) / 2.f
+    );
+    healthBar.setPosition(position + offset);
 }
 
 void hpBar::update(float curHP, float maxHP)
