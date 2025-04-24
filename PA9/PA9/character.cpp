@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-##include "character.hpp"
-#include "move.hpp"
-
-Character::Character(string newName, int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int* newStatusEffects)
-=======
 #include "character.hpp"
 #include "move.hpp"
 
 Character::Character(string newName,int newAttack, int newMaxHealth, int newCurrentHealth, int newAgility, int newAccuracy, int newDefense, int newMoveCnt, int* newStatusEffects, char newLastTypeUsed)
->>>>>>> andres-2
 {
 	name = newName;
 	attack = newAttack;
@@ -17,16 +10,12 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 	agility = newAgility;
 	accuracy = newAccuracy;
 	defense = newDefense;
-<<<<<<< HEAD
-	if (newStatusEffects == nullptr) {
-=======
 	moveCount = newMoveCnt;
 	lastTypeUsed = newLastTypeUsed;
 	if (newStatusEffects == nullptr) {
 		for (int i = 0; i < 10; ++i) {
 			statusEffects[i] = 0;
 		}
->>>>>>> andres-2
 	}
 	else {
 		for (int i = 0; i < 10; ++i) {
@@ -34,10 +23,6 @@ Character::Character(string newName,int newAttack, int newMaxHealth, int newCurr
 		}
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> andres-2
 }
 
 Character::~Character()
@@ -80,7 +65,18 @@ void Character::setDefense(const int newDefense)
 	defense = newDefense;
 }
 
-<<<<<<< HEAD
+void Character::setMoveCount(const int newCount)
+{
+	moveCount = newCount;
+}
+
+void Character::setStatusEffectArray(const int* newArray)
+{
+	for (int i = 0; i < 10; i++) {
+		statusEffects[i] = newArray[i];
+	}
+}
+
 void Character::setStatusEffect(const int index, const int turns, const int strength)
 {
 	this->statusEffects[index] = turns;
@@ -88,23 +84,6 @@ void Character::setStatusEffect(const int index, const int turns, const int stre
 }
 
 void Character::setMoveSet(const Move* newMoveSet)
-{
-	for (int i = 0; i < 12; i++) {
-		moveSet[i] = newMoveSet[i];
-	}
-=======
-void Character::setMoveCount(const int newCount)
-{
-	moveCount = newCount;
-}
-
-void Character::setStatusEffect(const int index, const int turns, const int strength)
-{
-	this->statusEffects[index] = turns;
-	this->statusEffects[index + 1] = strength;
-}
-
-void Character::setMoveSet(Move* newMoveSet)
 {
 	for (int i = 0; i < 12; i++) {
 		moveSet[i] = newMoveSet[i];
@@ -117,7 +96,6 @@ void Character::setLastTypeUsed(char newLastTypeUsed) {
 
 char Character::getLastTypeUsed(void) const {
 	return lastTypeUsed;
->>>>>>> andres-2
 }
 
 void Character::readFromFile(string fileName)
@@ -185,6 +163,23 @@ void Character::readFromFile(string fileName)
 	instream.close();
 }
 
+Character& Character::operator=(const Character& rhs)
+{
+	this->setName(rhs.getName());
+	this->setAttack(rhs.getAttack());
+	this->setMaxHealth(rhs.getMaxHealth());
+	this->setCurrentHealth(rhs.getCurrentHealth());
+	this->setAgility(rhs.getAgility());
+	this->setAccuracy(rhs.getAccuracy());
+	this->setDefense(rhs.getDefense());
+	this->setMoveCount(rhs.getMoveCount());
+	this->setStatusEffectArray(rhs.getStatusEffectArray());
+	this->setMoveSet(rhs.getMoveSet());
+	this->setLastTypeUsed(rhs.getLastTypeUsed());
+
+	return *this;
+}
+
 
 string Character::getName(void) const
 {
@@ -221,19 +216,14 @@ int Character::getDefense(void) const
 	return defense;
 }
 
-<<<<<<< HEAD
-int Character::getStatusEffectTurns(int index)	//put in the index for the start of attribute
-{
-	return this->statusEffects[index];
-}
-
-int Character::getStatursEffectStrength(int index)	//put in the index for the start of attribute
-{
-	return this->statusEffects[index + 1];
-=======
 int Character::getMoveCount(void) const
 {
 	return moveCount;
+}
+
+const int* Character::getStatusEffectArray(void) const
+{
+	return statusEffects;
 }
 
 int Character::getStatusEffectTurns(int index)	//put in the index for the start of attribute
@@ -244,18 +234,11 @@ int Character::getStatusEffectTurns(int index)	//put in the index for the start 
 int Character::getStatusEffectStrength(int index)	//put in the index for the start of attribute
 {
 	return this->statusEffects[index +1];
->>>>>>> andres-2
 
 }
 
 
-<<<<<<< HEAD
-Move& Character::getMoveSet(void)
-{
-	return *this->moveSet;
-=======
-Move* Character::getMoveSet(void)
+const Move* Character::getMoveSet(void) const
 {
 	return this->moveSet;
->>>>>>> andres-2
 }
