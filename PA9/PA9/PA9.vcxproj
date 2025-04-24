@@ -189,10 +189,6 @@
     <Font Include="assets\dogicabold.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="x64\Release\character.obj" />
-    <Object Include="x64\Release\main.obj" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="x64\Release\PA9.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
