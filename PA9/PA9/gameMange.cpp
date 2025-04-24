@@ -21,11 +21,6 @@ void GameManage::run()
     {
         window.clear();
 
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-                window.close();
-        }
 
 
         // input, update, draw current screen
