@@ -1,7 +1,8 @@
 #include "BattleScreen.hpp"
 
 BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture& playerTex, sf::Font& font)
-    : bg(bgTex), exitBattle(false), showDialog(false), andy(andyTex), player(playerTex), pHealthBar(300.f, 20.f), eHealthBar(300.f, 20.f), dialogInit(false), selectedMoveIndex(-1), selectedTypeIndex(0),
+    : bg(bgTex), exitBattle(false), showDialog(false), andy(andyTex), player(playerTex), pHealthBar(300.f, 20.f), eHealthBar(300.f, 20.f), dialogInit(false),
+    selectedMoveIndex(-1), selectedTypeIndex(0),
     /*          size      |     position    | font | charSize*/
     defBox({ 150.f, 50.f }, { 1160.f, 815.f }, font, 24),
     strBox({ 150.f, 50.f }, { 1160.f, 875.f }, font, 24),
@@ -10,7 +11,8 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
     move2({ 500.f, 100.f }, { 650.f, 800.f }, font, 24),
     move3({ 500.f, 100.f }, { 150.f, 900.f }, font, 24),
     move4({ 500.f, 100.f }, { 650.f, 900.f }, font, 24),
-    dialogBox({ 400.f, 250.f }, { 350.f, 200.f }, font, 24)
+    dialogBox({ 400.f, 250.f }, { 350.f, 200.f }, font, 24),
+    moveDialog({ 700.f, 150.f }, { 40.f, 625.f }, font, 24)
 {
     //insert data
     defBox.setText(std::string("1. DEF"));
@@ -23,6 +25,8 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
     move4.setText(std::string("v. Move4"));
 
     dialogBox.setText(std::string("Andy:\n\nHello, world!"));
+
+    moveDialog.setText(std::string("Hello, world!"));
 
 	// set up health bars
     pHealthBar.setPosition({ 1425.f, 550.f });
@@ -108,8 +112,11 @@ void BattleScreen::draw(sf::RenderWindow& window)
         dialogBox.draw(window);
     }
 
+
     if (andy.hasEnteredBattle() && !showDialog)
     {
+        moveDialog.draw(window);
+
         pHealthBar.draw(window);
         eHealthBar.draw(window);
 
@@ -135,7 +142,8 @@ void BattleScreen::draw(sf::RenderWindow& window)
 
 bool BattleScreen::shouldExitBattle() 
 {
-    if (exitBattle) {
+    if (exitBattle)
+    {
         exitBattle = false;
         return true;
     }

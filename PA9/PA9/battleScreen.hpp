@@ -25,6 +25,7 @@ public:
     textBox* getMove2Box() { return &move2; }
     textBox* getMove3Box() { return &move3; }
     textBox* getMove4Box() { return &move4; }
+    textBox* getMoveDialog() { return &moveDialog; }
 
     int getSelectedTypeIndex() const { return selectedTypeIndex; }
     int getSelectedMoveIndex() const { return selectedMoveIndex; }
@@ -40,7 +41,7 @@ private:
 
     textBox defBox, strBox, agilBox;
     textBox move1, move2, move3, move4;
-    textBox dialogBox;
+    textBox dialogBox, moveDialog;
 
     int selectedTypeIndex;
     int selectedMoveIndex;

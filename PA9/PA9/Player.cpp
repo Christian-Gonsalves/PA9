@@ -15,7 +15,7 @@ Player::Player(const sf::Texture& overworldTex, const std::vector<sf::Vector2f>&
 // Battle-only constructor
 Player::Player(const sf::Texture& battleTex)
 	: curIndex(0), inLevelSelect(false), battleSprite(battleTex), overworldSprite(battleTex),
-    Character("", 0, 0, 0, 0, 0, 0, 0, nullptr, '\0')
+    Character("", 0, 100, 25, 0, 0, 0, 0, nullptr, '\0')
 {
     battleSprite.setTexture(battleTex);
     battleSprite.setScale(sf::Vector2f(1.f, 1.f));
