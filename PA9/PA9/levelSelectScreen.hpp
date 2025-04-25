@@ -11,6 +11,7 @@ public:
     void draw(sf::RenderWindow& window) override;
 
     bool shouldStartBattle();
+    void setShouldStartBattle(bool newState) { startBattle = newState; }
 
 private:
     sf::Sprite bg;
