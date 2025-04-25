@@ -2,6 +2,7 @@
 
 #include "GameManage.hpp"
 #include "turnWrapper.hpp"
+#include <Windows.h>
 
 GameManage::GameManage()
     : window(sf::VideoMode({ 1920, 1080 }), "SFML window")
@@ -67,14 +68,20 @@ void GameManage::run()
 
             player.sortMoves();
 
+            for (int i = 0; i < 12; i++) {
+                std::cout << i << ": " << player.getMoveSet()[i].getMoveName() << " " << player.getMoveSet()[i].getMoveType() << std::endl;
+            }
+
             mainBattle.runBattle();
             
             // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
 
+            Sleep(0.2);
             while (window.pollEvent()) {
                 // Eat any remaining inputs
+                
             }
         }
     }
