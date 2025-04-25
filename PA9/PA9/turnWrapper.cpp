@@ -16,7 +16,6 @@ void TurnWrapper::runBattle() {
 
 	while (!isEndOfBattle) {
 		if(player.getStatusEffectStrength(STN_EFFECT_INDEX) < 1) {
-			std::cout << "CHOOSING PLAYER MOVE" << std::endl;
 			playerMove = choosePlayerMove();
 		}
 		
@@ -42,9 +41,9 @@ void TurnWrapper::runBattle() {
 		// Battle End Condition
 		if (enemy.getCurrentHealth() <= 0) { // Player wins in situation where both hit zero hp on same turn
 			isEndOfBattle = true;
+			playerVictory = true;
 		}
 		else if (player.getCurrentHealth() <= 0) {
-			playerVictory = true;
 			isEndOfBattle = true;
 		}
 	}
@@ -180,78 +179,59 @@ Move* TurnWrapper::choosePlayerMove() {
 		}
 	}
 	if (!hasAvailableMove) {
-		std::cout << "Player has no available moves!" << std::endl;
 		return &struggle;
 	}
-	std::cout << "Player DOES have an available move!" << std::endl;
-
-	// Sorting
-
-
-	std::cout << "Moves successfully sorted" << std::endl;
 
 	while (!validMove) {
 		selectedTypeIndex = screen->getSelectedTypeIndex();
 		selectedMoveIndex = screen->getSelectedMoveIndex();
 
-		std::cout << "Selected type index: " << selectedTypeIndex << std::endl;
-
-		if (playerMoveSet[selectedTypeIndex].getMoveName() == "") {
+		if (playerMoveSet[selectedTypeIndex * 4].getMoveName() == "") {
 			screen->getMove1Box()->setText("");
 		}
 		else {
-			screen->getMove1Box()->setText("Z.\n" + playerMoveSet[selectedTypeIndex].getMoveName());
+			screen->getMove1Box()->setText("Z.\n" + playerMoveSet[selectedTypeIndex * 4].getMoveName());
 		}
 
-		if (playerMoveSet[selectedTypeIndex + 1].getMoveName() == "") {
+		if (playerMoveSet[selectedTypeIndex * 4 + 1].getMoveName() == "") {
 			screen->getMove2Box()->setText("");
 		}
 		else {
-			screen->getMove2Box()->setText("X.\n" + playerMoveSet[selectedTypeIndex + 1].getMoveName());
+			screen->getMove2Box()->setText("X.\n" + playerMoveSet[selectedTypeIndex * 4 + 1].getMoveName());
 		}
 
 		if (playerMoveSet[selectedTypeIndex + 2].getMoveName() == "") {
 			screen->getMove3Box()->setText("");
 		}
 		else {
-			screen->getMove3Box()->setText("C.\n" + playerMoveSet[selectedTypeIndex + 2].getMoveName());
+			screen->getMove3Box()->setText("C.\n" + playerMoveSet[selectedTypeIndex * 4 + 2].getMoveName());
 		}
 
-		if (playerMoveSet[selectedTypeIndex +3].getMoveName() == "") {
+		if (playerMoveSet[selectedTypeIndex * 4 + 3].getMoveName() == "") {
 			screen->getMove4Box()->setText("");
 		}
 		else {
-			screen->getMove4Box()->setText("V.\n" + playerMoveSet[selectedTypeIndex + 3].getMoveName());
+			screen->getMove4Box()->setText("V.\n" + playerMoveSet[selectedTypeIndex * 4 + 3].getMoveName());
 		}
-		
-		std::cout << "Do you fail before?" << std::endl;
+
 		display();
-		std::cout << "Between?" << std::endl;
 		screen->handleInput(*window);
-		std::cout << "Or after?" << std::endl;
 
 		if (selectedMoveIndex != -1) {
-			std::cout << "Move Index Chosen!!!" << std::endl;
 			selectedMove = &(playerMoveSet[selectedMoveIndex + 4 * selectedTypeIndex]);
 		}
-		
-		std::cout << "here?: " << selectedMoveIndex + 4 * selectedTypeIndex << std::endl;
 
 		if (selectedMove != nullptr) {
-			std::cout << "Do you pass?" << std::endl;
 			if (selectedMove->getMoveName() != "" && selectedMove->getMoveType() != player.getLastTypeUsed() && selectedMove->getCurMoveCount() > 0) {
-				std::cout << "Are you fast?" << std::endl;
 				validMove = true;
 			}
 		}
 
-		std::cout << "there?" << std::endl;
 	}
 
 	screen->setShowingMainDialogueBox(true);
 
 
-	std::cout << "Player Selected Move: " << selectedMove->getMoveName() << std::endl;
 
 	player.setLastTypeUsed(selectedMove->getMoveType()); // If an attack misses, it will still have used that type. Maybe change?
 	screen->setSelectedMoveIndex(-1); // So it doesn't repeatedly enter same move after next turn

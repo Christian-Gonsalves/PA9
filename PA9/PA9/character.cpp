@@ -255,11 +255,11 @@ void Character::sortMoves() {
 		std::cout << "Sorted Move Types: " << tempMoveType << std::endl;
 
 		switch (tempMoveType) {
-		case 's':
+		case 'd':
 			sortedArray[numAtkMoves] = moveSet[i];
 			numAtkMoves++;
 			break;
-		case 'd':
+		case 's':
 			sortedArray[numDefMoves + 4] = moveSet[i];
 			numDefMoves++;
 			break;
@@ -275,6 +275,7 @@ void Character::sortMoves() {
 
 	// Don't want to deal with creating an array on the heap, sooo
 	for (int i = 0; i < 12; i++) {
+		std::cout << "SSSSS:  " << sortedArray[i].getMoveName() << ": " << sortedArray[i].getMoveType() << std::endl;
 		moveSet[i] = sortedArray[i];
 	}
 
