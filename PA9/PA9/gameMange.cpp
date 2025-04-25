@@ -23,11 +23,13 @@ void GameManage::run()
 {
     Character player;
     EnemyCharacter enemy;
-    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
 
     // Temp measure
     player.readFromFile("Player_Character.csv");
     enemy.readFromFile("Andy_Character.csv");
+
+    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
+
 
     while (window.isOpen())
     {

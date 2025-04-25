@@ -6,7 +6,7 @@
 int main(int argc, const char* argv[])
 {
     std::srand(std::time(NULL));
-    bool testing = false;
+    bool testing = true;
 
     if (testing) {
         Test t; 
