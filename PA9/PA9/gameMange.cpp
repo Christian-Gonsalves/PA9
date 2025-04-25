@@ -55,6 +55,7 @@ void GameManage::run()
 
         // check screen transitions
         if (levelScreen->shouldStartBattle()) {
+
             // Beginning battle Animation
             while (!battleScreen->hasAnimationConcluded()) {
                 window.clear();
@@ -64,11 +65,15 @@ void GameManage::run()
                 window.display();
             }
 
+            player.sortMoves();
+
             mainBattle.runBattle();
             
             // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
+
+            levelScreen->setShouldStartBattle(false);
         }
     }
 }

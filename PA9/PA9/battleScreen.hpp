@@ -28,6 +28,7 @@ public:
 
     int getSelectedTypeIndex() const { return selectedTypeIndex; }
     int getSelectedMoveIndex() const { return selectedMoveIndex; }
+    void setSelectedMoveIndex(int newSelectedMoveIndex) { selectedMoveIndex = newSelectedMoveIndex; }
 
 
 private:
