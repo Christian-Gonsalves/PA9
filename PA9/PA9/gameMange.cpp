@@ -73,7 +73,9 @@ void GameManage::run()
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
 
-            levelScreen->setShouldStartBattle(false);
+            while (window.pollEvent()) {
+                // Eat any remaining inputs
+            }
         }
     }
 }
