@@ -4,6 +4,8 @@
 Player::Player(const sf::Texture& overworldTex, const std::vector<sf::Vector2f>& pos)
 	: positions(pos), curIndex(0), inLevelSelect(true), overworldSprite(overworldTex), battleSprite(overworldTex)
 {
+    //readFromFile("Player_Character.csv");
+
     overworldSprite.setTexture(overworldTex);
     overworldSprite.setScale(sf::Vector2f(0.8f, 0.8f));
     overworldSprite.setPosition(positions[curIndex]);
