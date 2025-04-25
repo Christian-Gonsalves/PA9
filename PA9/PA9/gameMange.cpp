@@ -1,49 +1,38 @@
-#pragma once
-
 #include "GameManage.hpp"
-#include "turnWrapper.hpp"
-
+#include "Menu.hpp"
 GameManage::GameManage()
+
     : window(sf::VideoMode({ 1920, 1080 }), "SFML window")
 {
     lvlBgTex.loadFromFile("assets/lvlSelectBackgroundPxl.png");
     playerTex.loadFromFile("assets/playerPxl.png");
     battleBgTex.loadFromFile("assets/inBattleBG.png");
-    inBattlePlayerTex.loadFromFile("assets/playerInBattle.png");
     andyTex.loadFromFile("assets/andySprite.png");
-    font = sf::Font("assets/dogicabold.ttf");
     levelScreen = std::make_unique<LevelSelectScreen>(playerTex, lvlBgTex);
-    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex, inBattlePlayerTex, font);
+    battleScreen = std::make_unique<BattleScreen>(battleBgTex, andyTex);
 
     curScreen = levelScreen.get();
+    this->buffer = new sf::SoundBuffer[3]{ sf::SoundBuffer("Audio/sound1.wav"), sf::SoundBuffer("Audio/sound2.wav"), sf::SoundBuffer("Audio/sound5.ogg") };
+    this->sound = new sf::Sound[3]{ sf::Sound(buffer[0]), sf::Sound(buffer[1]), sf::Sound(buffer[2]) };
+
+
 }
-    
+
+
 
 void GameManage::run()
 {
-    Character player;
-    EnemyCharacter enemy;
-
-    player.readFromFile("Player_Character.csv");
-    enemy.readFromFile("Andy_Character.csv");
-
-    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
-
-    std::cout << player.getMoveCount() << std::endl;
-
-    for (int i = 0; i < player.getMoveCount(); i++) {
-        std::cout << player.getMoveSet()[i].getMoveName() << ": " << player.getMoveSet()[i].getMoveType() << std::endl;
-    }
-
+    Menu menu(this->window.getSize().x, this->window.getSize().y);
+    menu.load_menu(this->window);
+    sound[0].play();
     while (window.isOpen())
     {
         window.clear();
 
         while (const std::optional event = window.pollEvent())
         {
-            if (event->is<sf::Event::Closed>()) {
+            if (event->is<sf::Event::Closed>())
                 window.close();
-            }
         }
 
 
@@ -54,26 +43,27 @@ void GameManage::run()
         window.display();
 
         // check screen transitions
-        if (levelScreen->shouldStartBattle()) {
-
-            // Beginning battle Animation
-            while (!battleScreen->hasAnimationConcluded()) {
-                window.clear();
-                battleScreen->handleInput(window);
-                battleScreen->update();
-                battleScreen->draw(window);
-                window.display();
+        if (curScreen == levelScreen.get() && levelScreen->shouldStartBattle())
+        {
+            if (sound[0].getStatus() == sf::Sound::Status::Playing)
+            {
+                sound[0].stop();
             }
+            sound[1].setLooping(true);
+            sound[1].play();
 
-            player.sortMoves();
-
-            mainBattle.runBattle();
-            
-            // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
-            mainBattle.setPlayer(player);
-            mainBattle.setEnemy(enemy);
-
-            levelScreen->setShouldStartBattle(false);
+            curScreen = battleScreen.get();
+        }
+        else if (curScreen == battleScreen.get() && battleScreen->shouldExitBattle())
+        {
+            sound[2].play();
+            if (sound[1].getStatus() == sf::Sound::Status::Playing)
+            {
+                sound[1].stop();
+            }
+            sound[0].setLooping(true);
+            sound[0].play();
+            curScreen = levelScreen.get();
         }
     }
 }
