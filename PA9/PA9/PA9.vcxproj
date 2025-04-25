@@ -147,6 +147,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="textBox.cpp" />
     <ClCompile Include="turnWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Screen.hpp" />
     <ClInclude Include="test.hpp" />
+    <ClInclude Include="textBox.hpp" />
     <ClInclude Include="turnWrapper.hpp" />
   </ItemGroup>
   <ItemGroup>
