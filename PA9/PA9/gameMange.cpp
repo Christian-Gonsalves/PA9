@@ -28,13 +28,9 @@ void GameManage::run()
     player.readFromFile("Player_Character.csv");
     enemy.readFromFile("Andy_Character.csv");
 
+    player.sortMoves();
+
     TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
-
-    std::cout << player.getMoveCount() << std::endl;
-
-    for (int i = 0; i < player.getMoveCount(); i++) {
-        std::cout << player.getMoveSet()[i].getMoveName() << ": " << player.getMoveSet()[i].getMoveType() << std::endl;
-    }
 
     while (window.isOpen())
     {
@@ -66,23 +62,11 @@ void GameManage::run()
                 window.display();
             }
 
-            player.sortMoves();
-
-            for (int i = 0; i < 12; i++) {
-                std::cout << i << ": " << player.getMoveSet()[i].getMoveName() << " " << player.getMoveSet()[i].getMoveType() << std::endl;
-            }
-
             mainBattle.runBattle();
             
             // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
-
-            Sleep(0.2);
-            while (window.pollEvent()) {
-                // Eat any remaining inputs
-                
-            }
         }
     }
 }
