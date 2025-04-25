@@ -2,7 +2,7 @@
 
 Andy::Andy(const sf::Texture& texture)
 	: targetX(700.f), speed(1.5f), enteredBattle(false), andySprite(texture),
-	EnemyCharacter("", "", 0, 400, 0, 0, 0, 0, 0, nullptr, '\0')
+	EnemyCharacter("", "", 0, 0, 0, 0, 0, 0, 0, nullptr, '\0')
 {
 	readFromFile("Andy_Character.csv");
 	andySprite.setPosition(sf::Vector2f(-300.f, 400.f ));

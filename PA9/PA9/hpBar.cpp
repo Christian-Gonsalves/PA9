@@ -2,7 +2,7 @@
 
 hpBar::hpBar(float w, float h)
 {
-    bgBar.setSize(sf::Vector2f(w * 1.2, h * 1.2));
+    bgBar.setSize(sf::Vector2f(w, h));
     bgBar.setFillColor(sf::Color::White);
 
     healthBar.setSize(sf::Vector2f(w, h));
@@ -12,6 +12,7 @@ hpBar::hpBar(float w, float h)
 void hpBar::setPosition(const sf::Vector2f& position)
 {
     bgBar.setPosition(position);
+
     healthBar.setPosition(position);
 }
 
@@ -20,6 +21,7 @@ void hpBar::update(float curHP, float maxHP)
     float healthPercent = curHP / maxHP;
     sf::Vector2f size = bgBar.getSize();
     healthBar.setSize(sf::Vector2f(size.x * healthPercent, size.y));
+
 
     if (healthPercent > 0.5f)
     {
