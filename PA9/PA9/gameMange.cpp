@@ -23,11 +23,17 @@ void GameManage::run()
 {
     Character player;
     EnemyCharacter enemy;
-    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
 
-    // Temp measure
     player.readFromFile("Player_Character.csv");
     enemy.readFromFile("Andy_Character.csv");
+
+    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
+
+    std::cout << player.getMoveCount() << std::endl;
+
+    for (int i = 0; i < player.getMoveCount(); i++) {
+        std::cout << player.getMoveSet()[i].getMoveName() << ": " << player.getMoveSet()[i].getMoveType() << std::endl;
+    }
 
     while (window.isOpen())
     {
@@ -49,11 +55,25 @@ void GameManage::run()
 
         // check screen transitions
         if (levelScreen->shouldStartBattle()) {
+
+            // Beginning battle Animation
+            while (!battleScreen->hasAnimationConcluded()) {
+                window.clear();
+                battleScreen->handleInput(window);
+                battleScreen->update();
+                battleScreen->draw(window);
+                window.display();
+            }
+
+            player.sortMoves();
+
             mainBattle.runBattle();
             
             // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
+
+            levelScreen->setShouldStartBattle(false);
         }
     }
 }
