@@ -186,8 +186,9 @@ Move* TurnWrapper::choosePlayerMove() {
 	}
 
 	// Sorting
-	for (int i = 0; i < 12; i++) {
+	for (int i = 0; i < player.getMoveCount(); i++) {
 		tempMoveType = player.getMoveSet()[i].getMoveType();
+		std::cout << "RARW" << tempMoveType << std::endl;
 		switch (tempMoveType) {
 			case 's':
 				sortedArray[numAtkMoves] = &(player.getMoveSet()[i]);

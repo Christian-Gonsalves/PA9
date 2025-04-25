@@ -15,6 +15,8 @@ public:
     void draw(sf::RenderWindow& window) override;
 
     bool shouldExitBattle();
+    bool hasAnimationConcluded() const { return andy.hasEnteredBattle(); }
+
     bool isShowingMainDialogBox() const { return showDialog; } // if it isn't, it's player choice time
     void setShowingMainDialogueBox(bool newState) { showDialog = newState; }
 
