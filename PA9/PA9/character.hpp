@@ -48,6 +48,8 @@ public:
 	void readFromFile(string fileName);
 	Character& operator= (Character& rhs);
 
+	/*Sorts moves from moveset so that all defense type moves take up the first 4 elements, strength the next 4, and agility the last 4*/
+	void sortMoves();
 
 private:
 	string name;

@@ -1,7 +1,7 @@
 #include "BattleScreen.hpp"
 
 BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture& playerTex, sf::Font& font)
-    : bg(bgTex), exitBattle(false), showDialog(false), andy(andyTex), player(playerTex), pHealthBar(200.f, 20.f), eHealthBar(200.f, 20.f), dialogInit(false),
+    : bg(bgTex), exitBattle(false), showDialog(false), andy(andyTex), player(playerTex), pHealthBar(300.f, 20.f), eHealthBar(300.f, 20.f), dialogInit(false), selectedMoveIndex(-1), selectedTypeIndex(0),
     /*          size      |     position    | font | charSize*/
     defBox({ 150.f, 50.f }, { 1160.f, 815.f }, font, 24),
     strBox({ 150.f, 50.f }, { 1160.f, 875.f }, font, 24),
@@ -24,11 +24,9 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
 
     dialogBox.setText(std::string("Andy:\n\nHello, world!"));
 
-    pHealthBar.setPosition(sf::Vector2f(50.f, 50.f));
-    eHealthBar.setPosition(sf::Vector2f(50.f, 100.f));
 	// set up health bars
-	pHealthBar.setPosition(sf::Vector2f(50.f, 50.f));
-	eHealthBar.setPosition(sf::Vector2f(50.f, 100.f));
+    pHealthBar.setPosition({ 1425.f, 550.f });
+    eHealthBar.setPosition({ 675.f, 375.f });
 }
 
 void BattleScreen::handleInput(sf::RenderWindow& window)
@@ -67,20 +65,21 @@ void BattleScreen::handleInput(sf::RenderWindow& window)
                     break;
                 case sf::Keyboard::Scancode::Numpad1: case sf::Keyboard::Scancode::Num1:
                     selectedTypeIndex = 0;
+                    selectedMoveIndex = -1;
                     break;
                 case sf::Keyboard::Scancode::Numpad2: case sf::Keyboard::Scancode::Num2:
                     selectedTypeIndex = 1;
+                    selectedMoveIndex = -1;
                     break;
                 case sf::Keyboard::Scancode::Numpad3: case sf::Keyboard::Scancode::Num3:
                     selectedTypeIndex = 2;
+                    selectedMoveIndex = -1;
                     break;
                 }
             }
         }
     }
 }
-
-
 
 
 
@@ -103,15 +102,16 @@ void BattleScreen::draw(sf::RenderWindow& window)
     window.draw(bg);
     andy.draw(window);
     player.drawInBattle(window);
-	pHealthBar.draw(window);
-	eHealthBar.draw(window);
-  
+
     if (showDialog)
     {
         dialogBox.draw(window);
     }
+
     if (andy.hasEnteredBattle() && !showDialog)
     {
+        pHealthBar.draw(window);
+        eHealthBar.draw(window);
 
         defBox.setHighlight(selectedTypeIndex == 0);
         strBox.setHighlight(selectedTypeIndex == 1);
@@ -121,19 +121,15 @@ void BattleScreen::draw(sf::RenderWindow& window)
         strBox.draw(window);
         agilBox.draw(window);
 
-        // if in the SelectingMove state highlight and draw move boxes
-        if (menuState == MenuState::SelectingMove)
-        {
-            move1.setHighlight(selectedMoveIndex == 0);
-            move2.setHighlight(selectedMoveIndex == 1);
-            move3.setHighlight(selectedMoveIndex == 2);
-            move4.setHighlight(selectedMoveIndex == 3);
+        move1.setHighlight(selectedMoveIndex == 0);
+        move2.setHighlight(selectedMoveIndex == 1);
+        move3.setHighlight(selectedMoveIndex == 2);
+        move4.setHighlight(selectedMoveIndex == 3);
 
-            move1.draw(window);
-            move2.draw(window);
-            move3.draw(window);
-            move4.draw(window);
-        }
+        move1.draw(window);
+        move2.draw(window);
+        move3.draw(window);
+        move4.draw(window);
     }
 }
 

@@ -242,3 +242,41 @@ Move* Character::getMoveSet(void)
 {
 	return this->moveSet;
 }
+
+void Character::sortMoves() {
+	Move sortedArray[12];
+
+	int numAtkMoves = 0, numDefMoves = 0, numAgiMoves = 0;
+	char tempMoveType = '\0';
+
+	// Sort in sortedArray
+	for (int i = 0; i < moveCount; i++) {
+		tempMoveType = moveSet[i].getMoveType();
+		std::cout << "Sorted Move Types: " << tempMoveType << std::endl;
+
+		switch (tempMoveType) {
+		case 'd':
+			sortedArray[numAtkMoves] = moveSet[i];
+			numAtkMoves++;
+			break;
+		case 's':
+			sortedArray[numDefMoves + 4] = moveSet[i];
+			numDefMoves++;
+			break;
+		case 'a':
+			sortedArray[numAgiMoves + 4] = moveSet[i];
+			numAgiMoves++;
+			break;
+		default:
+			std::cout << "Error in TurnWrapper::choosePlayerMove(): player has move of invalid type." << std::endl;
+			break;
+		}
+	}
+
+	// Don't want to deal with creating an array on the heap, sooo
+	for (int i = 0; i < 12; i++) {
+		std::cout << "SSSSS:  " << sortedArray[i].getMoveName() << ": " << sortedArray[i].getMoveType() << std::endl;
+		moveSet[i] = sortedArray[i];
+	}
+
+}
