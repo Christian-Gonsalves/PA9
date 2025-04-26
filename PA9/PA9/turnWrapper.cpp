@@ -147,7 +147,7 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 
 
 	display();
-	//promptDialogueBoxInput();
+	promptDialogueBoxInput();
 
 	playedMove->setCurMoveCount(playedMove->getCurMoveCount() - 1);
 }

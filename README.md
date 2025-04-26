@@ -1,5 +1,5 @@
 Team Members:
-              Christian
+              Christian, Lab Section: 11, TA: Berekely C.
               Alejandro Lopez, Lab Section: 3, TA: Kyle P.
               Gabriel Sico, Lab section 10, TA: Marcus W
               Andres
@@ -15,7 +15,15 @@ Start Screen: The start screen can be navigated by using the arrow keys, press e
 
 Level Selector Screen: Once “play” has been selected the level selector screen will show up. This can be navigated by using the “a” and “d” keys, to enter a level the enter key can be pressed. Note that only the last level is actually completed/working, 
 
-Battle: Once the enter key has been pressed you enter the battle mode with the opponent. The opponent comes into view and says their intro phrase. After pressing enter the player is greeted with their move selection menu. You can press 1-3 to choose what type of move to use, and then in the selected menu you can use the keys “z”, “x”, “C”, and “V” to choose a move to attack with. Once the move is selected the battle scene will start. Whoever’s move has a better speed stat as well as whoever has the higher agility stat will attack first. The enemy character picks their move at the same time that the player does automatically. 	
+Battle: Once the enter key has been pressed you enter the battle mode with the opponent. The opponent comes into view and says their intro phrase. After pressing enter the player is greeted with their move selection menu. You can press 1-3 to choose what type of move to use, and then in the selected menu you can use the keys “z”, “x”, “C”, and “V” to choose a move to attack with. Moves of the same type cannot be used multiple times in a row. Once the move is selected the battle scene will start. Whoever’s move has a better speed stat as well as whoever has the higher agility stat will attack first. The enemy character picks their move at the same time that the player does automatically. 
+
+Certain types do stronger damage to moves of other types. When a character uses a type, its damage is modified based on the type the last enemy used. 
+
+Def strong against Strength
+Strength strong against Agility
+Agility strong against Defense
+
+Vice versa for weaknesses.
 
 Used assets:
 https://www.dafont.com/roberto-mocci.d8882 

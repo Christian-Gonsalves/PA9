@@ -171,6 +171,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Andy_Character.csv" />
+    <None Include="assets\Audio\Solution.VC.db" />
+    <None Include="assets\Audio\sound5.ogg" />
     <None Include="Player_Character.csv" />
     <None Include="Test_Enemy_1.csv" />
     <None Include="Test_Enemy_2.csv" />
@@ -183,6 +185,7 @@
     <Image Include="assets\andyAttackSprite.png" />
     <Image Include="assets\andySprite.png" />
     <Image Include="assets\inBattleBG.png" />
+    <Image Include="assets\loading_screen.jpg" />
     <Image Include="assets\lvlSelectBackgroundPxl.png" />
     <Image Include="assets\playerInBattle.png" />
     <Image Include="assets\playerPxl.png" />
@@ -192,6 +195,11 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="x64\Release\PA9.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="assets\Audio\sound1.wav" />
+    <Media Include="assets\Audio\sound2.wav" />
+    <Media Include="assets\Audio\sound3.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
