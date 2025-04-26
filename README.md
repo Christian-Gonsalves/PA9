@@ -2,7 +2,7 @@ Team Members:
               Christian, Lab Section: 11, TA: Berekely C.
               Alejandro Lopez, Lab Section: 3, TA: Kyle P.
               Gabriel Sico, Lab section 10, TA: Marcus W
-              Andres
+              Andres Valencia Cardenas, Lab section 7, TA: Aiden Hopper
 
 ----------------------------------------------Instructions--------------------------------------------------------
 ******** IF CODE DOES NOT RUN IN VISUAL STUDIO ADD EXISTING MISSING FILES (NOT OUR FAULT) ********
