@@ -3,7 +3,7 @@
 #include "turnWrapper.hpp"
 
 
-void TurnWrapper::runBattle() {
+bool TurnWrapper::runBattle() {
 	Move *playerMove = nullptr,
 		*enemyMove = nullptr;
 
@@ -49,6 +49,7 @@ void TurnWrapper::runBattle() {
 	}
 
 	endBattle(playerVictory);
+	return playerVictory;
 }
 
 Move* TurnWrapper::chooseEnemyMove(void) {

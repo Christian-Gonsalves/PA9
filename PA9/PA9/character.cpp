@@ -110,7 +110,6 @@ void Character::readFromFile(string fileName)
 	getline(instream, tempName, ',');
 	getline(instream, tempAtt, ',');
 	getline(instream, tempMxHp, ',');
-	getline(instream, tempCurrHp, ',');
 	getline(instream, tempAgil, ',');
 	getline(instream, tempAcc, ',');
 	getline(instream, tempDef, '\n');
@@ -118,7 +117,7 @@ void Character::readFromFile(string fileName)
 	this->setName(tempName);
 	this->setAttack(stoi(tempAtt));
 	this->setMaxHealth(stoi(tempMxHp));
-	this->setCurrentHealth(stoi(tempCurrHp));
+	this->setCurrentHealth(stoi(tempMxHp));
 	this->setAgility(stoi(tempAgil));
 	this->setAccuracy(stoi(tempAcc));
 	this->setDefense(stoi(tempDef));

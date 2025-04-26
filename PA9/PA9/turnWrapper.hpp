@@ -13,8 +13,8 @@ public:
 
 	~TurnWrapper() {};
 
-	// Main loop of battle
-	void runBattle();
+	// Main loop of battle returns true if player won, false if lost
+	bool runBattle();
 
 	void setPlayer(Character& newPlayer) { player = newPlayer; }
 	void setEnemy(EnemyCharacter& newEnemy) { enemy = newEnemy; }

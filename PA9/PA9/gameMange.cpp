@@ -24,6 +24,7 @@ void GameManage::run()
 {
     Character player;
     EnemyCharacter enemy;
+    bool winState;
 
     player.readFromFile("Player_Character.csv");
     enemy.readFromFile("Andy_Character.csv");
@@ -62,11 +63,15 @@ void GameManage::run()
                 window.display();
             }
 
-            mainBattle.runBattle();
+            winState = mainBattle.runBattle();
             
             // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
+
+            if (winState) {
+                window.close();
+            }
         }
     }
 }
