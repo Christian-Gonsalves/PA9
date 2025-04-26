@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "LevelSelectScreen.hpp"
 #include "BattleScreen.hpp"
+#include "Menu.hpp"
 
 class GameManage
 {
@@ -16,6 +17,9 @@ private:
     sf::Font font;
     std::unique_ptr<LevelSelectScreen> levelScreen;
     std::unique_ptr<BattleScreen> battleScreen;
+
+    sf::SoundBuffer* buffer;
+    sf::Sound* sound;
 
     GameScreen* curScreen;
 };
