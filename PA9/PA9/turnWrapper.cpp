@@ -3,7 +3,7 @@
 #include "turnWrapper.hpp"
 
 
-void TurnWrapper::runBattle() {
+bool TurnWrapper::runBattle() {
 	Move *playerMove = nullptr,
 		*enemyMove = nullptr;
 
@@ -49,6 +49,7 @@ void TurnWrapper::runBattle() {
 	}
 
 	endBattle(playerVictory);
+	return playerVictory;
 }
 
 Move* TurnWrapper::chooseEnemyMove(void) {
@@ -92,6 +93,10 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		// Damage Calculations
 		int totalDamage = currentCharacter.getAttack() * calculateMultiplier(currentCharacter.getStatusEffectStrength(STR_EFFECT_INDEX)) * playedMove->getPower();
 		totalDamage -= recipient.getDefense() * calculateMultiplier(recipient.getStatusEffectStrength(DEF_EFFECT_INDEX));
+		if (totalDamage < 0) {
+			totalDamage = 0;
+		}
+
 		recipient.setCurrentHealth(recipient.getCurrentHealth() - totalDamage);
 
 		screen->getMoveDialog()->setText(recipient.getName() + " took " + std::to_string(totalDamage) + " damage!");
@@ -190,28 +195,28 @@ Move* TurnWrapper::choosePlayerMove() {
 			screen->getMove1Box()->setText("");
 		}
 		else {
-			screen->getMove1Box()->setText("Z.\n" + playerMoveSet[selectedTypeIndex * 4].getMoveName());
+			screen->getMove1Box()->setText("Z.\n" + createMoveBoxDescription(selectedTypeIndex * 4));
 		}
 
 		if (playerMoveSet[selectedTypeIndex * 4 + 1].getMoveName() == "") {
 			screen->getMove2Box()->setText("");
 		}
 		else {
-			screen->getMove2Box()->setText("X.\n" + playerMoveSet[selectedTypeIndex * 4 + 1].getMoveName());
+			screen->getMove2Box()->setText("X.\n" + createMoveBoxDescription(selectedTypeIndex * 4 + 1));
 		}
 
-		if (playerMoveSet[selectedTypeIndex + 2].getMoveName() == "") {
+		if (playerMoveSet[selectedTypeIndex * 4 + 2].getMoveName() == "") {
 			screen->getMove3Box()->setText("");
 		}
 		else {
-			screen->getMove3Box()->setText("C.\n" + playerMoveSet[selectedTypeIndex * 4 + 2].getMoveName());
+			screen->getMove3Box()->setText("C.\n" + createMoveBoxDescription(selectedTypeIndex * 4 + 2));
 		}
 
 		if (playerMoveSet[selectedTypeIndex * 4 + 3].getMoveName() == "") {
 			screen->getMove4Box()->setText("");
 		}
 		else {
-			screen->getMove4Box()->setText("V.\n" + playerMoveSet[selectedTypeIndex * 4 + 3].getMoveName());
+			screen->getMove4Box()->setText("V.\n" + createMoveBoxDescription(selectedTypeIndex * 4 + 3));
 		}
 
 		display();
@@ -280,3 +285,32 @@ void TurnWrapper::promptDialogueBoxInput() {
 	}
 }
 
+std::string TurnWrapper::createMoveBoxDescription(int index) {
+	Move* moveSet = player.getMoveSet();
+	std::string description = moveSet[index].getMoveName() + "\n\n" + "Power: " + std::to_string(moveSet[index].getPower()) + 
+		"\n\nSpeed: " + std::to_string(moveSet[index].getSpeed()) + "\n\nAccuracy: " + std::to_string(moveSet[index].getAccuracy()) + "\n\n"
+		+ "Str" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STR_EFFECT_INDEX]) + " Def" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[DEF_EFFECT_INDEX]) + " Spd" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[SPD_EFFECT_INDEX]) + "\nEva" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[EVA_EFFECT_INDEX]) + " Stn" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STN_EFFECT_INDEX]);
+
+
+	return description;
+}
+
+std::string TurnWrapper::createStatusEffectStrengthSymbol(int strength) {
+	std::string symbol = "";
+	if (strength == 0) {
+		symbol = "-";
+	}
+	else if (strength < 0) {
+		strength *= -1;
+		for (int i = 0; i < strength; i++) {
+			symbol += "v";
+		}
+	}
+	else {
+		for (int i = 0; i < strength; i++) {
+			symbol += "^";
+		}
+	}
+
+	return symbol;
+}

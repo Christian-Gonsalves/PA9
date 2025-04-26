@@ -110,7 +110,6 @@ void Character::readFromFile(string fileName)
 	getline(instream, tempName, ',');
 	getline(instream, tempAtt, ',');
 	getline(instream, tempMxHp, ',');
-	getline(instream, tempCurrHp, ',');
 	getline(instream, tempAgil, ',');
 	getline(instream, tempAcc, ',');
 	getline(instream, tempDef, '\n');
@@ -118,7 +117,7 @@ void Character::readFromFile(string fileName)
 	this->setName(tempName);
 	this->setAttack(stoi(tempAtt));
 	this->setMaxHealth(stoi(tempMxHp));
-	this->setCurrentHealth(stoi(tempCurrHp));
+	this->setCurrentHealth(stoi(tempMxHp));
 	this->setAgility(stoi(tempAgil));
 	this->setAccuracy(stoi(tempAcc));
 	this->setDefense(stoi(tempDef));
@@ -252,16 +251,15 @@ void Character::sortMoves() {
 	// Sort in sortedArray
 	for (int i = 0; i < moveCount; i++) {
 		tempMoveType = moveSet[i].getMoveType();
-		std::cout << "Sorted Move Types: " << tempMoveType << std::endl;
 
 		switch (tempMoveType) {
 		case 'd':
-			sortedArray[numAtkMoves] = moveSet[i];
-			numAtkMoves++;
+			sortedArray[numDefMoves] = moveSet[i];
+			numDefMoves++;
 			break;
 		case 's':
-			sortedArray[numDefMoves + 4] = moveSet[i];
-			numDefMoves++;
+			sortedArray[numAtkMoves + 4] = moveSet[i];
+			numAtkMoves++;
 			break;
 		case 'a':
 			sortedArray[numAgiMoves + 4] = moveSet[i];
@@ -273,10 +271,7 @@ void Character::sortMoves() {
 		}
 	}
 
-	// Don't want to deal with creating an array on the heap, sooo
 	for (int i = 0; i < 12; i++) {
-		std::cout << "SSSSS:  " << sortedArray[i].getMoveName() << ": " << sortedArray[i].getMoveType() << std::endl;
 		moveSet[i] = sortedArray[i];
 	}
-
 }

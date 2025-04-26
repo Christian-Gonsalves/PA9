@@ -13,6 +13,7 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
     move4({ 500.f, 100.f }, { 650.f, 900.f }, font, 24),
     dialogBox({ 400.f, 250.f }, { 350.f, 200.f }, font, 24),
     moveDialog({ 700.f, 150.f }, { 40.f, 625.f }, font, 24)
+
 {
     //insert data
     defBox.setText(std::string("1. DEF"));

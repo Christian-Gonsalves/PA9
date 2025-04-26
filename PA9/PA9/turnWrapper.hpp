@@ -13,8 +13,8 @@ public:
 
 	~TurnWrapper() {};
 
-	// Main loop of battle
-	void runBattle();
+	// Main loop of battle returns true if player won, false if lost
+	bool runBattle();
 
 	void setPlayer(Character& newPlayer) { player = newPlayer; }
 	void setEnemy(EnemyCharacter& newEnemy) { enemy = newEnemy; }
@@ -71,4 +71,10 @@ private:
 
 	/*Pauses until user presses enter on dialogue box to continue game*/
 	void promptDialogueBoxInput();
+
+	// Creates a std::string for the descrption of a move using its index
+	std::string createMoveBoxDescription(int index);
+
+	// Returns a std::string based on strength
+	std::string createStatusEffectStrengthSymbol(int strength);
 };
