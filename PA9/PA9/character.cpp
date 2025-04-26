@@ -262,7 +262,7 @@ void Character::sortMoves() {
 			numAtkMoves++;
 			break;
 		case 'a':
-			sortedArray[numAgiMoves + 4] = moveSet[i];
+			sortedArray[numAgiMoves + 8] = moveSet[i];
 			numAgiMoves++;
 			break;
 		default:

@@ -15,8 +15,21 @@ textBox::textBox(const sf::Vector2f& size, const sf::Vector2f& position, sf::Fon
 
 void textBox::setText(const std::string& text)
 {
+
 	this->text.setString(text);
 
+}
+
+void textBox::formattedSetText(const std::string& text) {
+	std::string modifiedText = text;
+	int offset = 15, index = offset;
+
+	while (index < modifiedText.length()) {
+		modifiedText.insert(index, "-\n\n");
+		index += offset + 3;
+	}
+
+	setText(modifiedText);
 }
 
 void textBox::setPostion(sf::Vector2f& position)

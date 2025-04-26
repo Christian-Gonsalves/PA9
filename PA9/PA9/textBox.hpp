@@ -9,6 +9,9 @@ public:
 	textBox(const sf::Vector2f& size, const sf::Vector2f& position, sf::Font& font, int characterSize = 24);
 
 	void setText(const std::string& text);
+
+	// After a # of characters, appends a newline
+	void formattedSetText(const std::string& text);
 	void setPostion(sf::Vector2f& position);
 	void draw(sf::RenderWindow& window);
 	void setHighlight(bool highlight);

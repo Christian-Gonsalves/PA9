@@ -8,7 +8,7 @@ int main(int argc, const char* argv[])
     std::srand(std::time(NULL));
     ifstream funny;
     funny.open("coconut.jpg");
-    bool testing = true;
+    bool testing = false;
 
     if (funny.is_open()) {
         if (testing) {
