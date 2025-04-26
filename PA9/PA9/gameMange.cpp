@@ -65,7 +65,8 @@ void GameManage::run()
 
         // check screen transitions
         if (levelScreen->shouldStartBattle()) {
-
+            
+            sound[2].play();
             if (sound[0].getStatus() == sf::Sound::Status::Playing)
             {
                 sound[0].stop();
@@ -91,7 +92,7 @@ void GameManage::run()
 
             if (winState) {
 
-                sound[2].play();
+                
                 if (sound[1].getStatus() == sf::Sound::Status::Playing)
                 {
                     sound[1].stop();
