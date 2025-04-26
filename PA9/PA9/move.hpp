@@ -5,9 +5,6 @@
 class Move {
 public:
     Move(string newName = "", string newPhrase = "", double newPower = 0, double newSpeed = 0, double newAccuracy = 0,
-<<<<<<< HEAD
-        int newMoveCnt = 0, char newType = '\n', int* newStatus = nullptr);
-=======
         int newMaxMoveCnt = 0, char newType = '\n', int* newStatus = nullptr);
 
     ~Move();
@@ -35,47 +32,13 @@ public:
     int getEffectTurns(int index);
     int getEffectStrength(int index);
     
-    Move& operator= (const Move& rhs);
->>>>>>> andres-2
+    Move& operator= (Move& rhs);
 
-    ~Move();
-
-    void setMoveName(const string newName);
-    void setMovePhrase(const string newPhrase);
-    void setPower(double newPower);
-    void setSpeed(double newSpeed);
-    void setAccuracy(double newAccuracy);
-    void setMoveCount(int newCount);
-    void setMoveType(char newType);
-    void setEffectArray(const int* newArray);
-    void setEffectAttribute(int index, int turns, int strength);
-
-    string getMoveName(void) const;
-    string getMovePhrase(void) const;
-    double getPower(void) const;
-    double getSpeed(void) const;
-    double getAccuracy(void) const;
-    int getMoveCount(void) const;
-    char getMoveType(void) const;
-    const int* getEffectArray(void) const;
-    int getEffectTurns(int index);
-    int getEffectStrength(int index);
-
-    Move& operator= (const Move& rhs);
 
 private:
     string moveName;
     string movePhrase;
     double power,	 // Multiplier
-<<<<<<< HEAD
-        speed,
-        accuracy;
-    int maxMoveCount, // # of times a move can be used
-        currentMoveCount;
-    char moveType;
-    int statusEffect[10];
-
-=======
            speed,
            accuracy;
     int maxMoveCount, // # of times a move can be used
@@ -83,7 +46,6 @@ private:
     char moveType; 
     int statusEffect[10];
     
->>>>>>> andres-2
     // some sort of status eefect moodifier
     // an array to hold status effect things;
 };

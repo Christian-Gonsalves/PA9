@@ -71,6 +71,7 @@ void Test::testPlayMove(void)
 
 	attacker.readFromFile(attackerFile);
 	defender.readFromFile(defenderFile);
+	
 
 	TurnWrapper turn(attacker, defender);
 	cout << "This test will check to see if a hit is succesfull or not on an emeny, it will also print the moves catch phrase" << endl;
@@ -78,7 +79,43 @@ void Test::testPlayMove(void)
 
 	cout << endl << defender.getName() << "'s initial health is: " << defender.getCurrentHealth() << endl;
 
-	turn.playMove(defender, attacker);
+	Move* choosenMove = turn.chooseEnemyMove();
+
+	cout << endl << "The attackers chosen move was: " << choosenMove->getMoveName() << " with a power of: " << choosenMove->getPower() << endl;
+	cout << "The attackers base attack is: " << attacker.getAttack() << endl;
+	if (attacker.getStatusEffectTurns(STN_EFFECT_INDEX) > 0) { // Stunned
+		return;
+	}
+
+
+	// Move Dialogue
+	string playedMovePhrase = choosenMove->getMovePhrase();
+
+	// Does player hit attack?
+	double totalMoveAccuracy = attacker.getAccuracy() * choosenMove->getAccuracy();
+	double totalRecipientEvasion = defender.getAgility() * (1 + .25 * (defender.getStatusEffectStrength(SPD_EFFECT_INDEX))) * (1 + .25 * (defender.getStatusEffectStrength(EVA_EFFECT_INDEX)));
+
+	if ((std::rand() % (10000 - 1 + 1) + 1) >= 10000 - ((int)10000 * totalMoveAccuracy / totalRecipientEvasion)) { // Essentially a random number with (accuracy / evasion)% chance of occuring accurate to 3 decimal points 
+		// Damage Calculations
+		int totalDamage = attacker.getAttack() * (1 + .25 * (attacker.getStatusEffectStrength(STR_EFFECT_INDEX))) * choosenMove->getPower();
+		totalDamage -= defender.getDefense() * (1 + .25 * (defender.getStatusEffectStrength(DEF_EFFECT_INDEX)));
+		defender.setCurrentHealth(defender.getCurrentHealth() - totalDamage);
+
+		// Status Effect (Currently completely overwrites a given status effect type with the new strenth and duration. This means if it was previously a strength of -2 and then a strength of 1 was applied, the final status effect would be 1)
+		for (int i = 0; i < 10; i += 2) {
+			if (choosenMove->getEffectTurns(i) != 0) {
+				defender.setStatusEffect(i, choosenMove->getEffectTurns(i), choosenMove->getEffectStrength(i));
+			}
+		}
+	}
+	else {
+		cout << "The attack missed" << endl;
+	}
+
+	choosenMove->setCurMoveCount(choosenMove->getCurMoveCount() - 1);
+
+
+
 
 	cout << endl << defender.getName() << "'s new health is: " << defender.getCurrentHealth() << endl;
 

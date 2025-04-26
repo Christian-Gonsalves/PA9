@@ -2,6 +2,7 @@
 
 #include "GameManage.hpp"
 #include "turnWrapper.hpp"
+#include <Windows.h>
 
 GameManage::GameManage()
     : window(sf::VideoMode({ 1920, 1080 }), "SFML window")
@@ -23,11 +24,14 @@ void GameManage::run()
 {
     Character player;
     EnemyCharacter enemy;
-    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
+    bool winState;
 
-    // Temp measure
     player.readFromFile("Player_Character.csv");
     enemy.readFromFile("Andy_Character.csv");
+
+    player.sortMoves();
+
+    TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
 
     while (window.isOpen())
     {
@@ -49,11 +53,25 @@ void GameManage::run()
 
         // check screen transitions
         if (levelScreen->shouldStartBattle()) {
-            mainBattle.runBattle();
+
+            // Beginning battle Animation
+            while (!battleScreen->hasAnimationConcluded()) {
+                window.clear();
+                battleScreen->handleInput(window);
+                battleScreen->update();
+                battleScreen->draw(window);
+                window.display();
+            }
+
+            winState = mainBattle.runBattle();
             
             // Temporary mesure. Should set up some way of deciding what player & enemy should be besides the defaultssss
             mainBattle.setPlayer(player);
             mainBattle.setEnemy(enemy);
+
+            if (winState) {
+                window.close();
+            }
         }
     }
 }

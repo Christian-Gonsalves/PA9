@@ -3,7 +3,8 @@
 #include "turnWrapper.hpp"
 
 
-void TurnWrapper::runBattle() {
+
+bool TurnWrapper::runBattle() {
 	Move *playerMove = nullptr,
 		*enemyMove = nullptr;
 
@@ -41,14 +42,15 @@ void TurnWrapper::runBattle() {
 		// Battle End Condition
 		if (enemy.getCurrentHealth() <= 0) { // Player wins in situation where both hit zero hp on same turn
 			isEndOfBattle = true;
+			playerVictory = true;
 		}
 		else if (player.getCurrentHealth() <= 0) {
-			playerVictory = true;
 			isEndOfBattle = true;
 		}
 	}
 
 	endBattle(playerVictory);
+	return playerVictory;
 }
 
 Move* TurnWrapper::chooseEnemyMove(void) {
@@ -92,6 +94,10 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		// Damage Calculations
 		int totalDamage = currentCharacter.getAttack() * calculateMultiplier(currentCharacter.getStatusEffectStrength(STR_EFFECT_INDEX)) * playedMove->getPower();
 		totalDamage -= recipient.getDefense() * calculateMultiplier(recipient.getStatusEffectStrength(DEF_EFFECT_INDEX));
+		if (totalDamage < 0) {
+			totalDamage = 0;
+		}
+
 		recipient.setCurrentHealth(recipient.getCurrentHealth() - totalDamage);
 
 		screen->getDialogueBox()->setText(recipient.getName() + " took " + std::to_string(totalDamage) + " damage!");
@@ -168,12 +174,9 @@ void TurnWrapper::defaultMoveSetup(void)
 }
 
 Move* TurnWrapper::choosePlayerMove() {
-	Move* selectedMove = nullptr;
-	Move* sortedArray[12] = {nullptr};
+	Move* selectedMove = nullptr, *playerMoveSet = player.getMoveSet();
 	bool validMove = false, hasAvailableMove = false;
-	int numAtkMoves = 0, numDefMoves = 0, numAgiMoves = 0,
-		selectedTypeIndex = 0;
-	char tempMoveType = '\0';
+	int selectedTypeIndex = 0, selectedMoveIndex = -1;
 
 	// Any available moves?
 	for (int i = 0; i < player.getMoveCount(); i++) {
@@ -185,73 +188,59 @@ Move* TurnWrapper::choosePlayerMove() {
 		return &struggle;
 	}
 
-	// Sorting
-	for (int i = 0; i < 12; i++) {
-		tempMoveType = player.getMoveSet()[i].getMoveType();
-		switch (tempMoveType) {
-			case 's':
-				sortedArray[numAtkMoves] = &(player.getMoveSet()[i]);
-				numAtkMoves++;
-				break;
-			case 'd':
-				sortedArray[numDefMoves + 4] = &(player.getMoveSet()[i]);
-				numDefMoves++;
-				break;
-			case 'a':
-				sortedArray[numAgiMoves + 4] = &(player.getMoveSet()[i]);
-				numAgiMoves++;
-				break;
-			default:
-				std::cout << "Error in TurnWrapper::choosePlayerMove(): player has move of invalid type." << std::endl;
-				break;
-		}
-	}
-
 	while (!validMove) {
 		selectedTypeIndex = screen->getSelectedTypeIndex();
+		selectedMoveIndex = screen->getSelectedMoveIndex();
 
-		if (sortedArray[selectedTypeIndex] == nullptr) {
+		if (playerMoveSet[selectedTypeIndex * 4].getMoveName() == "") {
 			screen->getMove1Box()->setText("");
 		}
 		else {
-			screen->getMove1Box()->setText("Z.\n" + sortedArray[selectedTypeIndex]->getMoveName());
+			screen->getMove1Box()->setText("Z.\n" + createMoveBoxDescription(selectedTypeIndex * 4));
 		}
 
-		if (sortedArray[selectedTypeIndex + 1] == nullptr) {
+		if (playerMoveSet[selectedTypeIndex * 4 + 1].getMoveName() == "") {
 			screen->getMove2Box()->setText("");
 		}
 		else {
-			screen->getMove2Box()->setText("X.\n" + sortedArray[selectedTypeIndex + 1]->getMoveName());
+			screen->getMove2Box()->setText("X.\n" + createMoveBoxDescription(selectedTypeIndex * 4 + 1));
 		}
 
-		if (sortedArray[selectedTypeIndex + 2] == nullptr) {
+		if (playerMoveSet[selectedTypeIndex * 4 + 2].getMoveName() == "") {
 			screen->getMove3Box()->setText("");
 		}
 		else {
-			screen->getMove3Box()->setText("C.\n" + sortedArray[selectedTypeIndex + 2]->getMoveName());
+			screen->getMove3Box()->setText("C.\n" + createMoveBoxDescription(selectedTypeIndex * 4 + 2));
 		}
 
-		if (sortedArray[selectedTypeIndex + 3] == nullptr) {
+		if (playerMoveSet[selectedTypeIndex * 4 + 3].getMoveName() == "") {
 			screen->getMove4Box()->setText("");
 		}
 		else {
-			screen->getMove4Box()->setText("V.\n" + sortedArray[selectedTypeIndex + 3]->getMoveName());
+			screen->getMove4Box()->setText("V.\n" + createMoveBoxDescription(selectedTypeIndex * 4 + 3));
 		}
-		
 
 		display();
 		screen->handleInput(*window);
-		selectedMove = sortedArray[screen->getSelectedMoveIndex() + 4 * selectedTypeIndex];
+
+		if (selectedMoveIndex != -1) {
+			selectedMove = &(playerMoveSet[selectedMoveIndex + 4 * selectedTypeIndex]);
+		}
 
 		if (selectedMove != nullptr) {
-			if (selectedMove->getMoveType() != player.getLastTypeUsed() && selectedMove->getCurMoveCount() > 0) {
+			if (selectedMove->getMoveName() != "" && selectedMove->getMoveType() != player.getLastTypeUsed() && selectedMove->getCurMoveCount() > 0) {
 				validMove = true;
 			}
 		}
+
 	}
 
 	screen->setShowingMainDialogueBox(true);
 
+
+
+	player.setLastTypeUsed(selectedMove->getMoveType()); // If an attack misses, it will still have used that type. Maybe change?
+	screen->setSelectedMoveIndex(-1); // So it doesn't repeatedly enter same move after next turn
 	return selectedMove;
 }
 
@@ -297,3 +286,47 @@ void TurnWrapper::promptDialogueBoxInput() {
 	}
 }
 
+std::string TurnWrapper::createMoveBoxDescription(int index) {
+	Move* moveSet = player.getMoveSet();
+	std::string description = "\n" + moveSet[index].getMoveName() + "\n\n" + "Power: " + std::to_string(moveSet[index].getPower()).substr(0, 4) +
+		"\t\tSpeed: " + std::to_string(moveSet[index].getSpeed()).substr(0, 4) + "\n\nAccuracy: " + std::to_string(moveSet[index].getAccuracy()).substr(0, 4);
+	if (moveSet[index].getEffectArray()[STR_EFFECT_INDEX] > 0) {
+		description += "\t Str: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STR_EFFECT_INDEX]).substr(0, 4);
+		}
+	if (moveSet[index].getEffectArray()[DEF_EFFECT_INDEX] > 0) {
+		description += "\t Def: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[DEF_EFFECT_INDEX]).substr(0, 4);
+	}
+	if (moveSet[index].getEffectArray()[SPD_EFFECT_INDEX] > 0) {
+		description += "\t Spd: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[SPD_EFFECT_INDEX]).substr(0, 4);
+	}
+	if (moveSet[index].getEffectArray()[EVA_EFFECT_INDEX] > 0) {
+		description += "\t Eva: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[EVA_EFFECT_INDEX]).substr(0, 4);
+	}
+	if (moveSet[index].getEffectArray()[STN_EFFECT_INDEX] > 0) {
+		description += "\t Stn: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STN_EFFECT_INDEX]).substr(0, 4);
+	}
+
+
+
+	return description;
+}
+
+std::string TurnWrapper::createStatusEffectStrengthSymbol(int strength) {
+	std::string symbol = "";
+	if (strength == 0) {
+		symbol = "-";
+	}
+	else if (strength < 0) {
+		strength *= -1;
+		for (int i = 0; i < strength; i++) {
+			symbol += "v";
+		}
+	}
+	else {
+		for (int i = 0; i < strength; i++) {
+			symbol += "^";
+		}
+	}
+
+	return symbol;
+}

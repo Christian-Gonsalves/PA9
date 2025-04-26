@@ -150,7 +150,7 @@ int Move::getEffectStrength(int index)
 >>>>>>> andres-2
 }
 
-Move& Move::operator=(const Move& rhs)
+Move& Move::operator=(Move& rhs)
 {
 
 	this->setMoveName(rhs.getMoveName());

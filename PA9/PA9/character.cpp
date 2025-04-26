@@ -83,7 +83,7 @@ void Character::setStatusEffect(const int index, const int turns, const int stre
 	this->statusEffects[index + 1] = strength;
 }
 
-void Character::setMoveSet(const Move* newMoveSet)
+void Character::setMoveSet(Move* newMoveSet)
 {
 	for (int i = 0; i < 12; i++) {
 		moveSet[i] = newMoveSet[i];
@@ -110,15 +110,14 @@ void Character::readFromFile(string fileName)
 	getline(instream, tempName, ',');
 	getline(instream, tempAtt, ',');
 	getline(instream, tempMxHp, ',');
-	getline(instream, tempCurrHp, ',');
 	getline(instream, tempAgil, ',');
 	getline(instream, tempAcc, ',');
-	getline(instream, tempDef, ',');
+	getline(instream, tempDef, '\n');
 
 	this->setName(tempName);
 	this->setAttack(stoi(tempAtt));
 	this->setMaxHealth(stoi(tempMxHp));
-	this->setCurrentHealth(stoi(tempCurrHp));
+	this->setCurrentHealth(stoi(tempMxHp));
 	this->setAgility(stoi(tempAgil));
 	this->setAccuracy(stoi(tempAcc));
 	this->setDefense(stoi(tempDef));
@@ -163,7 +162,7 @@ void Character::readFromFile(string fileName)
 	instream.close();
 }
 
-Character& Character::operator=(const Character& rhs)
+Character& Character::operator=(Character& rhs)
 {
 	this->setName(rhs.getName());
 	this->setAttack(rhs.getAttack());
@@ -238,7 +237,41 @@ int Character::getStatusEffectStrength(int index)	//put in the index for the sta
 }
 
 
-const Move* Character::getMoveSet(void) const
+Move* Character::getMoveSet(void)
 {
 	return this->moveSet;
+}
+
+void Character::sortMoves() {
+	Move sortedArray[12];
+
+	int numAtkMoves = 0, numDefMoves = 0, numAgiMoves = 0;
+	char tempMoveType = '\0';
+
+	// Sort in sortedArray
+	for (int i = 0; i < moveCount; i++) {
+		tempMoveType = moveSet[i].getMoveType();
+
+		switch (tempMoveType) {
+		case 'd':
+			sortedArray[numDefMoves] = moveSet[i];
+			numDefMoves++;
+			break;
+		case 's':
+			sortedArray[numAtkMoves + 4] = moveSet[i];
+			numAtkMoves++;
+			break;
+		case 'a':
+			sortedArray[numAgiMoves + 8] = moveSet[i];
+			numAgiMoves++;
+			break;
+		default:
+			std::cout << "Error in TurnWrapper::choosePlayerMove(): player has move of invalid type." << std::endl;
+			break;
+		}
+	}
+
+	for (int i = 0; i < 12; i++) {
+		moveSet[i] = sortedArray[i];
+	}
 }
