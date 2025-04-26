@@ -1,5 +1,6 @@
-﻿  turnWrapper.cpp
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(95,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(96,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(299,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  battleScreen.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\battleScreen.cpp(100,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\battleScreen.cpp(100,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\battleScreen.cpp(101,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\battleScreen.cpp(101,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   PA9.vcxproj -> C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
