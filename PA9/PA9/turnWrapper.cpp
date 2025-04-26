@@ -286,9 +286,22 @@ void TurnWrapper::promptDialogueBoxInput() {
 	}
 }
 
+
+
+
 std::string TurnWrapper::createMoveBoxDescription(int index) {
 	Move* moveSet = player.getMoveSet();
-	std::string description = "\n" + moveSet[index].getMoveName() + "\n\n" + "Power: " + std::to_string(moveSet[index].getPower()).substr(0, 4) +
+	std::string description = "\n" + moveSet[index].getMoveName();
+
+
+
+	if (moveSet[index].getMoveName().length() < 10) {
+		for (int i = moveSet[index].getMoveName().length(); i < 10; i++){
+			description += " ";
+			}
+	}
+
+	description += "\t\t Moves: " + std::to_string(moveSet[index].getCurMoveCount()).substr(0, 2) + "\n\n" + "Power: " + std::to_string(moveSet[index].getPower()).substr(0, 4) +
 		"\t\tSpeed: " + std::to_string(moveSet[index].getSpeed()).substr(0, 4) + "\n\nAccuracy: " + std::to_string(moveSet[index].getAccuracy()).substr(0, 4);
 	if (moveSet[index].getEffectArray()[STR_EFFECT_INDEX] > 0) {
 		description += "\t Str: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STR_EFFECT_INDEX]).substr(0, 4);

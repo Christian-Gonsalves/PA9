@@ -24,7 +24,8 @@ int main(int argc, const char* argv[])
     std::srand(std::time(NULL));
     ifstream funny;
     funny.open("coconut.jpg");
-    bool testing = true;
+
+    bool testing = false;   //change this to true to see test output in terminal
 
     if (funny.is_open()) {
         if (testing) {
