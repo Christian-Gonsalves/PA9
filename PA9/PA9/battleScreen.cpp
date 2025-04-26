@@ -6,10 +6,10 @@ BattleScreen::BattleScreen(sf::Texture& bgTex, sf::Texture& andyTex, sf::Texture
     defBox({ 150.f, 50.f }, { 1160.f, 815.f }, font, 24),
     strBox({ 150.f, 50.f }, { 1160.f, 875.f }, font, 24),
     agilBox({ 150.f, 50.f }, { 1160.f, 935.f }, font, 24),
-    move1({ 500.f, 100.f }, { 150.f, 800.f }, font, 16),
-    move2({ 500.f, 100.f }, { 650.f, 800.f }, font, 16),
-    move3({ 500.f, 100.f }, { 150.f, 900.f }, font, 16),
-    move4({ 500.f, 100.f }, { 650.f, 900.f }, font, 16),
+    move1({ 500.f, 100.f }, { 150.f, 800.f }, font, 14),
+    move2({ 500.f, 100.f }, { 650.f, 800.f }, font, 14),
+    move3({ 500.f, 100.f }, { 150.f, 900.f }, font, 14),
+    move4({ 500.f, 100.f }, { 650.f, 900.f }, font, 14),
     dialogBox({ 400.f, 250.f }, { 350.f, 200.f }, font, 24)
 {
     //insert data

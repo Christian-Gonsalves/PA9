@@ -1,8 +1,5 @@
-﻿  main.cpp
-C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\main.cpp(8,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  turnWrapper.cpp
+﻿  turnWrapper.cpp
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(95,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(96,41): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
 C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\turnWrapper.cpp(299,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
   PA9.vcxproj -> C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
