@@ -66,13 +66,13 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 	}
 
 	if (playedMove->getMoveName() == "struggle") {
-		screen->getDialogueBox()->setText(currentCharacter.getName() + " struggled!\n");
+		screen->getMoveDialog()->setText(currentCharacter.getName() + " struggled!\n");
 		display();
 		promptDialogueBoxInput();
 		
 		return;
 	}
-	screen->getDialogueBox()->setText(currentCharacter.getName() + " used " + playedMove->getMoveName() + "!\n");
+	screen->getMoveDialog()->setText(currentCharacter.getName() + " used " + playedMove->getMoveName() + "!\n");
 	display();
 	promptDialogueBoxInput();
 	screen->setShowingMainDialogueBox(true); // Continue to show 
@@ -80,7 +80,7 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 	// Move Dialogue
 	string playedMovePhrase = playedMove->getMovePhrase();
 	if (playedMovePhrase != "") {
-		screen->getDialogueBox()->setText(currentCharacter.getName() + ": " + playedMovePhrase + "\n");
+		screen->getMoveDialog()->setText(currentCharacter.getName() + ": " + playedMovePhrase + "\n");
 		display();
 		promptDialogueBoxInput();
 		screen->setShowingMainDialogueBox(true); // Continue to show 
@@ -100,7 +100,7 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 
 		recipient.setCurrentHealth(recipient.getCurrentHealth() - totalDamage);
 
-		screen->getDialogueBox()->setText(recipient.getName() + " took " + std::to_string(totalDamage) + " damage!");
+		screen->getMoveDialog()->setText(recipient.getName() + " took " + std::to_string(totalDamage) + " damage!");
 
 		// Status Effect (Currently completely overwrites a given status effect type with the new strenth and duration. This means if it was previously a strength of -2 and then a strength of 1 was applied, the final status effect would be 1)
 		for (int i = 0; i < 10;  i += 2) {
@@ -110,7 +110,7 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		}
 	}
 	else {
-		screen->getDialogueBox()->setText(currentCharacter.getName() + " missed!\n");
+		screen->getMoveDialog()->setText(currentCharacter.getName() + " missed!\n");
 	}
 
 	display();
@@ -261,10 +261,10 @@ void TurnWrapper::endBattle(bool playerVictory) {
 	screen->setShowingMainDialogueBox(true);
 
 	if (playerVictory) {
-		screen->getDialogueBox()->setText("Player victory!!!");
+		screen->getMoveDialog()->setText("Player victory!!!");
 	}
 	else {
-		screen->getDialogueBox()->setText("Player defeated :(");
+		screen->getMoveDialog()->setText("Player defeated :(");
 	}
 
 	display();
