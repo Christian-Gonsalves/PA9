@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "LevelSelectScreen.hpp"
 #include "BattleScreen.hpp"
 
@@ -16,6 +17,9 @@ private:
     sf::Font font;
     std::unique_ptr<LevelSelectScreen> levelScreen;
     std::unique_ptr<BattleScreen> battleScreen;
+
+    sf::SoundBuffer *buffer; 
+    sf::Sound * sound; 
 
     GameScreen* curScreen;
 };
