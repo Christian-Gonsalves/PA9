@@ -2,8 +2,6 @@
 
 #include "turnWrapper.hpp"
 
-
-
 bool TurnWrapper::runBattle() {
 	Move *playerMove = nullptr,
 		*enemyMove = nullptr;
@@ -11,7 +9,7 @@ bool TurnWrapper::runBattle() {
 	bool isEndOfBattle = false;
 	int playerVictory = false;
 
-	screen->getDialogueBox()->setText(enemy.getName() + ": " + enemy.getCatchPhrase());
+	screen->getDialogueBox()->formattedSetText(enemy.getName() + ": " + enemy.getCatchPhrase());
 	display();
 	promptDialogueBoxInput();
 
@@ -60,19 +58,20 @@ Move* TurnWrapper::chooseEnemyMove(void) {
 
 void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Character& recipient) {
 	screen->setShowingMainDialogueBox(true); // Continue to show 
+	std::string damageMessage;
 
 	if (currentCharacter.getStatusEffectTurns(STN_EFFECT_INDEX) > 0) { // Stunned
 		return; 
 	}
 
 	if (playedMove->getMoveName() == "struggle") {
-		screen->getDialogueBox()->setText(currentCharacter.getName() + " struggled!\n");
+		screen->getDialogueBox()->formattedSetText(currentCharacter.getName() + " struggled!\n");
 		display();
 		promptDialogueBoxInput();
 		
 		return;
 	}
-	screen->getDialogueBox()->setText(currentCharacter.getName() + " used " + playedMove->getMoveName() + "!\n");
+	screen->getDialogueBox()->formattedSetText(currentCharacter.getName() + " used " + playedMove->getMoveName() + "!\n");
 	display();
 	promptDialogueBoxInput();
 	screen->setShowingMainDialogueBox(true); // Continue to show 
@@ -80,7 +79,7 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 	// Move Dialogue
 	string playedMovePhrase = playedMove->getMovePhrase();
 	if (playedMovePhrase != "") {
-		screen->getDialogueBox()->setText(currentCharacter.getName() + ": " + playedMovePhrase + "\n");
+		screen->getDialogueBox()->formattedSetText(currentCharacter.getName() + ": " + playedMovePhrase + "\n");
 		display();
 		promptDialogueBoxInput();
 		screen->setShowingMainDialogueBox(true); // Continue to show 
@@ -94,23 +93,51 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 		// Damage Calculations
 		int totalDamage = currentCharacter.getAttack() * calculateMultiplier(currentCharacter.getStatusEffectStrength(STR_EFFECT_INDEX)) * playedMove->getPower();
 		totalDamage -= recipient.getDefense() * calculateMultiplier(recipient.getStatusEffectStrength(DEF_EFFECT_INDEX));
+
+		double typeMultiplier = calculateTypeMultiplier(playedMove->getMoveType(), recipient.getLastTypeUsed());
+		totalDamage *= typeMultiplier;
+
+		std::cout << "Actor: " << playedMove->getMoveType() << " Recipient: " << recipient.getLastTypeUsed() << " Multiplier: " << typeMultiplier << std::endl;
+
+		damageMessage += "Move was ";
+		if (typeMultiplier > 1.00) {
+			damageMessage += "effective";
+		}
+		else if (typeMultiplier < 1.00) {
+			damageMessage += "ineffective";
+		}
+		damageMessage += "! ";
+
 		if (totalDamage < 0) {
 			totalDamage = 0;
 		}
 
 		recipient.setCurrentHealth(recipient.getCurrentHealth() - totalDamage);
 
-		screen->getDialogueBox()->setText(recipient.getName() + " took " + std::to_string(totalDamage) + " damage!");
+		damageMessage += recipient.getName() + " took " + std::to_string(totalDamage) + " damage! ";
 
 		// Status Effect (Currently completely overwrites a given status effect type with the new strenth and duration. This means if it was previously a strength of -2 and then a strength of 1 was applied, the final status effect would be 1)
-		for (int i = 0; i < 10;  i += 2) {
-			if (playedMove->getEffectTurns(i) != 0) {
+		for (int i = 0; i < 8;  i += 2) {
+			if (playedMove->getEffectStrength(i) < 0) {
 				recipient.setStatusEffect(i, playedMove->getEffectTurns(i), playedMove->getEffectStrength(i));
+				damageMessage += recipient.getName() + "'s " + convertEffectIndexToName(i) + " has been decreased! ";
 			}
+			else if (playedMove->getEffectStrength(i) > 0) {
+				currentCharacter.setStatusEffect(i, playedMove->getEffectTurns(i), playedMove->getEffectStrength(i));
+				damageMessage += currentCharacter.getName() + "'s " + convertEffectIndexToName(i) + " has been increased! ";
+			}
+			
 		}
+		
+		if (playedMove->getEffectStrength(STN_EFFECT_INDEX) > 0) {
+			recipient.setStatusEffect(STN_EFFECT_INDEX, playedMove->getEffectTurns(STN_EFFECT_INDEX), playedMove->getEffectStrength(STN_EFFECT_INDEX));
+			damageMessage += currentCharacter.getName() + " has been stunned!!! ";
+		}
+
+		screen->getDialogueBox()->formattedSetText(damageMessage);
 	}
 	else {
-		screen->getDialogueBox()->setText(currentCharacter.getName() + " missed!\n");
+		screen->getDialogueBox()->formattedSetText(currentCharacter.getName() + " missed!\n");
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	screen->setEnemyMaxHP(enemy.getMaxHealth());
@@ -120,20 +147,36 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 
 
 	display();
-	promptDialogueBoxInput();
+	//promptDialogueBoxInput();
 
 	playedMove->setCurMoveCount(playedMove->getCurMoveCount() - 1);
 }
 
 void TurnWrapper::updateStatusEffects(Character &currentCharacter) {
+	screen->setShowingMainDialogueBox(true);
+	std::string effectEndMessage;
+
 	for (int i = 0; i < 10; i += 2) {
 		if (currentCharacter.getStatusEffectTurns(i) > 0) {
 			currentCharacter.setStatusEffect(i, currentCharacter.getStatusEffectTurns(i) - 1, currentCharacter.getStatusEffectStrength(i));
 
 			if (currentCharacter.getStatusEffectTurns(i) <= 0) { // Became 0 after turn passed
 				currentCharacter.setStatusEffect(i, 0, 0);
+				effectEndMessage += currentCharacter.getName();
+				if (i != STN_EFFECT_INDEX) {
+					effectEndMessage += "'s " + convertEffectIndexToName(i) + " is back to normal. ";
+				}
+				else {
+					effectEndMessage += " is no longer stunned. ";
+				}
+				
 			}
 		}
+	}
+	if (effectEndMessage != "") { // is not blank
+		screen->getDialogueBox()->formattedSetText(effectEndMessage);
+		display();
+		promptDialogueBoxInput();
 	}
 }
 
@@ -267,10 +310,10 @@ void TurnWrapper::endBattle(bool playerVictory) {
 	screen->setShowingMainDialogueBox(true);
 
 	if (playerVictory) {
-		screen->getDialogueBox()->setText("Player victory!!!");
+		screen->getDialogueBox()->formattedSetText("Player victory!!!");
 	}
 	else {
-		screen->getDialogueBox()->setText("Player defeated :(");
+		screen->getDialogueBox()->formattedSetText("Player defeated :(");
 	}
 
 	display();
@@ -325,8 +368,6 @@ std::string TurnWrapper::createMoveBoxDescription(int index) {
 		description += "\t Stn: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STN_EFFECT_INDEX]).substr(0, 4);
 	}
 
-
-
 	return description;
 }
 
@@ -348,4 +389,48 @@ std::string TurnWrapper::createStatusEffectStrengthSymbol(int strength) {
 	}
 
 	return symbol;
+}
+
+double TurnWrapper::calculateTypeMultiplier(char typeUsed, char enemyLastTypeUsed) {
+	double multiplierIntensity = 0.25;
+
+	switch (typeUsed) {
+	case 'd':
+		if (enemyLastTypeUsed == 'a') { // Weakness
+			multiplierIntensity *= -1;
+		}
+		break;
+	case 's':
+		if (enemyLastTypeUsed == 'd') {
+			multiplierIntensity *= -1;
+		}
+		break;
+	case 'a':
+		if (enemyLastTypeUsed == 's') {
+			multiplierIntensity *= -1;
+		}
+		break;
+	}
+	std::cout << "Intensity: " << multiplierIntensity << " ";
+	return 1.0 + multiplierIntensity;
+}
+
+std::string TurnWrapper::convertEffectIndexToName(int index) {
+	switch (index) {
+	case STR_EFFECT_INDEX:
+		return "Strength";
+		break;
+	case DEF_EFFECT_INDEX:
+		return "Defense";
+		break;
+	case SPD_EFFECT_INDEX:
+		return "Speed";
+		break;
+	case EVA_EFFECT_INDEX:
+		return "Evasion";
+		break;
+	case STN_EFFECT_INDEX:
+		return "Stun";
+		break;
+	}
 }

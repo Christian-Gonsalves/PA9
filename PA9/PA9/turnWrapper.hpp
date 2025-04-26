@@ -77,4 +77,15 @@ private:
 
 	// Returns a std::string based on strength
 	std::string createStatusEffectStrengthSymbol(int strength);
+
+	/*Calculates the type multiplier. If a type is stronger than another (->), it deals 1.25x damage. Vice versa deals 0.75x damage
+	Type of Move Used vs Last Type Used by enemy
+	Def -> Str
+	Str -> Agi
+	Agi -> Def
+	*/
+	double calculateTypeMultiplier(char typeUsed, char enemyLastTypeUsed);
+
+	// Converts effect index to name
+	std::string convertEffectIndexToName(int index);
 };

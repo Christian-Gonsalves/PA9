@@ -1,6 +1,10 @@
 You,30,100,20,100,20
-POW,POW!,1.00,1.00,1.00,10,d,0,2,1
-BAM,BAM!,1.5,0.75,0.75,20,s,2,2,1
-BOOM,BOOM!,99,0.10,0.10,1,s,8,1,1
-STABBY,Stabby stabby,1.1,1.25,.75,30,a,0,0,0
-SMOKE,Blowing smoke buddy,0,.5,1,10,d,6,2,-2
+Disarm,Get outta here!,1.25,1,0.75,3,s,0,3,-2  
+Tradeoff,I will beat you one day...,-1,1,1,1,s,0,3,2 
+Slam,Lightweight!,3,0.75,0.25,10,s,0,0,0 
+Turtle,If I can't see you I know you can't see me :,0,0.75,1,3,d,2,2,2 
+Cautious Slap,I didn't mean it !,0.5,0.75,1,10,d,0,0,0 
+Faint,...,0,0.75,1,1,d,6,1,4 
+Second Wind,I WILL DESTROY YOU!!!,0.75,1,1,2,a,4,3,2 
+Paper Cut,OW!,0.75,2,1,5,a,0,0,0 
+Gamble,I'm due for a hit!,1.25,1.5,0.49,10,a,0,0,0 

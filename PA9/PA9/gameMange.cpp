@@ -39,6 +39,10 @@ void GameManage::run()
 
     player.sortMoves();
 
+    for (int i = 0; i < 12; i++) {
+        std::cout << player.getMoveSet()[i].getMoveName() << ": " << player.getMoveSet()[i].getMoveType() << std::endl;
+    }
+
     TurnWrapper mainBattle(enemy, player, battleScreen.get(), &window);
 
     while (window.isOpen())
