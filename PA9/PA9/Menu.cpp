@@ -71,7 +71,7 @@ void Menu::credits(sf::RenderWindow& window)
         std::cout << "Font file not found!" << std::endl;
     }
     sf::Text* options = new sf::Text[6]{ sf::Text(credits_font),sf::Text(credits_font), sf::Text(credits_font), sf::Text(credits_font), sf::Text(credits_font), sf::Text(credits_font) };
-    sf::Texture texture("assets/Images/loading_screen.jpg");
+    sf::Texture texture("assets/loading_screen.jpg");
     sf::Sprite sprite(texture);
     //sprite.setScale({ 3, 3 });
 
@@ -175,7 +175,7 @@ void Menu::load_menu(sf::RenderWindow& window)
                     }
                     else if (menu.GetPressedItem() == 1)
                     {
-                        sound.stop();
+                     
                         menu.credits(window);
 
                     }
