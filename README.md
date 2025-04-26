@@ -4,7 +4,7 @@ Team Members:
               Gabriel Sico, Lab section 10, TA: Marcus W
               Andres
 
-----------------------------------------------Instructions-----------------------------------------------
+----------------------------------------------Instructions--------------------------------------------------------
 ******** IF CODE DOES NOT RUN IN VISUAL STUDIO ADD EXISTING MISSING FILES (NOT OUR FAULT) ********
 
 When the program is first run the start screen is opened up, If the tests want to be seen, you must go into main.cpp and change testing = true, if this is done then when the program is run then the terminal will also open up.
