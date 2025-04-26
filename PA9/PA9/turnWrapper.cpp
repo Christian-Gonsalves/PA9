@@ -111,6 +111,12 @@ void TurnWrapper::playMove(Character& currentCharacter, Move* playedMove, Charac
 	else {
 		screen->getMoveDialog()->setText(currentCharacter.getName() + " missed!\n");
 	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	screen->setEnemyMaxHP(enemy.getMaxHealth());
+	screen->setEnemyCurHP(enemy.getCurrentHealth());
+	screen->setPlayerMaxHP(player.getMaxHealth());
+	screen->setPlayerCurHP(player.getCurrentHealth());
+
 
 	display();
 	promptDialogueBoxInput();

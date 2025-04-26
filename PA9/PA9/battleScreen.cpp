@@ -98,8 +98,8 @@ void BattleScreen::update()
         dialogInit = true;
     }
 
-    pHealthBar.update(player.getCurrentHealth(), player.getMaxHealth());
-    eHealthBar.update(andy.getCurrentHealth(), andy.getMaxHealth());
+    pHealthBar.update(pCurHP, pMaxHP);
+    eHealthBar.update(eCurHP, eMaxHP);
 }
 
 void BattleScreen::draw(sf::RenderWindow& window)

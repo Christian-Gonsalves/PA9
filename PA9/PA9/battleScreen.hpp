@@ -4,6 +4,8 @@
 #include "Player.hpp"
 #include "hpBar.hpp"
 #include "textBox.hpp"
+#include "enemyCharacter.hpp"
+#include "Character.hpp" 
 #include <iostream>
 
 class BattleScreen : public GameScreen
@@ -32,6 +34,17 @@ public:
     void setSelectedMoveIndex(int newSelectedMoveIndex) { selectedMoveIndex = newSelectedMoveIndex; }
 
 
+    int getEnemyCurHP() const { return eCurHP; }
+    int getPlayerCurHP() const { return pCurHP; }
+    int getEnemyMaxHP() const { return eMaxHP; }
+    int getPlayerMaxHP() const { return pMaxHP; }
+
+    void setEnemyCurHP(int hp) { eCurHP = hp; }
+    void setPlayerCurHP(int hp) { pCurHP = hp; }
+    void setEnemyMaxHP(int hp) { eMaxHP = hp; }
+    void setPlayerMaxHP(int hp) { pMaxHP = hp; }
+
+
 private:
     sf::Sprite bg;
     bool exitBattle, showDialog;
@@ -45,8 +58,6 @@ private:
 
     int selectedTypeIndex;
     int selectedMoveIndex;
-    enum class MenuState { SelectingType, SelectingMove };
-    MenuState menuState;
     bool dialogInit;
-
+    int eCurHP, eMaxHP, pCurHP, pMaxHP;
 };
