@@ -3,6 +3,7 @@
 #include "turnWrapper.hpp"
 
 
+
 bool TurnWrapper::runBattle() {
 	Move *playerMove = nullptr,
 		*enemyMove = nullptr;
@@ -287,9 +288,24 @@ void TurnWrapper::promptDialogueBoxInput() {
 
 std::string TurnWrapper::createMoveBoxDescription(int index) {
 	Move* moveSet = player.getMoveSet();
-	std::string description = moveSet[index].getMoveName() + "\n\n" + "Power: " + std::to_string(moveSet[index].getPower()) + 
-		"\n\nSpeed: " + std::to_string(moveSet[index].getSpeed()) + "\n\nAccuracy: " + std::to_string(moveSet[index].getAccuracy()) + "\n\n"
-		+ "Str" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STR_EFFECT_INDEX]) + " Def" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[DEF_EFFECT_INDEX]) + " Spd" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[SPD_EFFECT_INDEX]) + "\nEva" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[EVA_EFFECT_INDEX]) + " Stn" + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STN_EFFECT_INDEX]);
+	std::string description = "\n" + moveSet[index].getMoveName() + "\n\n" + "Power: " + std::to_string(moveSet[index].getPower()).substr(0, 4) +
+		"\t\tSpeed: " + std::to_string(moveSet[index].getSpeed()).substr(0, 4) + "\n\nAccuracy: " + std::to_string(moveSet[index].getAccuracy()).substr(0, 4);
+	if (moveSet[index].getEffectArray()[STR_EFFECT_INDEX] > 0) {
+		description += "\t Str: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STR_EFFECT_INDEX]).substr(0, 4);
+		}
+	if (moveSet[index].getEffectArray()[DEF_EFFECT_INDEX] > 0) {
+		description += "\t Def: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[DEF_EFFECT_INDEX]).substr(0, 4);
+	}
+	if (moveSet[index].getEffectArray()[SPD_EFFECT_INDEX] > 0) {
+		description += "\t Spd: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[SPD_EFFECT_INDEX]).substr(0, 4);
+	}
+	if (moveSet[index].getEffectArray()[EVA_EFFECT_INDEX] > 0) {
+		description += "\t Eva: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[EVA_EFFECT_INDEX]).substr(0, 4);
+	}
+	if (moveSet[index].getEffectArray()[STN_EFFECT_INDEX] > 0) {
+		description += "\t Stn: " + createStatusEffectStrengthSymbol(moveSet[index].getEffectArray()[STN_EFFECT_INDEX]).substr(0, 4);
+	}
+
 
 
 	return description;
