@@ -143,6 +143,7 @@
     <ClCompile Include="hpBar.cpp" />
     <ClCompile Include="levelSelectScreen.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="move.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="hpBar.hpp" />
     <ClInclude Include="include.hpp" />
     <ClInclude Include="levelSelectScreen.hpp" />
+    <ClInclude Include="Menu.hpp" />
     <ClInclude Include="move.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Screen.hpp" />
