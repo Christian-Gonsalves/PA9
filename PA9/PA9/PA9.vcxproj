@@ -102,12 +102,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-3.0.0\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-3.0.0\lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;sfml-audio-s-d.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -116,18 +120,78 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-3.0.0\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-3.0.0\lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;sfml-audio-s.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Andy.cpp" />
+    <ClCompile Include="battleScreen.cpp" />
+    <ClCompile Include="character.cpp" />
+    <ClCompile Include="enemyCharacter.cpp" />
+    <ClCompile Include="gameMange.cpp" />
+    <ClCompile Include="hpBar.cpp" />
+    <ClCompile Include="levelSelectScreen.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="move.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="textBox.cpp" />
+    <ClCompile Include="turnWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Andy.hpp" />
+    <ClInclude Include="battleScreen.hpp" />
+    <ClInclude Include="character.hpp" />
+    <ClInclude Include="enemyCharacter.hpp" />
+    <ClInclude Include="gameManage.hpp" />
+    <ClInclude Include="GameScreen.hpp" />
+    <ClInclude Include="hpBar.hpp" />
+    <ClInclude Include="include.hpp" />
+    <ClInclude Include="levelSelectScreen.hpp" />
+    <ClInclude Include="Menu.hpp" />
+    <ClInclude Include="move.hpp" />
+    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="test.hpp" />
+    <ClInclude Include="textBox.hpp" />
+    <ClInclude Include="turnWrapper.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Andy_Character.csv" />
+    <None Include="Player_Character.csv" />
+    <None Include="Test_Enemy_1.csv" />
+    <None Include="Test_Enemy_2.csv" />
+    <None Include="x64\Release\PA9.exe.recipe" />
+    <None Include="x64\Release\PA9.iobj" />
+    <None Include="x64\Release\PA9.ipdb" />
+    <None Include="x64\Release\vc143.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\andyAttackSprite.png" />
+    <Image Include="assets\andySprite.png" />
+    <Image Include="assets\inBattleBG.png" />
+    <Image Include="assets\lvlSelectBackgroundPxl.png" />
+    <Image Include="assets\playerInBattle.png" />
+    <Image Include="assets\playerPxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\dogicabold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Release\PA9.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
