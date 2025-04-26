@@ -71,4 +71,10 @@ private:
 
 	/*Pauses until user presses enter on dialogue box to continue game*/
 	void promptDialogueBoxInput();
+
+	// Creates a std::string for the descrption of a move using its index
+	std::string createMoveBoxDescription(int index);
+
+	// Returns a std::string based on strength
+	std::string createStatusEffectStrengthSymbol(int strength);
 };
