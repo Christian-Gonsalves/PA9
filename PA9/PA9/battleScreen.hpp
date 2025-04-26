@@ -4,6 +4,8 @@
 #include "Player.hpp"
 #include "hpBar.hpp"
 #include "textBox.hpp"
+#include "enemyCharacter.hpp"
+#include "Character.hpp" 
 #include <iostream>
 
 class BattleScreen : public GameScreen
@@ -25,10 +27,22 @@ public:
     textBox* getMove2Box() { return &move2; }
     textBox* getMove3Box() { return &move3; }
     textBox* getMove4Box() { return &move4; }
+    textBox* getMoveDialog() { return &moveDialog; }
 
     int getSelectedTypeIndex() const { return selectedTypeIndex; }
     int getSelectedMoveIndex() const { return selectedMoveIndex; }
     void setSelectedMoveIndex(int newSelectedMoveIndex) { selectedMoveIndex = newSelectedMoveIndex; }
+
+
+    int getEnemyCurHP() const { return eCurHP; }
+    int getPlayerCurHP() const { return pCurHP; }
+    int getEnemyMaxHP() const { return eMaxHP; }
+    int getPlayerMaxHP() const { return pMaxHP; }
+
+    void setEnemyCurHP(int hp) { eCurHP = hp; }
+    void setPlayerCurHP(int hp) { pCurHP = hp; }
+    void setEnemyMaxHP(int hp) { eMaxHP = hp; }
+    void setPlayerMaxHP(int hp) { pMaxHP = hp; }
 
 
 private:
@@ -40,12 +54,10 @@ private:
 
     textBox defBox, strBox, agilBox;
     textBox move1, move2, move3, move4;
-    textBox dialogBox;
+    textBox dialogBox, moveDialog;
 
     int selectedTypeIndex;
     int selectedMoveIndex;
-    enum class MenuState { SelectingType, SelectingMove };
-    MenuState menuState;
     bool dialogInit;
-
+    int eCurHP, eMaxHP, pCurHP, pMaxHP;
 };
