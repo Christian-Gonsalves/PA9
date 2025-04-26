@@ -1,1 +1,17 @@
-﻿  PA9.vcxproj -> C:\Users\chris\Downloads\Textbooks\Spring 2025\Cpts 122\PA 9\PA9\PA9\x64\Debug\PA9.exe
+﻿  gameMange.cpp
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(11,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(12,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(13,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(14,35): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(15,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,63): warning C4244:         with
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,63): warning C4244:         [
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,63): warning C4244:             T=unsigned int
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,63): warning C4244:         ]
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,37): warning C4244:         with
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,37): warning C4244:         [
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,37): warning C4244:             T=unsigned int
+C:\Users\mypeo\Documents\GitHub\PA9\PA9\PA9\gameMange.cpp(33,37): warning C4244:         ]
+  PA9.vcxproj -> C:\Users\mypeo\Documents\GitHub\PA9\PA9\x64\Debug\PA9.exe
