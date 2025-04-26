@@ -255,12 +255,12 @@ void Character::sortMoves() {
 
 		switch (tempMoveType) {
 		case 'd':
-			sortedArray[numAtkMoves] = moveSet[i];
-			numAtkMoves++;
+			sortedArray[numDefMoves] = moveSet[i];
+			numDefMoves++;
 			break;
 		case 's':
-			sortedArray[numDefMoves + 4] = moveSet[i];
-			numDefMoves++;
+			sortedArray[numAtkMoves + 4] = moveSet[i];
+			numAtkMoves++;
 			break;
 		case 'a':
 			sortedArray[numAgiMoves + 4] = moveSet[i];
@@ -272,4 +272,7 @@ void Character::sortMoves() {
 		}
 	}
 
+	for (int i = 0; i < 12; i++) {
+		moveSet[i] = sortedArray[i];
+	}
 }
