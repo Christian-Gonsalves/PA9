@@ -110,7 +110,6 @@ void Character::readFromFile(string fileName)
 	getline(instream, tempName, ',');
 	getline(instream, tempAtt, ',');
 	getline(instream, tempMxHp, ',');
-	getline(instream, tempCurrHp, ',');
 	getline(instream, tempAgil, ',');
 	getline(instream, tempAcc, ',');
 	getline(instream, tempDef, '\n');
@@ -118,7 +117,7 @@ void Character::readFromFile(string fileName)
 	this->setName(tempName);
 	this->setAttack(stoi(tempAtt));
 	this->setMaxHealth(stoi(tempMxHp));
-	this->setCurrentHealth(stoi(tempCurrHp));
+	this->setCurrentHealth(stoi(tempMxHp));
 	this->setAgility(stoi(tempAgil));
 	this->setAccuracy(stoi(tempAcc));
 	this->setDefense(stoi(tempDef));
@@ -255,12 +254,12 @@ void Character::sortMoves() {
 
 		switch (tempMoveType) {
 		case 'd':
-			sortedArray[numAtkMoves] = moveSet[i];
-			numAtkMoves++;
+			sortedArray[numDefMoves] = moveSet[i];
+			numDefMoves++;
 			break;
 		case 's':
-			sortedArray[numDefMoves + 4] = moveSet[i];
-			numDefMoves++;
+			sortedArray[numAtkMoves + 4] = moveSet[i];
+			numAtkMoves++;
 			break;
 		case 'a':
 			sortedArray[numAgiMoves + 4] = moveSet[i];
@@ -272,4 +271,7 @@ void Character::sortMoves() {
 		}
 	}
 
+	for (int i = 0; i < 12; i++) {
+		moveSet[i] = sortedArray[i];
+	}
 }
